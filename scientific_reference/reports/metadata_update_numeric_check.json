@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "fields_compared": [
+    "ras",
+    "mean_G_raw",
+    "mean_G_corrected",
+    "mean_R_corrected",
+    "n_selected",
+    "event_ci_low",
+    "event_ci_high",
+    "event_control_ci_low",
+    "event_control_ci_high",
+    "blue_positive_fraction_reporters"
+  ],
+  "score_rows": 56,
+  "maximum_absolute_numeric_change": 0,
+  "intentional_metadata_changes": "S7 source10 to actual15 mass pct; independent transfection well n; S10 doses, coexpression interpretation, RNA parent mapping and flow then extraction"
+}

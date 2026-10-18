@@ -1,0 +1,2 @@
+﻿model,status,fitted,PER,reasons,mathematical_sensitivity,maximum_affine_prediction_difference
+RAS_to_S7_RES_to_RNA_fraction,UNAVAILABLE,False,,No calibrated molecular editing fractions; S7/S10 reference and population transfer unqualified; no supported RES domain validated,Affine transform only evaluated separately; no added sample information,2.914335439641036e-16

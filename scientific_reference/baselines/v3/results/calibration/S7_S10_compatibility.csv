@@ -1,0 +1,10 @@
+﻿dimension,S7,S10,status,calibration_transfer_qualified
+cell_type,HEK293T_user_confirmed,HEK293T_user_confirmed,MATCH,False
+detector_profile,same recorded CytoFLEX S profile,same profile,MATCH_NOT_SUFFICIENT,False
+population,reporter eligible,reporter eligible or R+B+,REPORTER_MATCH_BPOS_MISMATCH,False
+reporter_architecture,AC/INAC exact sequences and lengths unverified,OpenA reconstructed amplicon; full construct unknown,UNRESOLVED,False
+reporter_loading,per-well amount unresolved,100 ng/well,UNRESOLVED,False
+treatment_TMP,unresolved,unresolved,UNRESOLVED,False
+editor_presence,BFP label does not verify linked editor,ORCA-P2A-BFP at variable doses,UNRESOLVED_REFERENCE_BRIDGE,False
+reference_axis,AC DNA mass mixture,editor DNA dose; unknown actual RNA state,DIFFERENT_EXPERIMENTAL_AXIS,False
+molecular_population,not applicable,RNA cell population undocumented,UNRESOLVED,False

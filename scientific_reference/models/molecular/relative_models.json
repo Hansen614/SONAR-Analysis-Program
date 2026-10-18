@@ -1,0 +1,278 @@
+{
+  "training_mean": {
+    "coefficients": [
+      0.10128764462687148
+    ],
+    "residual_df": 11,
+    "sigma2": 0.005372639633889127,
+    "xtx_inverse": [
+      [
+        0.08333333333333333
+      ]
+    ],
+    "features": [],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  },
+  "reporter_RAS": {
+    "coefficients": [
+      0.43350992494678614,
+      -0.5616766446343965
+    ],
+    "residual_df": 10,
+    "sigma2": 0.005419105984748616,
+    "xtx_inverse": [
+      [
+        22.571552657004208,
+        -38.02004959257606
+      ],
+      [
+        -38.020049592576065,
+        64.27917436310302
+      ]
+    ],
+    "features": [
+      "RAS_reporter"
+    ],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  },
+  "B_detection_fraction": {
+    "coefficients": [
+      0.012973316423126937,
+      0.5290918832649482
+    ],
+    "residual_df": 10,
+    "sigma2": 0.0002753792512035152,
+    "xtx_inverse": [
+      [
+        0.22175532047963822,
+        -0.8292872895500282
+      ],
+      [
+        -0.8292872895500282,
+        4.968267128562102
+      ]
+    ],
+    "features": [
+      "blue_positive_fraction_reporters"
+    ],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  },
+  "editor_dose_log1p": {
+    "coefficients": [
+      0.010507420997584067,
+      0.09072145023510965
+    ],
+    "residual_df": 10,
+    "sigma2": 0.0005402158335429147,
+    "xtx_inverse": [
+      [
+        0.23680685665140067,
+        -0.15337416070888646
+      ],
+      [
+        -0.15337416070888651,
+        0.15327486242955157
+      ]
+    ],
+    "features": [
+      "log1p_editor_ratio"
+    ],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  },
+  "reporter_RAS_plus_B": {
+    "coefficients": [
+      -0.023892991501071697,
+      0.060784748719832894,
+      0.5345625862342026
+    ],
+    "residual_df": 9,
+    "sigma2": 0.00030025957446874974,
+    "xtx_inverse": [
+      [
+        26.634916691552828,
+        -43.54971970988277,
+        -4.748816216537508
+      ],
+      [
+        -43.54971970988277,
+        71.8042819700644,
+        6.462474664317202
+      ],
+      [
+        -4.7488162165375005,
+        6.46247466431719,
+        5.549897884292701
+      ]
+    ],
+    "features": [
+      "RAS_reporter",
+      "blue_positive_fraction_reporters"
+    ],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  },
+  "editor_dose_linear": {
+    "coefficients": [
+      0.037070084533741915,
+      0.024858410358630786
+    ],
+    "residual_df": 10,
+    "sigma2": 0.00032269098369037497,
+    "xtx_inverse": [
+      [
+        0.1571428571428571,
+        -0.02857142857142857
+      ],
+      [
+        -0.02857142857142856,
+        0.01105990783410138
+      ]
+    ],
+    "features": [
+      "editor_ratio"
+    ],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  },
+  "editor_dose_linear_plus_B": {
+    "coefficients": [
+      0.02140251419993712,
+      0.009414299983850941,
+      0.33288951658478033
+    ],
+    "residual_df": 9,
+    "sigma2": 0.00027649981558214396,
+    "xtx_inverse": [
+      [
+        0.48957641387045603,
+        0.29912076830380074,
+        -7.063229565138017
+      ],
+      [
+        0.29912076830380396,
+        0.33407836887624476,
+        -6.9624896957401905
+      ],
+      [
+        -7.063229565138076,
+        -6.962489695740181,
+        150.07273146832213
+      ]
+    ],
+    "features": [
+      "editor_ratio",
+      "blue_positive_fraction_reporters"
+    ],
+    "endpoint": "RAW_C280_CHROMATOGRAM_COMPOSITION_INDEX",
+    "absolute_fraction_qualified": false,
+    "training_wells": [
+      "S10_1_0_A_well",
+      "S10_1_0_B_well",
+      "S10_1_0.5_A_well",
+      "S10_1_0.5_B_well",
+      "S10_1_1_A_well",
+      "S10_1_1_B_well",
+      "S10_1_2_A_well",
+      "S10_1_2_B_well",
+      "S10_1_4_A_well",
+      "S10_1_4_B_well",
+      "S10_1_8_A_well",
+      "S10_1_8_B_well"
+    ],
+    "version": "sonar-science-v1.0-s7s10"
+  }
+}

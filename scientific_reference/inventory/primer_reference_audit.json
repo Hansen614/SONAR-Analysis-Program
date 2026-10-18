@@ -1,0 +1,13 @@
+{
+  "primer_source": "inputs/S10/523RepEdit.xlsx#Sheet1!C13:C14",
+  "forward": "ATGGCCGATAAGCAGAAGAACG",
+  "reverse": "CCACACTTTTCACCCAGGTCAC",
+  "general_design_sha256": "187c784d54657d0ccdbf166a5a7110710f41e321c7ece85490f53fe38f3417a0",
+  "general_design_length": 7498,
+  "forward_start_1based": 2352,
+  "reverse_binding_start_1based": 2874,
+  "design_amplicon_length": 544,
+  "primer_name_length_label": 523,
+  "exact_S10_OpenA_reference_verified": false,
+  "interpretation": "Primers delimit a reporter region in the general design, but the 544 bp design interval is not the exact 523-labelled OpenA amplicon. No molecular target editing percentage is inferred."
+}

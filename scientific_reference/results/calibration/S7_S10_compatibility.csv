@@ -1,0 +1,13 @@
+﻿dimension,S7,S10,status,calibration_transfer_qualified,reference_basis_id
+cell_type,HEK293T_user_confirmed,HEK293T_user_confirmed,MATCH,False,S7_AC_DNA_mass_team_corrected_20261013
+detector_profile,same recorded CytoFLEX S profile,same profile,MATCH_NOT_SUFFICIENT,False,S7_AC_DNA_mass_team_corrected_20261013
+population,reporter eligible,reporter eligible or R+B+,REPORTER_MATCH_BPOS_MISMATCH,False,S7_AC_DNA_mass_team_corrected_20261013
+reporter_architecture,AC/INAC exact sequences and lengths unverified,OpenA reconstructed amplicon; full construct unknown,UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013
+reporter_loading,per-well amount unresolved,100 ng/well,UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013
+treatment_TMP,unresolved,unresolved,UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013
+editor_presence,BFP label does not verify linked editor,ORCA-P2A-BFP at variable doses,UNRESOLVED_REFERENCE_BRIDGE,False,S7_AC_DNA_mass_team_corrected_20261013
+reference_axis,Corrected AC DNA mass mixture; probable label transposition authorized retrospectively,editor DNA dose; unknown actual RNA state,DIFFERENT_EXPERIMENTAL_AXIS,False,S7_AC_DNA_mass_team_corrected_20261013
+molecular_population,not applicable,RNA cell population undocumented,UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013
+total_DNA_loading,not documented per S7 well,1000 ng/well user-confirmed,UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013
+sampling_time,exact elapsed culture/treatment timing not documented,RNA after flow at same experimental timepoint; elapsed minutes unknown,UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013
+BFP_linkage,S7 linkage unverified,ORCA-P2A-BFP confirmed,DIFFERENT_OR_UNRESOLVED,False,S7_AC_DNA_mass_team_corrected_20261013

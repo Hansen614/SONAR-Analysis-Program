@@ -1,0 +1,36 @@
+{
+  "provided_archive": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/SONAR_Reconstruction_S7_S10_20261012.zip",
+  "archive_sha256": "cccd214f129f7bdf4ac79af3a272d4c50949c642bc219b0ddffaf0516f2a4156",
+  "checks": [
+    {
+      "path": "config/analysis.json",
+      "archive_sha256": "9b25c20f8d37799a4c00efee143d854d17cfe7a41825b8dce9e423eb58d7f057",
+      "working_sha256": "9b25c20f8d37799a4c00efee143d854d17cfe7a41825b8dce9e423eb58d7f057",
+      "equal": true
+    },
+    {
+      "path": "results/ras_results.csv",
+      "archive_sha256": "0e487e7ace56dab223ee4828c3f0308e657c1310342e43b8440db71546e01d9b",
+      "working_sha256": "0e487e7ace56dab223ee4828c3f0308e657c1310342e43b8440db71546e01d9b",
+      "equal": true
+    },
+    {
+      "path": "src/core.py",
+      "archive_sha256": "d7237412e283ceb3ba13cfd3fd73a28c639f0e7df093d838b29cacf5155564a9",
+      "working_sha256": "d7237412e283ceb3ba13cfd3fd73a28c639f0e7df093d838b29cacf5155564a9",
+      "equal": true
+    },
+    {
+      "path": "reproduce.py",
+      "archive_sha256": "b062a366b528e8ca8b0b8c538fe145463a0183316564fd73a38ebcb953ce8dd9",
+      "working_sha256": "b062a366b528e8ca8b0b8c538fe145463a0183316564fd73a38ebcb953ce8dd9",
+      "equal": true
+    },
+    {
+      "path": "reports/reproducibility_record.json",
+      "archive_sha256": "b96811d9e9a0735163c9da2952c3ebd4dec8bcc42bc36eb49422c2d6a1b026f2",
+      "working_sha256": "b96811d9e9a0735163c9da2952c3ebd4dec8bcc42bc36eb49422c2d6a1b026f2",
+      "equal": true
+    }
+  ]
+}

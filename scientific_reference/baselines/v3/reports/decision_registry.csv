@@ -1,0 +1,13 @@
+﻿decision_id,question,status,evidence_or_limit,analysis_version
+D01,Construct/reference identity,partially_resolved,OpenA523 reconstructed independently; full AC/INAC/OpenA/editor construct identities remain unverified,sonar-s7-s10-layer23-20261013-v3
+D02,FCS and optics,partially_resolved,Byte decoding and channels verified; identity matrix optically unvalidated,sonar-s7-s10-layer23-20261013-v3
+D03,Population gates,frozen_exploratory,"Mock1 MCD geometry, pulse ratio and per-file time rule; no viability claim",sonar-s7-s10-layer23-20261013-v3
+D04,Background and thresholds,frozen_exploratory,Equal-control linear means; Mock Q99.5 boundaries; transfer check only,sonar-s7-s10-layer23-20261013-v3
+D05,Quantification QC,provisional,"N>=100 and denominator RSE<=0.1 are declared numerical screens, not validated LOQ",sonar-s7-s10-layer23-20261013-v3
+D06,Population bridge,unresolved,S7 to S10 blue-selected bridge not demonstrated,sonar-s7-s10-layer23-20261013-v3
+D07,Reporter inverse,exploratory_models_fitted,Three actual S7 models and grouped validation completed; model-specific inverse sets exported; no validated RES domain,sonar-s7-s10-layer23-20261013-v3
+D08,BFP covariate,partially_resolved,ORCA-P2A-BFP linkage user-confirmed; coexpression exploratory; 14/40 blue bins unavailable,sonar-s7-s10-layer23-20261013-v3
+D09,Molecular reference,partially_resolved,"OpenA523 candidate C280 reconstructed; 48 reads processed, 47 site-eligible, 23 complete pairs within 12 wells; absolute RNA assay and sampled population unqualified",sonar-s7-s10-layer23-20261013-v3
+D10,Prediction domain,relative_models_evaluated_PER_unavailable,Grouped relative-index prediction evaluated; RAS does not beat mean baseline; B covariate is exploratory; staged RNA PER unavailable,sonar-s7-s10-layer23-20261013-v3
+D11,Fresh reconciliation,completed_with_unknowns,All raw files inventoried; two duplicate controls removed; conflicts explicit,sonar-s7-s10-layer23-20261013-v3
+D12,Reference validity,partially_resolved,Most A/B dispersion lower; red dependence and bright-event influence remain,sonar-s7-s10-layer23-20261013-v3

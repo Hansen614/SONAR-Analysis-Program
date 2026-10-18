@@ -1,0 +1,72 @@
+{
+  "numerical": {
+    "AC_mass_fraction": [
+      0,
+      1
+    ],
+    "RAS_response": [
+      0.5000914764582751,
+      1.1744788068801943
+    ]
+  },
+  "observed": {
+    "reference_levels": [
+      0.0,
+      0.05,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.75,
+      0.9,
+      1.0
+    ],
+    "observed_RAS_range": [
+      0.5081713670662267,
+      1.144855589498998
+    ],
+    "independent_wells": 20,
+    "wells_per_level": 2,
+    "not_continuous_observation": true
+  },
+  "internal_screen": {
+    "RAS_largest_contiguous": [
+      0.7845,
+      1.0065
+    ],
+    "hinge_mass_equivalent": [
+      0.5451643320125362,
+      0.80408485926118
+    ],
+    "all_grid_pass_ranges": [
+      [
+        0.7845,
+        1.0065
+      ],
+      [
+        1.0075,
+        1.0075
+      ],
+      [
+        1.0085,
+        1.0085
+      ]
+    ],
+    "policy": "largest_contiguous_primary_and_isotonic_union_width_le_0.20_interior",
+    "max_total_width": 0.2,
+    "RAS_grid_step": 0.0005,
+    "mass_grid_step": 0.001,
+    "measurement_uncertainty": "per-sample RAS margin added afterwards; may narrow eligibility",
+    "qualification": "ENGINEERING_EXPLORATORY_COMPATIBILITY_SCREEN_NOT_VALIDATED_ACCURACY_RANGE",
+    "observed_reference_levels_inside": [
+      0.75
+    ]
+  },
+  "transfer": {
+    "supported": "same S7 reference experiment, reporter population",
+    "external_supported": false,
+    "S10_qualified": false,
+    "routine_quantitative_qualified": false
+  }
+}

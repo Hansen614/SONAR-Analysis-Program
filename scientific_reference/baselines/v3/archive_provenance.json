@@ -1,0 +1,1143 @@
+{
+  "archive": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/SONAR_S7_S10_Layer23_v3_20261013.zip",
+  "sha256": "3701754b45ae5e4f009971b2b565a57588de67c36c0c2a43c1384ff87b83d7a5",
+  "status": "Original v3 archive retained unchanged; scientific source and output snapshot extracted here; unchanged raw inputs shared",
+  "snapshot_files": [
+    {
+      "path": "README.md",
+      "sha256": "984905f2c4495f409a801700c988b94c7c125d72a07b58ab449739c0b0d5e83e"
+    },
+    {
+      "path": "SONAR_Figure_Evidence_Inventory.md",
+      "sha256": "8f678be8311892bb5923e1594c57833db9b1cd4cb9f37840d12da0b29f420ae8"
+    },
+    {
+      "path": "SONAR_Layer23_Blocker_Resolution.md",
+      "sha256": "ec8f27e9f0289433aae08c8b47f045b23c14fa6a25cc3192c573d329526ed26f"
+    },
+    {
+      "path": "SONAR_Layer23_Evidence_Report.md",
+      "sha256": "d5fe1c8b75308acfd253a86544542f72db31850bda5c71381e663e19c178adeb"
+    },
+    {
+      "path": "SONAR_Layer23_Figure_Evidence_Inventory.md",
+      "sha256": "34f6c145142202e2b89775c7ee3c435c1e837a0192783a2f344851403c659234"
+    },
+    {
+      "path": "SONAR_Layer23_Scientific_Summary_ZH.md",
+      "sha256": "816df56b8b9a8fd79b691ffc4db4a776267e7916a1a2a2b2fbd43f16200b3795"
+    },
+    {
+      "path": "SONAR_Measurement_Evidence_Report.md",
+      "sha256": "d0d47e916c3c86c252ed2b1047e85f6bf7b969e480c2c2def77e50b34fb25b83"
+    },
+    {
+      "path": "SONAR_\u4e2d\u6587\u79d1\u5b66\u6458\u8981.md",
+      "sha256": "59fa520cd6881ce902219f6ad012b9710d5087d2c7ea732808138f57f3153ea8"
+    },
+    {
+      "path": "config/analysis.json",
+      "sha256": "9b25c20f8d37799a4c00efee143d854d17cfe7a41825b8dce9e423eb58d7f057"
+    },
+    {
+      "path": "config/environment.json",
+      "sha256": "6540116579199672ef4dfffc9b6f73fba6b7c61aeeb6c040bed21822ed984c6f"
+    },
+    {
+      "path": "config/layer23.json",
+      "sha256": "c7efa3af6a22c2b54c39fec9e0b552e1ec0ff14ff18b5ccb554a745ef9257089"
+    },
+    {
+      "path": "config/user_confirmations.json",
+      "sha256": "c97cd74c3aeb2ba63270a8db0b455a9af39fe4f191dfe39730867425f000ff4e"
+    },
+    {
+      "path": "contexts/context.json",
+      "sha256": "73fd3966f4d8d005ad329a5772b6228b0cebceed2cfc0da64f87b8a1201156a6"
+    },
+    {
+      "path": "figures/F01_control_gates.png",
+      "sha256": "8945677a1180345d9f2d9c4f8e2da2a0e2d091d819371843a809065262ef9ff1"
+    },
+    {
+      "path": "figures/F01_control_gates.svg",
+      "sha256": "8dc3349beb18361dc7e1d6684056d5687c708991ecfca14f12bc9615d57d56ed"
+    },
+    {
+      "path": "figures/F02_control_background.png",
+      "sha256": "ff49b71a7e371d138b0f14767492886a0a38feb6aa9acba58d194fdf4618321e"
+    },
+    {
+      "path": "figures/F02_control_background.svg",
+      "sha256": "3521d5a7f40f99c6810fb198135bdf00d0220521e3c3d2c3672d3f945633e37d"
+    },
+    {
+      "path": "figures/F03_event_retention.png",
+      "sha256": "d952ef091c1a8553990b635ed59d20d6a4f7d5cb792412fd6ff98a19e39f3b66"
+    },
+    {
+      "path": "figures/F03_event_retention.svg",
+      "sha256": "5e03f58dd20945bcb60f35a7b527fd31c706553e91d87c444597bd927847bae6"
+    },
+    {
+      "path": "figures/F04_S10_normalization.png",
+      "sha256": "7dbe1f75cf3e1529ca9cecad9020187dd06eb5d13fd0484017d29588dc6d612d"
+    },
+    {
+      "path": "figures/F04_S10_normalization.svg",
+      "sha256": "d09d0a91f26194572565d55a863ea66a3e2ee1dadd80ebc04a7d62cc2fefafc9"
+    },
+    {
+      "path": "figures/F04_S7_normalization.png",
+      "sha256": "6c3b798d04f5816e6c6300e1c09ba0201bdab8edeb1af129a987938d03c029e3"
+    },
+    {
+      "path": "figures/F04_S7_normalization.svg",
+      "sha256": "8edb053f07ea72a03eeab95d1914efc7102ae32bd798a13812b47cf251bf381c"
+    },
+    {
+      "path": "figures/F05_pair_dispersion.png",
+      "sha256": "29d752c352322969695026ba2604b4d8316fcaa3cea3945cc9fd6af0f2b760d5"
+    },
+    {
+      "path": "figures/F05_pair_dispersion.svg",
+      "sha256": "10bee6e7dc9795c1c5198afe55101f3f18de7fd91529e7025ff08c612e3c2852"
+    },
+    {
+      "path": "figures/F06_blue_dimension.png",
+      "sha256": "474d8ddba2a35430efc01dd68326f0d75e112a98db7f3ec5ff1371b036a8bff9"
+    },
+    {
+      "path": "figures/F06_blue_dimension.svg",
+      "sha256": "c040d61b8b589ddc149f34651fd922180f41577f1600a8d7957c474dbbf3e3dd"
+    },
+    {
+      "path": "figures/F07_sensitivity.png",
+      "sha256": "68d20bdf9ead3eec0550b021e43b032b17770ba1b20c3891872b4f76f95f9961"
+    },
+    {
+      "path": "figures/F07_sensitivity.svg",
+      "sha256": "dcb3ddbee104b820d4a52af397aabed023c688fce4b6f9acf096de392902d3f3"
+    },
+    {
+      "path": "figures/F08_event_count.png",
+      "sha256": "dfeaa2ce6ecd3b273a7e4f2b585aa7efa68fdee0acdb8e132486f253f1372b90"
+    },
+    {
+      "path": "figures/F08_event_count.svg",
+      "sha256": "70c17d7287a9fdf1ec11dddab236996a58fb26fc910fab6e10d7b53249410faa"
+    },
+    {
+      "path": "figures/F09_reference_influence.png",
+      "sha256": "12ab27329492d8ed580b7da6974d35ce01d6172f5f66dd91ec6c5906a0d3e552"
+    },
+    {
+      "path": "figures/F09_reference_influence.svg",
+      "sha256": "31cbcb4c676a66714a1e55d8167ebdec5bb8f8482bbefe2b51e9282c45c56e55"
+    },
+    {
+      "path": "figures/F10_blue_common_support.png",
+      "sha256": "549b23b3191ef99410e8c8f6a859c87abac7183bd3ceb1b1fdf48febf1682518"
+    },
+    {
+      "path": "figures/F10_blue_common_support.svg",
+      "sha256": "a765b43c89342d5c1b55dbedb409ba2db69725c12b3006826e314fbd8945a95b"
+    },
+    {
+      "path": "figures/F11_molecular_audit.png",
+      "sha256": "186d04da2592ff71185b0e0fc7f25bdd1351b398747f5c468448754f31c900fb"
+    },
+    {
+      "path": "figures/F11_molecular_audit.svg",
+      "sha256": "55d4f4da77285ada9811292e48a541d9a8d2e3871505c45ee7f07352f0222c7e"
+    },
+    {
+      "path": "figures/F12_plate_reference_signal.png",
+      "sha256": "01a24adbff80da015c534387cd72bf13574715bbce08854fc10cdce643214f39"
+    },
+    {
+      "path": "figures/F12_plate_reference_signal.svg",
+      "sha256": "90399219ce20b5f66216921aabbef746522f8a8eb45c8897fb3ab93adeb1be7b"
+    },
+    {
+      "path": "figures/figure_index.csv",
+      "sha256": "d08b113edff303d90a3ea896d278f079ecceb925b6ee4b420f62cafef3dd8956"
+    },
+    {
+      "path": "figures/layer23/L23_01_reference_support.png",
+      "sha256": "7ad61a2d69fc4909e1ab15e02fd59e0fc204ee4e56d8485090c1c5c6f6f9afa4"
+    },
+    {
+      "path": "figures/layer23/L23_01_reference_support.svg",
+      "sha256": "1c75692addd3e166d9d46d27cd8209b739f8e3a2b1ea72a89a078250bc2d5eaa"
+    },
+    {
+      "path": "figures/layer23/L23_02_bidirectional_traces.png",
+      "sha256": "ba939d2fb0108ba264f33727bebc6dff5198a5489b3d188b328395ea9ea27f35"
+    },
+    {
+      "path": "figures/layer23/L23_02_bidirectional_traces.svg",
+      "sha256": "3349d210951fc2338938eaaf60b20428f65907adaf1055831d59974382592110"
+    },
+    {
+      "path": "figures/layer23/L23_03_flagged_read.png",
+      "sha256": "bf6cdb71c26c1c595ddb06b2f2984e451fc653ab889791439bdff814536387d3"
+    },
+    {
+      "path": "figures/layer23/L23_03_flagged_read.svg",
+      "sha256": "d0bf69cc4329d1b33710e8b45627247b15327297dcd23d27873fcd271344d373"
+    },
+    {
+      "path": "figures/layer23/L23_04_molecular_response.png",
+      "sha256": "f8b05c8518f1585f0f1a645e70e83c97f6545edfd1d41be37d9e0f833c2c5ebb"
+    },
+    {
+      "path": "figures/layer23/L23_04_molecular_response.svg",
+      "sha256": "143cdda5a79185e5eba9fa301c61056a82293233801fb7eb876d42d18f7bb870"
+    },
+    {
+      "path": "figures/layer23/L23_05_direction_agreement.png",
+      "sha256": "787672d2883bbdebb6257ed2f41175c56b3680d0cc6e878d4322351f2a52b007"
+    },
+    {
+      "path": "figures/layer23/L23_05_direction_agreement.svg",
+      "sha256": "58af96bf736d2b10ed31b01e0379b5407ebd318ab74122e809693cdad0f3ac63"
+    },
+    {
+      "path": "figures/layer23/L23_06_cytidine_screen.png",
+      "sha256": "2708a2387c4a1b33eebcb300f987cc64d80781fb02ba3833f9fffb820e309a40"
+    },
+    {
+      "path": "figures/layer23/L23_06_cytidine_screen.svg",
+      "sha256": "f53a4628c8037413346a7f613c12259d5c227c1e3c37fc5154ee350aa035ef5c"
+    },
+    {
+      "path": "figures/layer23/L23_07_S7_models.png",
+      "sha256": "ddca5474af00c61fbaee46a16d0c0ead8ccb3ca8c4aabbff6011282e33f7b5f8"
+    },
+    {
+      "path": "figures/layer23/L23_07_S7_models.svg",
+      "sha256": "c023336150c313045fc1ce69a72276b812569c562e94398e84ab9b3f43dd5d4a"
+    },
+    {
+      "path": "figures/layer23/L23_08_S7_residuals.png",
+      "sha256": "9eea078492f60dea1d3b19205c2f6f859cbdd090f4eaa71dd0464901be84bec2"
+    },
+    {
+      "path": "figures/layer23/L23_08_S7_residuals.svg",
+      "sha256": "3333a45e41e4abab91d1ee5b5d2ee16bff6bc162514250be8be3fffef0c921af"
+    },
+    {
+      "path": "figures/layer23/L23_09_inverse_uncertainty.png",
+      "sha256": "cf27515c9c6818fdc36abb8bf30b9641a6019a3634461bd6bc480cfaf85fac53"
+    },
+    {
+      "path": "figures/layer23/L23_09_inverse_uncertainty.svg",
+      "sha256": "ea6a293a51f595f191cc2af67aa8084d7a0b6f21ade2c5f85d1ed236c4f5a294"
+    },
+    {
+      "path": "figures/layer23/L23_10_reference_anomaly.png",
+      "sha256": "9f67f3b363b8b6c15f905ad7c2812b387b7914957ef2f8a3ffa716fdc8564366"
+    },
+    {
+      "path": "figures/layer23/L23_10_reference_anomaly.svg",
+      "sha256": "2d9e2a07a00b65fa87bab388694f75782763dab70753c10bad00036bac393480"
+    },
+    {
+      "path": "figures/layer23/L23_11_flow_molecular_association.png",
+      "sha256": "e796fff41582a4c69a11644cd7ffef40e66f08ba19f26c2fa6f10e9550692502"
+    },
+    {
+      "path": "figures/layer23/L23_11_flow_molecular_association.svg",
+      "sha256": "8fb383bdc4d5708474e40f01bc823035e02906a6f4d7adf79ba94e1b0f68c6ea"
+    },
+    {
+      "path": "figures/layer23/L23_12_internal_prediction.png",
+      "sha256": "5a1ca09d7e33077a7f7fb2981b60ea519cb10684a214d823bdb1ef0bde33c452"
+    },
+    {
+      "path": "figures/layer23/L23_12_internal_prediction.svg",
+      "sha256": "576bdce35ad44ae00dc154903c31d7b8b44c305bb4e8ba419277fba3d149faac"
+    },
+    {
+      "path": "figures/layer23/figure_index.csv",
+      "sha256": "0e39eabac3196fafd7ce6e7696cb1cf08c72555baf1bce70cabcf99016e8ed66"
+    },
+    {
+      "path": "figures/source_tables/event_display_subset.csv",
+      "sha256": "74c3d60047e4c68d55fa22073e19dea9d1a632f709fb45c8f59eab0a39f53aee"
+    },
+    {
+      "path": "inventory/S10_record.png",
+      "sha256": "0363e2125ec3dd468dc2582c8c003d5ae6e9bf1efc7524c51e3e71e2d1f26835"
+    },
+    {
+      "path": "inventory/S7_record.png",
+      "sha256": "bfcf53df635f7f9b6df08b5070f8a4558115ae4a05e649bc475d9bb16a7ba2fa"
+    },
+    {
+      "path": "inventory/acquisition_file_manifest.csv",
+      "sha256": "6736bc5c7c34c498365f86cce935167f7c32507ce308bc3c1eece884263e70b3"
+    },
+    {
+      "path": "inventory/acquisition_manifest.csv",
+      "sha256": "c38e238342c44c3bc2c14570a403e9ed9e9e7fee60c88ccc8e131f095ca0f233"
+    },
+    {
+      "path": "inventory/channel_metadata.csv",
+      "sha256": "91d4de6b2e5558fe5d3030ec507c5a53472fe733b9729884cca9139f0b5177f8"
+    },
+    {
+      "path": "inventory/construct_features.csv",
+      "sha256": "8a79816b7aa62b6e755840439e670bda242f8fccb29258f02d552437ff689d8b"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 0 A.json",
+      "sha256": "8714db7853d34df73aa5c6d52c20dc1941722c2490a7017ae997d88165d040c7"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 0 B.json",
+      "sha256": "dd0f7c916156390776b1d2c227d6e6f2101bc1fd6970ea4676f412d3c8b7764a"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 0.5 A.json",
+      "sha256": "4e3178e53a9b38af9c3b310c43e417b27f6ccd037c61c74533165e8dbb17b94f"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 0.5 B.json",
+      "sha256": "cbe4b2d3edc8f990255a1ae26f845bbcc784dc777fdc192a31863b02ddc4a9ee"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 1 A.json",
+      "sha256": "cb9bbfedfe06ea57cb84d08c50b3e55d123600f631f1013c313ecc6f3d15f529"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 1 B.json",
+      "sha256": "a8ae9b6bfdb179421fd5a814f5d64186613c10766a5119df2b31d3e8c602dfbe"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 2 A.json",
+      "sha256": "4d0bfd5c79bf4881a22a978d0bcf1b1d08bc67163ab3e3d5f5bb5985407fb20c"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 2 B.json",
+      "sha256": "84340e72a7c14e1e5c5cc720552b7adea69d5a8bae13c3bde6176b305ff30125"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 4 A.json",
+      "sha256": "f82e51676ae7b44375052afeeee597731c332b9ec83b16864b96467aa28b3d81"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 4 B.json",
+      "sha256": "eb9827f35730a0c3f2e25c0331ac4325ab2bf97a93d0a47ff2a8cf1841b120a5"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 8 A.json",
+      "sha256": "ed71bc6fce53159bcb9e7f4ace3a240b5f8fdbef10fb3555f289ff7942f15cf2"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_1 8 B.json",
+      "sha256": "6327884e0bf09ed388dbc81adfc4d5742732be6c096d883e41b6419329cb3fa3"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_MOCK1.json",
+      "sha256": "4b00c854aa57731c1716c227892bbb1ab7278646d151d02227ab2e7ca5174687"
+    },
+    {
+      "path": "inventory/fcs_metadata/S10_MOCK2.json",
+      "sha256": "792c04041ff38173168cb0722d8c35a197557bac363507c52fcb849124258520"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_0A.json",
+      "sha256": "c4c0782c6e8364585a5d6202d3feab02ccd723d569675bcda36151da6308fc4b"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_0B.json",
+      "sha256": "265e488aa308d884cd33f8c16262c878635ca5fbbfbf8cf303be1b406037451f"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_100A.json",
+      "sha256": "e4b49d382d8d10ec4cdb92212772bb2f16cb3466becc5081a0fda814cd1ad36b"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_100B.json",
+      "sha256": "dc1064f919080b8a6085f5a462c4c5942882778f75ba6d43b61db0d9e0d2649f"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_10A.json",
+      "sha256": "3794d0c16d93a3b970b77196f649e096b4baa82976e64c83e7dd10e8a6a328ff"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_10B.json",
+      "sha256": "c7308fbe9ce823d9aedadbeaf56ff3c8c6576fb47fa0c1e52fd1df31b9e4fd44"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_20A.json",
+      "sha256": "c7b6b3ce208cccbbb733a5e9be9815b2895afacd0b5d7a26e1190f37f0825eb4"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_20B.json",
+      "sha256": "f4692aa7328e3921e90128a4ef196e75df089e531fd9745b8f1e16bc3ec55487"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_30A.json",
+      "sha256": "562f4b4d45059a8434c059a6b5fb7dda97c806c87e2e3ea08712820d42258ac7"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_30B.json",
+      "sha256": "c19df6fd85dafef97609e8153a7578f5a7c92bbdae7ce93533daf7bf1ae9cb27"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_40A.json",
+      "sha256": "a255037a62ecd91f9074f355fef5af63073cb8d9a5696b07747075f8e3ea933a"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_40B.json",
+      "sha256": "a2de9792b5808138bcaab8c0d885471e725043bfa5919382608f03f3cee2bea6"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_50A.json",
+      "sha256": "836e2bfc58832ff6b1eb354a23b2083996ff3b49b0859a66084e23a4096db6ab"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_50B.json",
+      "sha256": "f4ed84f428ee1a9d0c19d26089281524a46c30e9e03614c1fd198394549f909b"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_5A.json",
+      "sha256": "4200849d7a3a0f05bd07f693b8c93def0e1fa79995fe6da5736e7cf1edf144e6"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_5B.json",
+      "sha256": "6e638e9fb0482e93ecdde9ea60ce56b3594f7a3f87ca9537f78b947dd321223f"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_75A.json",
+      "sha256": "69201c8a1de16c5203e34ca08587a770a3c3f4ba538dccc94890d8aa8e91a706"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_75B.json",
+      "sha256": "01e0db0287da8f9d3e3863bfd2500267b27d578fea48b2e7cff1410f96a35b1d"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_90A.json",
+      "sha256": "a2a1ddae149e3215e85be9e8552aac5cf8f7253371b74da41f2aa5e8ad79088f"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_90B.json",
+      "sha256": "78fd3a0db526b9ce93dcc1684e50e996db885a108bfd131a3639339c786dacfd"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_MOCK1.json",
+      "sha256": "4b00c854aa57731c1716c227892bbb1ab7278646d151d02227ab2e7ca5174687"
+    },
+    {
+      "path": "inventory/fcs_metadata/S7_MOCK2.json",
+      "sha256": "792c04041ff38173168cb0722d8c35a197557bac363507c52fcb849124258520"
+    },
+    {
+      "path": "inventory/input_files.csv",
+      "sha256": "3b53d9f7e45bb0f237d8449b90a546138352ac4f4abe3d642b89026eccd32f94"
+    },
+    {
+      "path": "inventory/molecular_pairing_registry.csv",
+      "sha256": "7a39cd5f7e1c9b9355eada0c770c5f7d6c33759537e24bc8adaee58978168dc0"
+    },
+    {
+      "path": "inventory/molecular_reads.csv",
+      "sha256": "523208d1ce8b13f821f6124df0437c7b3cfd3b3047d5b7cfb6f11e3d7f51501a"
+    },
+    {
+      "path": "inventory/plate_settings.csv",
+      "sha256": "a6da7f172b49405a5a3d41f4f4684d5a2163049527ab46705eb7e9b96745bb36"
+    },
+    {
+      "path": "inventory/primer_reference_audit.json",
+      "sha256": "baf19868d5eacebff3c0637689916158f3df13262f14535a3ccbf1d064cc46df"
+    },
+    {
+      "path": "inventory/reader_crosscheck.csv",
+      "sha256": "c30f5c57be41697c538a8689659153fceea145362bd854913c673aaf626fb350"
+    },
+    {
+      "path": "inventory/record_transcription.md",
+      "sha256": "155545234a771f78440364a0a042708c747ef223be631567791be267314762e0"
+    },
+    {
+      "path": "masks/S10_1_0.5_A.npz",
+      "sha256": "46f98505cca0c4bde87aab1caaa30af833e719a5698a9ba29ecd44b9cfeca63c"
+    },
+    {
+      "path": "masks/S10_1_0.5_B.npz",
+      "sha256": "75c8314584c48964a67fbd0e687e4fe7131312fcdd071a3b2e7127d708fcc6e5"
+    },
+    {
+      "path": "masks/S10_1_0_A.npz",
+      "sha256": "4a0b1a48be045124d54c2aa1424f2418d0ce0cb746eb3ad9598ee85f5a022192"
+    },
+    {
+      "path": "masks/S10_1_0_B.npz",
+      "sha256": "be743e17945fce96623247c6c82f3863be0d125c53ad38a0a89bf389f3bd98da"
+    },
+    {
+      "path": "masks/S10_1_1_A.npz",
+      "sha256": "362960850f3cfa13af9ac52f174f38d522657f91ac703a54c75681f439692929"
+    },
+    {
+      "path": "masks/S10_1_1_B.npz",
+      "sha256": "3df5c33b9629f4a3492a4540b954c885ffde594eb726c34a7d28e937c0cd80b2"
+    },
+    {
+      "path": "masks/S10_1_2_A.npz",
+      "sha256": "ffae84a0beb9d43e7568d29d21f2f6beab6b48a44874a4e04666fddf1cf3e1ff"
+    },
+    {
+      "path": "masks/S10_1_2_B.npz",
+      "sha256": "6b750a97f6b9984fcc15f9ae4469418c29a39c4858443e423640a57889e5fd01"
+    },
+    {
+      "path": "masks/S10_1_4_A.npz",
+      "sha256": "27a7e7cd6ccc69c283879dddbd86ec04211b7ae9b1599b763f968f921fab0064"
+    },
+    {
+      "path": "masks/S10_1_4_B.npz",
+      "sha256": "15bff5b75a81343f8145812b64b32b1090b6cf8f323eeb2bde4ae7be229c6a0b"
+    },
+    {
+      "path": "masks/S10_1_8_A.npz",
+      "sha256": "216e5eb6c9f703b735bc76ca74f6db65664a6d6f0cd81883d75dad2db2e15019"
+    },
+    {
+      "path": "masks/S10_1_8_B.npz",
+      "sha256": "6c6fdd15023d06dded75ef7a991ce1cfbcb08fe6166edeb98ee76de5628e5f4e"
+    },
+    {
+      "path": "masks/S7_0A.npz",
+      "sha256": "6cec22b5c2b8b9bc63642182f6f720eb6bca003fadad242dad2e6888df4224f8"
+    },
+    {
+      "path": "masks/S7_0B.npz",
+      "sha256": "82a4c8c98058cb5e06616bfb6f8848d9a270721c9e424cae530b9f16454c4341"
+    },
+    {
+      "path": "masks/S7_100A.npz",
+      "sha256": "230b9d545a1797bf790a86890ca709dee3138a03dddd06d8ab45f1248c6f4b75"
+    },
+    {
+      "path": "masks/S7_100B.npz",
+      "sha256": "1f9a6fe6918b7fe8b8e0dd3cbe033ae762d5410952b5c69ef0f31480bd3d017e"
+    },
+    {
+      "path": "masks/S7_10A.npz",
+      "sha256": "5fbd97a4e1bed8b849630ec7ff11c6b6bce4f1e3907df3e9c0a29f3ae8075e38"
+    },
+    {
+      "path": "masks/S7_10B.npz",
+      "sha256": "469695ae2844cdc825314f83c60229b42066b37d9fbd2fd2ee58c030e5cab6e7"
+    },
+    {
+      "path": "masks/S7_20A.npz",
+      "sha256": "3bbaf4fdfce44d2fcb521ce0411b4926c35fd0ab047826be7238c72be981ce53"
+    },
+    {
+      "path": "masks/S7_20B.npz",
+      "sha256": "965218d772df53114e7dc50e0ea02b831853992bea20884ae440fa382a4ec51a"
+    },
+    {
+      "path": "masks/S7_30A.npz",
+      "sha256": "471dca24dfa84180ad7c7ec547413f1e0bd704fbf1a5d060fbe8dbaed2128cb3"
+    },
+    {
+      "path": "masks/S7_30B.npz",
+      "sha256": "de9ebc6c3e9235a02929ccf050dc464ecbe1bd8bcf5b1c69d5e2e4287e1ff77f"
+    },
+    {
+      "path": "masks/S7_40A.npz",
+      "sha256": "44914bc1267443871cd14786d9bbaa1ad1430f6ba038ef17a2a41f1a0635659a"
+    },
+    {
+      "path": "masks/S7_40B.npz",
+      "sha256": "b593635bcc6c130129b9e2d3330fb5ec15b4c9fe04138766ca167308eeb3eda9"
+    },
+    {
+      "path": "masks/S7_50A.npz",
+      "sha256": "48a53bfe50790037e19c7b7e57275112cf924be414e03d21514df51b1c3611d4"
+    },
+    {
+      "path": "masks/S7_50B.npz",
+      "sha256": "60f174c88316335f1653eafbf429129417fe70b5d1bdbac61cdd92bb1a7b37bf"
+    },
+    {
+      "path": "masks/S7_5A.npz",
+      "sha256": "1cc9b776425beb020b801a4d9350250424d069ed4438c85b6f9b2a439cd9628b"
+    },
+    {
+      "path": "masks/S7_5B.npz",
+      "sha256": "20d3f45c5e0d7c52373cfd27575a9eb3546b3079ad8255c25d1957ab76ace74b"
+    },
+    {
+      "path": "masks/S7_75A.npz",
+      "sha256": "e825c5b74308c275e71b1990a78c66fa965b2412cadd8307aace9a804b6638e4"
+    },
+    {
+      "path": "masks/S7_75B.npz",
+      "sha256": "139eca2b25cda6ab7047bbfaf83501eeaa6e295a992868f9a7c3db5f6c566fb5"
+    },
+    {
+      "path": "masks/S7_90A.npz",
+      "sha256": "fb5dc13893ece4456df687c838d3eace2c59014a4db2ef0e64a95d605210e431"
+    },
+    {
+      "path": "masks/S7_90B.npz",
+      "sha256": "b80be2dcbf65c448d39966bfc90e2518e54198fa0769ab42029881ddc76f9ce8"
+    },
+    {
+      "path": "masks/S7_MOCK1.npz",
+      "sha256": "122d3ea566d38e4eb1a9ce2e4a2b885cd389d19465a3df7814857976842a2dde"
+    },
+    {
+      "path": "masks/S7_MOCK2.npz",
+      "sha256": "12c4e756a9c8287da34fd8316458ad4f3e95cf79436014e8956f1edd08f8600e"
+    },
+    {
+      "path": "models/layer23/S10_exploratory_signal_models.json",
+      "sha256": "45a9c8f813e1abf32b753d82cc8f73f1cf041acbd69f77d8f863b9e91787a5cc"
+    },
+    {
+      "path": "models/layer23/S7_calibration_models.json",
+      "sha256": "bc3d1c7b7925ed5a4cc6a0a83ff49f0aa675ea7fb4697607b74e719a1a861db3"
+    },
+    {
+      "path": "reference/SONAR_Work_EN_v3.1.md",
+      "sha256": "51abaa0ca21205c6d1b2dd4923bd6ebfff62baa250823bee22bfee0777cf7f72"
+    },
+    {
+      "path": "reference/User_Work_Prompt.txt",
+      "sha256": "4631fec5601fb68e30077a8f0f7406665df4a62b7bb73288b84c50d6f9b04b79"
+    },
+    {
+      "path": "reference/layer23/S10_OpenA_edit523_provisional_amplicon.fasta",
+      "sha256": "2be2580f5c5acb87132b36f7d083c8e90d3f8a54a39c4e6545468d3dbe4b9105"
+    },
+    {
+      "path": "reference/layer23/S10_OpenA_edit523_reconstruction_notes.md",
+      "sha256": "d93bbc4838f509fc3c48c332e15beb260c5c2e1566acccf67d78b6a557b99312"
+    },
+    {
+      "path": "reference/layer23/construct_records/REPORTER_assembled_from_4_primers.dna",
+      "sha256": "cf25e2d239003c10c38a200bdc6cddf85d58ba2c22293514a809d6bb00d33767"
+    },
+    {
+      "path": "reference/layer23/construct_records/REPORTER_assembled_from_4_primers.fasta",
+      "sha256": "02a4506f01d3dbe1a1a752cc3b49f420a3e4d0a0919d1540e2e388917a037377"
+    },
+    {
+      "path": "reference/layer23/construct_records/REPORTER_assembled_from_4_primers.gb",
+      "sha256": "187c784d54657d0ccdbf166a5a7110710f41e321c7ece85490f53fe38f3417a0"
+    },
+    {
+      "path": "reference/layer23/construct_records/REPORTER_shipping.dna",
+      "sha256": "382c9b3702220d4ca0c9924f73a3199d74ac8fcbbfda47453f9e31273295fa23"
+    },
+    {
+      "path": "reference/layer23/construct_records/REPORTER_vector.dna",
+      "sha256": "53b151c6f5c50be2a3c9bcaf31ec876a49f95cb67588a532bf43b75ab9860e43"
+    },
+    {
+      "path": "reference/layer23/construct_records/reporter_apoe4_assembled.fasta",
+      "sha256": "6dad67628072b59d796a98a5e9d2a0a1a4e3c966a826d03d4ce5bd28aaa68590"
+    },
+    {
+      "path": "reference/layer23/construct_records/reporter_apoe4_assembled.gb",
+      "sha256": "c426d9ca704323d35505f83ae195f99810a6f3d8a2c3f8b68a9e6cac1cfc8844"
+    },
+    {
+      "path": "reference/layer23/construct_records/reporter_universal.fasta",
+      "sha256": "be25169b4324b7765742b2944f2c5f951ab80547e6408063e0e631d1d750ec5b"
+    },
+    {
+      "path": "reference/layer23/construct_records/reporter_universal.gb",
+      "sha256": "6c70f820a5f9afb3ffd69292cf227aa60ebeba043c35125b5f7632cb6b9164cf"
+    },
+    {
+      "path": "reference/layer23/construct_records/reporter_universal_FINAL.dna",
+      "sha256": "979fd87a98c516ed39ee34110cd29bfac60f8411aa0184364bfe6368c260d8b3"
+    },
+    {
+      "path": "reference/layer23/source_manifest.json",
+      "sha256": "8640f2e615a73feb0dfef3a6d7ea5fb98845d9690aa51de5c694318427470949"
+    },
+    {
+      "path": "reference/layer23/user_request.txt",
+      "sha256": "0d7c95ae6e91efb29d0a3896ab4e51db5368d4eeca08ceba7f9f60ead4ec0ac4"
+    },
+    {
+      "path": "reference/reference_provenance.json",
+      "sha256": "42b0bcfb21d20e288d6e6b954a603a4ab03b09126c4efe8d4ef5ddf2c474c4d5"
+    },
+    {
+      "path": "reports/Data_Inventory_and_Reconciliation.md",
+      "sha256": "7cd29a8ea9920ff6eb42fed63fe10288c1209baf3b8264c9889d15bfb10a5b3f"
+    },
+    {
+      "path": "reports/Executive_Summary.md",
+      "sha256": "0faea2827b1fda698f04663508f906926f8ccc2e35639d9c4d5a50cecdc14773"
+    },
+    {
+      "path": "reports/Layer0_Context_Calibration.md",
+      "sha256": "19dfb3cd2da03aab78a819d7892015c0276716811c33396db280a0457f881d60"
+    },
+    {
+      "path": "reports/Layer1_Flow_Quantification.md",
+      "sha256": "3812244331823bf38d8c866bc30a047e9aff651a0499e6b1d3af8db23641db12"
+    },
+    {
+      "path": "reports/Layer2_RES_Calibration.md",
+      "sha256": "2d0cad163e04be56bcf99f11f0f9f61456970842edb3ab6c65ee8299ebe77653"
+    },
+    {
+      "path": "reports/Layer2_Reporter_Calibration_Feasibility.md",
+      "sha256": "85f1af4129a2177f2fe3f4ac40faac427671643043cb87f4c16dc7c18da558b1"
+    },
+    {
+      "path": "reports/Layer3_Biological_Calibration_Audit.md",
+      "sha256": "066587945573f64fac741f873c9326b6082333fc855c2fb6de296993a8f6c1f9"
+    },
+    {
+      "path": "reports/Layer3_PER_Calibration.md",
+      "sha256": "618dc64c24304a0034a3392fc71d1f02c0a114c923fe4ca47164c032674d1fb1"
+    },
+    {
+      "path": "reports/Metadata_Confirmation_Update.md",
+      "sha256": "83c9fdb4aa36de0e3a0fda94e4b105f03054c3c97e3f6ab2dc90273b3c1e2028"
+    },
+    {
+      "path": "reports/OpenA_Amplicon_Reconstruction.md",
+      "sha256": "4d9ffd81c6c9cd19725cf4b2d718d187d07596bc7a3775b5e29e0263da467706"
+    },
+    {
+      "path": "reports/S10_Sanger_Quantification.md",
+      "sha256": "90a6d25f3e24e62dcedcf50633492c36e74f50e14673bdfc2daa8d3b50dac686"
+    },
+    {
+      "path": "reports/data_dictionary.csv",
+      "sha256": "c587fb042c011af1a5451dfa21504fd2eeb81645ccc464fe335e7bd13db845bf"
+    },
+    {
+      "path": "reports/decision_registry.csv",
+      "sha256": "ce8b32d309b7833735ad0bcd3cd129acc72fc8cc00dda7d6d147b8a1ef19f200"
+    },
+    {
+      "path": "reports/evidence_register.csv",
+      "sha256": "a8c87e119e345c962a0977d4fa3a00a02ef555a4c16ca576baf5490b9ecdd83d"
+    },
+    {
+      "path": "reports/layer23/blocker_resolution.csv",
+      "sha256": "ec3fb03d5bc57d7cf6c697012974ab3fd12d09c19bbf117e489d733a19e7e509"
+    },
+    {
+      "path": "reports/layer23/figure_evidence_inventory.csv",
+      "sha256": "61de5642b5b1dc8a52609d7489d4f1037bca72d34811377c97cf437cb4087b24"
+    },
+    {
+      "path": "reports/layer23/visual_and_document_QA.md",
+      "sha256": "fff54677b6414e4b32c44696717ca910830fa6a5ecde82f584a757d9b029528c"
+    },
+    {
+      "path": "reports/metadata_update_numeric_check.json",
+      "sha256": "fb8874ae6ca11a5835c62fdf357a8ee4a88651e37d2ff77778f80a1834d6d8af"
+    },
+    {
+      "path": "reports/reproducibility_record.json",
+      "sha256": "10d54729f22c2295b4de16091ceacee1b21bed645ed64f86080769815d8886cc"
+    },
+    {
+      "path": "reports/test_results.txt",
+      "sha256": "dcb7495a4b198e3f529eb7b4698ac2735d4444cdef4f6a9ecc4e5e25432b9d98"
+    },
+    {
+      "path": "reports/units_and_uncertainty.md",
+      "sha256": "8dcbcea22d44dba3055bdb079a95ca80fa3df24858be9d6d0df2454cb9c7e0b6"
+    },
+    {
+      "path": "reports/visual_QA.md",
+      "sha256": "f3ee0700072e1f5e6ac0c5054303edf4af625115a1e8d3ec5a5be0d00018a408"
+    },
+    {
+      "path": "reproduce.py",
+      "sha256": "1f298b91c39bd3aeae06179e82e24da9b16a4ceba90172b9f7c9a7298ad153bc"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "a3e4524519715edc23b03cb4c2e58f9f73a11e5ed56ca7e48f124f364835a6dd"
+    },
+    {
+      "path": "results/B_negative_transfer.csv",
+      "sha256": "548c2f2389fb2d3b6408be425f3a0c8cb6822da33975c005d61517bc3150df0c"
+    },
+    {
+      "path": "results/adjacent_response.csv",
+      "sha256": "fd82496fe4b7e078ac80143f0d89a09b80c188a054676e82c308fcfeb1fad1d5"
+    },
+    {
+      "path": "results/associations.csv",
+      "sha256": "f16be4cf2e3e6c9745a1930450791f4c611798f9eea7f70a49011286899ae5ed"
+    },
+    {
+      "path": "results/background_thresholds.csv",
+      "sha256": "214368a8279a0722152b056f04eb6fa8163eb3b888a0571fb8a20af5ca06a61c"
+    },
+    {
+      "path": "results/binary_populations.csv",
+      "sha256": "f16f928454d2a7e95ffa9953dbe0bdd61a5a5f8df175c9e4c650aa2fc4caa3b4"
+    },
+    {
+      "path": "results/blue_profiles.csv",
+      "sha256": "34d3dc24ce3056f6c90732ac73b1f0119f31cacec21a9f9efa17bb5a17056fe3"
+    },
+    {
+      "path": "results/bootstrap_draws.csv",
+      "sha256": "f991db2ae73966951ebba9f044223c696a8329ad93b5a42ae055af6565eb75ca"
+    },
+    {
+      "path": "results/calibration/S10_hypothetical_S7_mapping.csv",
+      "sha256": "bc1f889576caded3a051cfd7b723d031f9105d9420acb77221e96f8639c42ef8"
+    },
+    {
+      "path": "results/calibration/S7_RES_results.csv",
+      "sha256": "a26b80e14d942b0e17c6e843d54b10e71a1da07a07c6f49b7594fdabeda34d65"
+    },
+    {
+      "path": "results/calibration/S7_S10_compatibility.csv",
+      "sha256": "6b7530efdc96e5f00afde475b3f241ce4b97ff34e4ba07614da82dde0b3a35d8"
+    },
+    {
+      "path": "results/calibration/S7_anomaly_distribution_quantiles.csv",
+      "sha256": "405b110e69ca5b70e9bbbb8ddd85035ea8943ddcd22ddddef1ec668ba9f7a886"
+    },
+    {
+      "path": "results/calibration/S7_anomaly_distributions.csv",
+      "sha256": "a1e4b2029136b6bc915ddf5124126e8daa1fa0a81063015ee7d0f9caf8c049db"
+    },
+    {
+      "path": "results/calibration/S7_anomaly_sensitivity.csv",
+      "sha256": "10d8e154cc4dc7cbc2d056dfc6329a6f55e6617ff8eeee950a25cbdb09e38025"
+    },
+    {
+      "path": "results/calibration/S7_anomaly_well_diagnostics.csv",
+      "sha256": "527049e3286d1051fecdb00d5b3937a3f5931fcb9f4500a33f01aee3b3658ed0"
+    },
+    {
+      "path": "results/calibration/S7_calibration_curves.csv",
+      "sha256": "4b203716cef482d24495569c381e9b10da4004233e62e71c1e81fdffd3c6aa26"
+    },
+    {
+      "path": "results/calibration/S7_calibration_predictions.csv",
+      "sha256": "9913a8f71d218fdd0e0c29b8e2bbe819cd98eb00ca370594454a3a2385f8e922"
+    },
+    {
+      "path": "results/calibration/S7_calibration_summary.json",
+      "sha256": "6fa384b5c57812811a77eaf2ccf12801476f04b6e66a2cb027306a2f6b5130c3"
+    },
+    {
+      "path": "results/calibration/S7_internal_validation.csv",
+      "sha256": "5d07317be401d0cd2b8b1e7e0f2c37e331260ffcb74cc498d2225bb1d264abeb"
+    },
+    {
+      "path": "results/calibration/S7_inverse_identifiability.csv",
+      "sha256": "a06f90fb53d475aa464ebb78368a792e128792bc13c67883bfe06403158cdb61"
+    },
+    {
+      "path": "results/calibration/S7_local_response_resolution.csv",
+      "sha256": "1ee24cfbb620897f39a1bb24d133e84ee0de9c6090fb4d934d23c7509bd59cf8"
+    },
+    {
+      "path": "results/calibration/S7_model_comparison.csv",
+      "sha256": "bf3b831042962fce70821da2aa4421f8b9fea7baba8be0efbf5d57a65727d275"
+    },
+    {
+      "path": "results/calibration/S7_parameter_bootstrap.csv",
+      "sha256": "a1e62d4ca8e2a7e6a9d609baa788455fdf3b27a19f446f536494df556367fd86"
+    },
+    {
+      "path": "results/event_count_sensitivity.csv",
+      "sha256": "07751f8476d63167325f5f49b76b247921fc296cfe2cd5b3d09b42772a2e5c39"
+    },
+    {
+      "path": "results/event_retention.csv",
+      "sha256": "28fc5de6c541f7f032fb88d835a277833f63886db46db05c888802e3e83cab0a"
+    },
+    {
+      "path": "results/flow_RNA_well_registry.csv",
+      "sha256": "e77e1a198fb92d786b13f5d165adcc20f3b62fced14824cafd481142a75b9001"
+    },
+    {
+      "path": "results/high_expression_influence.csv",
+      "sha256": "78bbab74ce61abc1f24f3c3fc9310a88fdb954165780d9be8d2cd83540107221"
+    },
+    {
+      "path": "results/molecular/OpenA_amplicon_annotated.gb",
+      "sha256": "bbfd15c5698d6113aa307e9ef051b541aac93be7ef91220bd12c0f796d15e6a1"
+    },
+    {
+      "path": "results/molecular/OpenA_amplicon_consensus.fasta",
+      "sha256": "157134703eafec09d9f7bab471f5c49b18b2716fe5ceba574ff5dba62dd54e74"
+    },
+    {
+      "path": "results/molecular/OpenA_candidate_editing_sites.csv",
+      "sha256": "5a5892f5d48f0d35638b1095d6bbfd164131b48757fc1b58401bd50a9c1dec46"
+    },
+    {
+      "path": "results/molecular/OpenA_control_base_calls.csv",
+      "sha256": "18dfd0bff3da924f8c7b4c665d5591193154667a08db7fdfecbddb582a14b8ea"
+    },
+    {
+      "path": "results/molecular/OpenA_generic_comparison.csv",
+      "sha256": "516af7fd717f8e01292a9e408aaa0caa69e7a65537673c202cf49fbdebb6a829"
+    },
+    {
+      "path": "results/molecular/OpenA_independent_control_assemblies.csv",
+      "sha256": "a79935129a8c6abb49caffcf29daa69e80af2cde61e7c01b4d60cb02a375e3b9"
+    },
+    {
+      "path": "results/molecular/OpenA_reconstruction_summary.json",
+      "sha256": "b7a49979b0cfb328582910157bd788eac93c8e86f214fa34aa79f6754028b315"
+    },
+    {
+      "path": "results/molecular/OpenA_reference_alignment.csv",
+      "sha256": "fa7941605b823be8d734b869c6b5b438069c7976aded06085ed62f39cc5a228d"
+    },
+    {
+      "path": "results/molecular/OpenA_vs_generic.aligned.fasta",
+      "sha256": "4cc8549f4330c98cb8a3f3ee38f29957302427ba4f777d857df4e78cf438a4ed"
+    },
+    {
+      "path": "results/molecular/S10_all_cytidine_peak_metrics.csv",
+      "sha256": "38d4e79c65a169dfe22287e4c1666831fcd2660b56d5a488bd4952854c3f0933"
+    },
+    {
+      "path": "results/molecular/S10_bidirectional_concordance.csv",
+      "sha256": "1f97a0be17a740ffb8e9093846d8667c6ff0af3c6a4bfe1fcc279031c8956476"
+    },
+    {
+      "path": "results/molecular/S10_bystander_site_analysis.csv",
+      "sha256": "a837f027f503e7b0c671579234b32ccf76735d114a6f6787527c4b0314f59189"
+    },
+    {
+      "path": "results/molecular/S10_chromatogram_plot_points.csv",
+      "sha256": "97ecb86b7a68c7a3e3ad9365fd7250038634be2a9618a6affa4cb07b1e71ab7d"
+    },
+    {
+      "path": "results/molecular/S10_condition_molecular_summary.csv",
+      "sha256": "75d64bda700868b09640330a9a379f4fb91cc652138d6ca6f3eb59bca83f2de6"
+    },
+    {
+      "path": "results/molecular/S10_molecular_summary.json",
+      "sha256": "f071a53b3dde567998e9b82d892bfce525f57c8bea93be6c66d4968c5db4edb6"
+    },
+    {
+      "path": "results/molecular/S10_no_editor_background.csv",
+      "sha256": "bf47711f4657f847bde3ebff71136ba0e9e76f328d144522fc7930f7f03ba221"
+    },
+    {
+      "path": "results/molecular/S10_processing_sensitivity.csv",
+      "sha256": "c42e97642cb0326d4b69f9ea7f62c15f807b07bc1a8b12912de51d3abf33d561"
+    },
+    {
+      "path": "results/molecular/S10_read_level_peak_metrics.csv",
+      "sha256": "f31b7dce9a0809f3e949e601ffbcaea13ff8eaf68e561e17396552fddbe1a2d3"
+    },
+    {
+      "path": "results/molecular/S10_read_metadata_audit.csv",
+      "sha256": "f1e66069a46a7194e01c8a6536307c4097f23ecb9f09187abf32dedbc3b5bb42"
+    },
+    {
+      "path": "results/molecular/S10_well_level_molecular_results.csv",
+      "sha256": "f907e1dc09b8e06fde59426456513cd6f2b71f063e3d610f0246b50d79fb7413"
+    },
+    {
+      "path": "results/molecular/construct_document_audit.csv",
+      "sha256": "ed9cf488f8af8b4dc5ca12c8770399931a12b8e6a36742d320c85bcefee635f8"
+    },
+    {
+      "path": "results/molecular/source_audit_summary.json",
+      "sha256": "71e277f795468859ac6d1f683e65d511cbcbfb76ffdd28eb4daa7d662701220e"
+    },
+    {
+      "path": "results/molecular/source_record_audit.csv",
+      "sha256": "c648e125af12a9947b12426d99c2fe933dfbc985a8651b0e01e80148d000a89e"
+    },
+    {
+      "path": "results/molecular/source_record_search_hits.csv",
+      "sha256": "568fbbd9c3e1fe2b9fea9ff4b300d0a6e6eb13b0308062d57fd24a58e2d24bc1"
+    },
+    {
+      "path": "results/negative_transfer.csv",
+      "sha256": "0621f6d736bafaa57a2527d474349e9316809f71f7dcf5e5d053262fd74dedd5"
+    },
+    {
+      "path": "results/partition_identity.csv",
+      "sha256": "9d2c1bdd5435634a2b758e2fc75955a193f81538659d0262c23bb9408fdf986b"
+    },
+    {
+      "path": "results/plate_raw_points.csv",
+      "sha256": "f2ea77b2ba5aab0703cdd2e13d0177396dc54d314d7f80f05729805a479374a9"
+    },
+    {
+      "path": "results/plate_summary.csv",
+      "sha256": "55a5499486b37ee2bf6989bcc5e1c95da9aa4dab451e2e29772c8ddf68fd179d"
+    },
+    {
+      "path": "results/prediction/S10_affine_transform_sensitivity.csv",
+      "sha256": "4b3e826a72d6d151815092ba67e93b251879c45c63f9711dd278d59d4224b302"
+    },
+    {
+      "path": "results/prediction/S10_direct_model_results.csv",
+      "sha256": "9ae1895da582328192f931f70c28688c6731388ebbeec59274cf9433fb358e48"
+    },
+    {
+      "path": "results/prediction/S10_flow_molecular_associations.csv",
+      "sha256": "8b73ee8b14325da8f4c6310422554d047a9d60bbc8c955b813e6be369f8fd486"
+    },
+    {
+      "path": "results/prediction/S10_flow_molecular_pairs.csv",
+      "sha256": "17916407d727387e48ee14d6e95b318c62dc3ab682765e32d7df0bc61662959e"
+    },
+    {
+      "path": "results/prediction/S10_model_parameter_bootstrap.csv",
+      "sha256": "c48e38dd7672d5f35ca6cab4dfd83fa353df563eed7a78282b71a8437011849b"
+    },
+    {
+      "path": "results/prediction/S10_prediction_summary.json",
+      "sha256": "a8b52af2e2bfc7c39ecabbf2d5f6a49a2140911fc487c8b36cf1c9d4a832d57d"
+    },
+    {
+      "path": "results/prediction/S10_prediction_validation.csv",
+      "sha256": "c43e5523ec2d62987c0533baf76f68e38e0b9cd616e8f0d7d9c91a5a9890df93"
+    },
+    {
+      "path": "results/prediction/S10_staged_model_results.csv",
+      "sha256": "825382c349fd98f023feb5a70132d92da202ef5771f677296c419e11e7c1b6fe"
+    },
+    {
+      "path": "results/prediction/SONAR_layer_status.csv",
+      "sha256": "24df213e3e82114ab5348a3cef7cfe69b3bb618db110007a193dea9fabbd3b6b"
+    },
+    {
+      "path": "results/ras_results.csv",
+      "sha256": "0e487e7ace56dab223ee4828c3f0308e657c1310342e43b8440db71546e01d9b"
+    },
+    {
+      "path": "results/red_profiles.csv",
+      "sha256": "76ec7a423acd89492dfcadb831641d186f3a65cb5bc992216db18d7a0af213a7"
+    },
+    {
+      "path": "results/repeatability.csv",
+      "sha256": "28917989ab202330f32055eb6056635821a392e2093f49215562e091ba835a8e"
+    },
+    {
+      "path": "results/response_summary.csv",
+      "sha256": "1c0fd98bb77c1fd130ade033e896ecb9a0991afb6ad0e3c8e98dda943ed16b96"
+    },
+    {
+      "path": "results/sample_highest_supported_output.csv",
+      "sha256": "22b807f1764f7b5df1a60f7a2987a64ff6757895ee8465855dba839ae85cd816"
+    },
+    {
+      "path": "results/sanger_base_quality.csv",
+      "sha256": "44d25c363ebce96fe23142679a6221e66db1155ab5c970ab47983fc5722b8884"
+    },
+    {
+      "path": "results/sensitivity.csv",
+      "sha256": "77baf246f17343c0704180c638beeb20e0d9111a00b19d335fe98ae66f7de5c8"
+    },
+    {
+      "path": "results/time_qc.csv",
+      "sha256": "8b3480e8eb7e101796a3703ad66c1271faef9eeaf9d784312e660b18341e0cef"
+    },
+    {
+      "path": "src/ab1_processing.py",
+      "sha256": "91b5af03a5f700f57fd74b4f30e9788b9df023102e900de5f372477ce994a0b0"
+    },
+    {
+      "path": "src/amplicon_reconstruction.py",
+      "sha256": "b378421b6153f896fa7aa22ad979a7b55f2cd2c4a5320437cab68326ba8030ad"
+    },
+    {
+      "path": "src/analyze.py",
+      "sha256": "3bfa8e6f8622c88cf40fd2f0eeb9b4a21aa5384bccb3edf5c7eb81ddb9f5140a"
+    },
+    {
+      "path": "src/biological_calibration.py",
+      "sha256": "81ecac528a842d4f168c9634ed8e7761b5dffbe6cffbaf63ad37c9bd764d37a9"
+    },
+    {
+      "path": "src/core.py",
+      "sha256": "d7237412e283ceb3ba13cfd3fd73a28c639f0e7df093d838b29cacf5155564a9"
+    },
+    {
+      "path": "src/inventory.py",
+      "sha256": "95b8d1d72e8ed9acfcea36e83f90c23d1621d09b79d2060f652fde06b4ab3089"
+    },
+    {
+      "path": "src/inverse_calibration.py",
+      "sha256": "7f29006ec119050fca30647a538162b65bec1d7ceb41d4629a86a4bdbccaedae"
+    },
+    {
+      "path": "src/layer23_common.py",
+      "sha256": "12bbb2d9766ff566bfc1098bed525c29f6fdf2ab433a2511b5261521eaa81c14"
+    },
+    {
+      "path": "src/layer23_evidence_audit.py",
+      "sha256": "2709a8ee1ef304f27aa2500317aa0610f8c51e2a0bf8da096098faa8d140bf10"
+    },
+    {
+      "path": "src/layer23_plots.py",
+      "sha256": "8bd6a8e221e8027a12eef5e11901f6c0eb8ddeb79ed93fcc2e58c839d03572eb"
+    },
+    {
+      "path": "src/layer23_reports.py",
+      "sha256": "1f52b20919e80d19492ddcb835cff3c1a508360c21f30004d0667b4ad3f20f74"
+    },
+    {
+      "path": "src/molecular_and_plate.py",
+      "sha256": "c4b269e1b89e2be6552ff0dda092634d87d05d840685b3e98b87973f2ec62673"
+    },
+    {
+      "path": "src/plots.py",
+      "sha256": "dca5bf9fa149dedb2c287e773147afe22f2bb5598cb331ce85230ac75cac3c76"
+    },
+    {
+      "path": "src/prediction_validation.py",
+      "sha256": "bbf43c95f4887abf059d72c9df8469119a04aa17d917e9a705a183a837ef0b2b"
+    },
+    {
+      "path": "src/reporter_calibration.py",
+      "sha256": "6cbfa7c2a380b74920eac189bcb48630de83f15cd38214852493f4abd28001c0"
+    },
+    {
+      "path": "src/reports.py",
+      "sha256": "c01a8f3e010869d841e4d9678d38e6c1b3e77368777f78679b3e88c9214f8144"
+    },
+    {
+      "path": "src/sample_metadata.py",
+      "sha256": "1f5d9eecd72175a6551af655f42dda11567fe277e5cbb96233dbf929e98cd894"
+    },
+    {
+      "path": "src/sanger_quantification.py",
+      "sha256": "ad3f1679776d45b7b2469122e6dbb72b9aa7a4f6dce3c62e416027f8f7ed43b2"
+    },
+    {
+      "path": "tests/test_layer23.py",
+      "sha256": "301e6518f1d0faea054a8ca37b6e1796c8312d8f29a6e6daa636f03825aea044"
+    },
+    {
+      "path": "tests/test_science.py",
+      "sha256": "cdc7bb73fe6a47608651a21c45027397b12646fe2c0fecd3132bc4e2aaf54bd5"
+    },
+    {
+      "path": "reports/release_files_sha256.csv",
+      "sha256": "c6c58b216e863144b92413de8852ae5d7c20ec0e5945ff737413863ad512e838"
+    }
+  ]
+}

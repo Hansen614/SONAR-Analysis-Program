@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "context_rebuilt_from_controls": true,
+  "event_masks_equal": 204,
+  "RAS_rows_compared": 54,
+  "no_editor_blue_tail_rows_reclassified_not_removed_from_legacy": 2
+}

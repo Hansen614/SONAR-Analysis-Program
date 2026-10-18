@@ -1,0 +1,18 @@
+# Local environments, personal data and generated packages
+.venv/
+.desktop-venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+_work/
+workspace/
+build/
+dist/
+desktop-dist/
+.DS_Store
+
+# Local QA and original design packages
+verification/
+SONAR_Logo_Brand_Kit_v1.0.zip
+runtime/
+runtime.cab

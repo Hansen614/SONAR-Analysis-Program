@@ -1,0 +1,26 @@
+{
+  "version": "sonar-science-v1.0-s7s10",
+  "formula": "PER=100*h(RES)",
+  "qualified_absolute_models": [],
+  "endpoint": "fraction_of_edited_RNA_molecules",
+  "current_endpoint": "relative_C280_chromatogram_composition",
+  "stages": {
+    "molecular_reference_available": true,
+    "candidate_signal_detected": true,
+    "relative_index_available": true,
+    "absolute_fraction_qualified": false,
+    "relative_prediction_fitted": true,
+    "relative_prediction_internally_evaluated": true,
+    "absolute_prediction_validated": false
+  },
+  "PER": null,
+  "status": "ASSAY_VALIDATION_INSUFFICIENT_AND_S7_S10_TRANSFER_UNQUALIFIED",
+  "future_adapter_requires": [
+    "known RNA mixture response calibration",
+    "DNase/noRT evidence",
+    "validated target/construct identity",
+    "matched population and conditions",
+    "independent held-out wells/batches",
+    "registered versioned h and transfer domain"
+  ]
+}

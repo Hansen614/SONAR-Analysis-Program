@@ -1,0 +1,38 @@
+{
+  "S7_90B": {
+    "ras": 0.9562602659677872,
+    "n_selected": 32207,
+    "sum_G_corrected": 5599302927.216467,
+    "sum_R_corrected": 5855417323.598267,
+    "effective_red_events": 3620.416481750841,
+    "RES_mass_fraction": 0.7454898213131971,
+    "evidence": "Actual v4 raw FCS measurement; corrected label applied by acquisition ID"
+  },
+  "S7_5B": {
+    "ras": 0.5081713670662267,
+    "n_selected": 25884,
+    "sum_G_corrected": 1893239123.062763,
+    "sum_R_corrected": 3725591888.4072614,
+    "effective_red_events": 3941.591713013849,
+    "RES_mass_fraction": 0.0164436407711481,
+    "evidence": "Actual v4 raw FCS measurement; corrected label applied by acquisition ID"
+  },
+  "S7_100A": {
+    "ras": 1.144855589498998,
+    "n_selected": 29732,
+    "sum_G_corrected": 5057803455.078001,
+    "sum_R_corrected": 4417852785.51276,
+    "effective_red_events": 3045.9787464785604,
+    "RES_mass_fraction": 0.9654501844002678,
+    "evidence": "Actual v4 raw FCS measurement; corrected label applied by acquisition ID"
+  },
+  "S10_1_8_A": {
+    "ras": 0.5722332151468955,
+    "n_selected": 21818,
+    "sum_G_corrected": 1839880290.8442316,
+    "sum_R_corrected": 3215263011.903152,
+    "effective_red_events": 1297.8389990473609,
+    "RES_mass_fraction": null,
+    "evidence": "Actual v4 raw FCS measurement; corrected label applied by acquisition ID"
+  }
+}

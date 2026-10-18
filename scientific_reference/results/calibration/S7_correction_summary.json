@@ -1,0 +1,49 @@
+{
+  "version": "sonar-s7-s10-layer23-v4-label-corrected",
+  "reference_basis_id": "S7_AC_DNA_mass_team_corrected_20261013",
+  "correction_independently_verified": false,
+  "best_forward_model_original": "affine",
+  "best_forward_model_corrected": "monotone_hinge_50",
+  "original_leave_level_RMSE": 0.0933899845410543,
+  "corrected_leave_level_RMSE": 0.0363679094161691,
+  "narrow_interior_domains": [
+    {
+      "model": "affine",
+      "segment": 0,
+      "model_mass_low": null,
+      "model_mass_high": null,
+      "RAS_low": null,
+      "RAS_high": null,
+      "maximum_compatibility_width": null,
+      "status": "NO_NARROW_INTERIOR_DOMAIN",
+      "qualification": "No model grid segment meets exploratory screen; not an absolute assay validity test"
+    },
+    {
+      "model": "isotonic",
+      "segment": 1,
+      "model_mass_low": 0.507,
+      "model_mass_high": 0.8280000000000001,
+      "RAS_low": 0.750961091333186,
+      "RAS_high": 1.0580682577211622,
+      "maximum_compatibility_width": 0.19599999999999995,
+      "status": "EXPLORATORY",
+      "qualification": "Configuration-fixed <=0.20 width; unique inverse; positive local slope; neither reference boundary truncates set; internal diagnostic only"
+    },
+    {
+      "model": "monotone_hinge_50",
+      "segment": 1,
+      "model_mass_low": 0.545,
+      "model_mass_high": 0.908,
+      "RAS_low": 0.7843591007550823,
+      "RAS_high": 1.0955974597076443,
+      "maximum_compatibility_width": 0.2,
+      "status": "EXPLORATORY",
+      "qualification": "Configuration-fixed <=0.20 width; unique inverse; positive local slope; neither reference boundary truncates set; internal diagnostic only"
+    }
+  ],
+  "validated_RES_count": 0,
+  "exploratory_inverse_points": 54,
+  "S10_transfer_qualified": false,
+  "direct_molecular_results_preserved": true,
+  "maximum_affine_prediction_difference": 3.469446951953614e-16
+}

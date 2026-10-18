@@ -1,0 +1,323 @@
+{
+  "model": "monotone_hinge_50",
+  "knots": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "values": [
+    0.5000914764582751,
+    0.7457758331163349,
+    1.1744788068801943
+  ],
+  "coefficients": [
+    0.5000914764582751,
+    0.4913687133161195,
+    0.8574059475277187
+  ],
+  "x_min": 0.0,
+  "x_max": 1.0,
+  "fraction_basis": "AC_DNA_mass_fraction",
+  "fitting_unit": "independent_transfection_well",
+  "qualification": "EXPLORATORY_INTERNALLY_EVALUATED",
+  "version": "sonar-science-v1.0-s7s10",
+  "calibration_model_id": "sonar-science-v1.0-s7s10::S7-hinge-k050",
+  "reference_basis_id": "S7_AC_DNA_mass_team_corrected_20261013",
+  "corrected_reference_sha256": "212cf9768d85b0be3b480ee1d1d89f31a5a1f0abcc276c65197a91c5143d8151",
+  "label_correction_sha256": "66198b09c1dc19dea4296cec8d9111d76d30ea67e661d69ba3e2a3bf90eb7673",
+  "upstream_RAS_sha256": "0e487e7ace56dab223ee4828c3f0308e657c1310342e43b8440db71546e01d9b",
+  "internal_discrepancy_q95": 0.06377069828293852,
+  "bootstrap": "stratified two wells per level with replacement plus shared-control event draws; n2 limitation",
+  "bootstrap_repeats": 1000,
+  "provenance": {
+    "layer23_config_sha256": "c35bbfdd4477286cf2bd788f9a7561d490b020923473e2af48910557d373b609",
+    "source_manifest_sha256": "8640f2e615a73feb0dfef3a6d7ea5fb98845d9690aa51de5c694318427470949"
+  },
+  "model_id": "sonar-science-v1.0-s7s10::S7-hinge-k050",
+  "ras_estimator_id": "ratio_of_paired_linear_sums-v2",
+  "kernel_sha256": "d7237412e283ceb3ba13cfd3fd73a28c639f0e7df093d838b29cacf5155564a9",
+  "context_id": "SONAR-CytoFLEXS-22cac3269aa6-v1",
+  "context_profile_sha256": "356aedc64989ebc2b71d464cbe13e9ef7e68177cb69423a01a4bcdc31792c97b",
+  "calibration_domain_id": "S7_AC_DNA_mass_team_corrected_20261013",
+  "model_family": "continuous_monotone_hinge_fixed_knot",
+  "mathematical_definition": "g(A)=alpha+beta*A+gamma*max(0,A-0.5)",
+  "parameters": {
+    "alpha": 0.5000914764582751,
+    "beta": 0.4913687133161195,
+    "gamma": 0.3660372342115992,
+    "k": 0.5,
+    "lower_slope": 0.4913687133161195,
+    "upper_slope": 0.8574059475277187
+  },
+  "knot_policy": "fixed at 0.5 in v3/v4; not searched in this release",
+  "constraints": "lower_slope>=0; upper_slope>=0; intercept unconstrained",
+  "fitting_method": "bounded least squares with equal weight per independent well; 20 wells, 10 levels",
+  "input_unit": "AC_DNA_mass_fraction_0_to_1",
+  "output_unit": "RAS_dimensionless_detector_channel_ratio",
+  "population_mode": "reporter",
+  "training_sample_ids": [
+    "S7_0A",
+    "S7_0B",
+    "S7_5A",
+    "S7_5B",
+    "S7_10A",
+    "S7_10B",
+    "S7_20A",
+    "S7_20B",
+    "S7_30A",
+    "S7_30B",
+    "S7_40A",
+    "S7_40B",
+    "S7_50A",
+    "S7_50B",
+    "S7_90A",
+    "S7_90B",
+    "S7_75A",
+    "S7_75B",
+    "S7_100A",
+    "S7_100B"
+  ],
+  "domains": {
+    "numerical": {
+      "AC_mass_fraction": [
+        0,
+        1
+      ],
+      "RAS_response": [
+        0.5000914764582751,
+        1.1744788068801943
+      ]
+    },
+    "observed": {
+      "reference_levels": [
+        0.0,
+        0.05,
+        0.15,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.75,
+        0.9,
+        1.0
+      ],
+      "observed_RAS_range": [
+        0.5081713670662267,
+        1.144855589498998
+      ],
+      "independent_wells": 20,
+      "wells_per_level": 2,
+      "not_continuous_observation": true
+    },
+    "internal_screen": {
+      "RAS_largest_contiguous": [
+        0.7845,
+        1.0065
+      ],
+      "hinge_mass_equivalent": [
+        0.5451643320125362,
+        0.80408485926118
+      ],
+      "all_grid_pass_ranges": [
+        [
+          0.7845,
+          1.0065
+        ],
+        [
+          1.0075,
+          1.0075
+        ],
+        [
+          1.0085,
+          1.0085
+        ]
+      ],
+      "policy": "largest_contiguous_primary_and_isotonic_union_width_le_0.20_interior",
+      "max_total_width": 0.2,
+      "RAS_grid_step": 0.0005,
+      "mass_grid_step": 0.001,
+      "measurement_uncertainty": "per-sample RAS margin added afterwards; may narrow eligibility",
+      "qualification": "ENGINEERING_EXPLORATORY_COMPATIBILITY_SCREEN_NOT_VALIDATED_ACCURACY_RANGE",
+      "observed_reference_levels_inside": [
+        0.75
+      ]
+    },
+    "transfer": {
+      "supported": "same S7 reference experiment, reporter population",
+      "external_supported": false,
+      "S10_qualified": false,
+      "routine_quantitative_qualified": false
+    }
+  },
+  "inverse_policy": "unique piecewise-linear inverse; plateau=>identified interval; outside=>null, never clip/extrapolate",
+  "uncertainty_artifact": "models/res_primary/uncertainty.json",
+  "validation": [
+    {
+      "model": "monotone_hinge_50",
+      "validation": "leave_one_reference_level_out",
+      "subset": "all_held_out",
+      "total_held_out": 20,
+      "unique_inverse_n": 19,
+      "unique_fraction": 0.95,
+      "out_of_range_n": 1,
+      "non_identifiable_n": 0,
+      "inverse_MAE_pp": 6.153120924077603,
+      "inverse_RMSE_pp": 7.077752446064921,
+      "inverse_bias_pp": 0.1197453319268539,
+      "point_error_denominator": 19,
+      "full_set_point_MAE": null,
+      "failure_policy": "undefined errors not replaced with zero; successes and failures jointly reported",
+      "forward_prediction_n": 16,
+      "forward_RMSE_RAS": 0.0363679094161691,
+      "forward_MAE_RAS": 0.030725544045972,
+      "compatible_set_coverage_all": 0.8,
+      "compatible_set_n": 20,
+      "conditional_bootstrap_coverage_given_interval": 0.25,
+      "conditional_interval_n": 20,
+      "coverage_status": "EMPIRICAL_INTERNAL_NOT_NOMINAL_95_PERCENT_VALIDATION"
+    },
+    {
+      "model": "monotone_hinge_50",
+      "validation": "leave_one_reference_level_out",
+      "subset": "held_input_in_training_domain",
+      "total_held_out": 16,
+      "unique_inverse_n": 16,
+      "unique_fraction": 1.0,
+      "out_of_range_n": 0,
+      "non_identifiable_n": 0,
+      "inverse_MAE_pp": 5.32697055482588,
+      "inverse_RMSE_pp": 6.115424361518147,
+      "inverse_bias_pp": -0.4080345641150646,
+      "point_error_denominator": 16,
+      "full_set_point_MAE": 5.32697055482588,
+      "failure_policy": "undefined errors not replaced with zero; successes and failures jointly reported",
+      "forward_prediction_n": 16,
+      "forward_RMSE_RAS": 0.0363679094161691,
+      "forward_MAE_RAS": 0.030725544045972,
+      "compatible_set_coverage_all": 1.0,
+      "compatible_set_n": 16,
+      "conditional_bootstrap_coverage_given_interval": 0.3125,
+      "conditional_interval_n": 16,
+      "coverage_status": "EMPIRICAL_INTERNAL_NOT_NOMINAL_95_PERCENT_VALIDATION"
+    },
+    {
+      "model": "monotone_hinge_50",
+      "validation": "leave_one_reference_level_out",
+      "subset": "matched_unique_all_three_models",
+      "total_held_out": 14,
+      "unique_inverse_n": 14,
+      "unique_fraction": 1.0,
+      "out_of_range_n": 0,
+      "non_identifiable_n": 0,
+      "inverse_MAE_pp": 5.847525308321494,
+      "inverse_RMSE_pp": 6.8580198085498205,
+      "inverse_bias_pp": 0.3256443863141799,
+      "point_error_denominator": 14,
+      "full_set_point_MAE": 5.847525308321494,
+      "failure_policy": "undefined errors not replaced with zero; successes and failures jointly reported",
+      "forward_prediction_n": 12,
+      "forward_RMSE_RAS": 0.0314001960233624,
+      "forward_MAE_RAS": 0.0271285654696212,
+      "compatible_set_coverage_all": 0.8571428571428571,
+      "compatible_set_n": 14,
+      "conditional_bootstrap_coverage_given_interval": 0.2857142857142857,
+      "conditional_interval_n": 14,
+      "coverage_status": "EMPIRICAL_INTERNAL_NOT_NOMINAL_95_PERCENT_VALIDATION"
+    },
+    {
+      "model": "monotone_hinge_50",
+      "validation": "leave_one_well_out",
+      "subset": "all_held_out",
+      "total_held_out": 20,
+      "unique_inverse_n": 20,
+      "unique_fraction": 1.0,
+      "out_of_range_n": 0,
+      "non_identifiable_n": 0,
+      "inverse_MAE_pp": 5.375173985842075,
+      "inverse_RMSE_pp": 6.099062386943447,
+      "inverse_bias_pp": -0.2508521148162138,
+      "point_error_denominator": 20,
+      "full_set_point_MAE": 5.375173985842075,
+      "failure_policy": "undefined errors not replaced with zero; successes and failures jointly reported",
+      "forward_prediction_n": 20,
+      "forward_RMSE_RAS": 0.0383174398214886,
+      "forward_MAE_RAS": 0.0329064822714869,
+      "compatible_set_coverage_all": 0.95,
+      "compatible_set_n": 20,
+      "conditional_bootstrap_coverage_given_interval": 0.1499999999999999,
+      "conditional_interval_n": 20,
+      "coverage_status": "EMPIRICAL_INTERNAL_NOT_NOMINAL_95_PERCENT_VALIDATION"
+    },
+    {
+      "model": "monotone_hinge_50",
+      "validation": "leave_one_well_out",
+      "subset": "held_input_in_training_domain",
+      "total_held_out": 20,
+      "unique_inverse_n": 20,
+      "unique_fraction": 1.0,
+      "out_of_range_n": 0,
+      "non_identifiable_n": 0,
+      "inverse_MAE_pp": 5.375173985842075,
+      "inverse_RMSE_pp": 6.099062386943447,
+      "inverse_bias_pp": -0.2508521148162138,
+      "point_error_denominator": 20,
+      "full_set_point_MAE": 5.375173985842075,
+      "failure_policy": "undefined errors not replaced with zero; successes and failures jointly reported",
+      "forward_prediction_n": 20,
+      "forward_RMSE_RAS": 0.0383174398214886,
+      "forward_MAE_RAS": 0.0329064822714869,
+      "compatible_set_coverage_all": 0.95,
+      "compatible_set_n": 20,
+      "conditional_bootstrap_coverage_given_interval": 0.1499999999999999,
+      "conditional_interval_n": 20,
+      "coverage_status": "EMPIRICAL_INTERNAL_NOT_NOMINAL_95_PERCENT_VALIDATION"
+    },
+    {
+      "model": "monotone_hinge_50",
+      "validation": "leave_one_well_out",
+      "subset": "matched_unique_all_three_models",
+      "total_held_out": 14,
+      "unique_inverse_n": 14,
+      "unique_fraction": 1.0,
+      "out_of_range_n": 0,
+      "non_identifiable_n": 0,
+      "inverse_MAE_pp": 5.7317161225149835,
+      "inverse_RMSE_pp": 6.577613485171696,
+      "inverse_bias_pp": -0.8092562305479175,
+      "point_error_denominator": 14,
+      "full_set_point_MAE": 5.7317161225149835,
+      "failure_policy": "undefined errors not replaced with zero; successes and failures jointly reported",
+      "forward_prediction_n": 14,
+      "forward_RMSE_RAS": 0.038951756750023,
+      "forward_MAE_RAS": 0.0330537500167693,
+      "compatible_set_coverage_all": 0.9285714285714286,
+      "compatible_set_n": 14,
+      "conditional_bootstrap_coverage_given_interval": 0.1428571428571428,
+      "conditional_interval_n": 14,
+      "coverage_status": "EMPIRICAL_INTERNAL_NOT_NOMINAL_95_PERCENT_VALIDATION"
+    }
+  ],
+  "output_policy": {
+    "research": "emit compatible numeric point with conditional interval and compatibility set",
+    "routine": "no qualified result for this release",
+    "incompatible": "ordinary RES null; separately labeled hypothetical mapping allowed"
+  },
+  "known_limits": [
+    "retrospective label correction not independently verified",
+    "n2/level one experimental series",
+    "local empirical 90-100% response flattening not represented by positive fitted upper slope",
+    "no external calibration or S10 transfer",
+    "not RNA editing fraction"
+  ],
+  "source_hashes": {
+    "src/core.py": "d7237412e283ceb3ba13cfd3fd73a28c639f0e7df093d838b29cacf5155564a9",
+    "src/science_api.py": "78072f9d8f8a023ba65ba7126c38425e15f849d11580378fedf2aba8e560c7f3",
+    "config/analysis.json": "9b25c20f8d37799a4c00efee143d854d17cfe7a41825b8dce9e423eb58d7f057",
+    "config/science_final.json": "3327d87976dd415a41302d70280849fec336dc4596ef4ae33dcdbe5dc2056546",
+    "config/s7_label_correction.json": "66198b09c1dc19dea4296cec8d9111d76d30ea67e661d69ba3e2a3bf90eb7673",
+    "results/ras_results.csv": "0e487e7ace56dab223ee4828c3f0308e657c1310342e43b8440db71546e01d9b",
+    "results/calibration/S7_reference_response_corrected.csv": "212cf9768d85b0be3b480ee1d1d89f31a5a1f0abcc276c65197a91c5143d8151",
+    "models/res_primary/uncertainty.json": "f0a0bf17a4e3597e8cae8ab157a9208feb74a0dea87403f213cc0f8c29390b04"
+  },
+  "source_calibration_model_id": "sonar-s7-s10-layer23-v4-label-corrected::monotone_hinge_50"
+}

@@ -1,0 +1,455 @@
+SONAR — S7 Label Correction, RES Recalibration, and Integrated Results Update
+1. Mission
+You are continuing the SONAR (System for Optical Normalization and Analysis of RNA Editing) reconstruction and calibration project for SUSTech-China iGEM 2026.
+The previous Work session completed a comprehensive Layer 0–3 analysis, delivered as:
+SONAR_S7_S10_Layer23_v3_20261013.zip
+An important correction to the S7 experimental metadata has now been reported by the experimental team.
+The team member responsible for the experiment believes that the 75% and 90% AC/INAC mixture labels were accidentally interchanged during the original experiment.
+You are instructed to apply this user-authorized correction to the primary analysis, reconstruct the affected calibration results, and update all dependent outputs.
+This is an incremental scientific correction and recalibration task, not a new SONAR reconstruction.
+Preserve the existing implementation and all unaffected results.
+Your primary objectives are to:
+1. Correct the S7 75%/90% AC-mixture labels.
+2. Refit and revalidate the Layer 2 reporter calibration.
+3. Recalculate RES and its uncertainty wherever supported.
+4. Reevaluate the transferability of the corrected S7 calibration to S10.
+5. Update Layer 3 analyses wherever they depend on the corrected calibration.
+6. Compare results before and after correction.
+7. Update all affected figures, scientific reports, metadata, and reproducibility records.
+8. Deliver a complete, versioned corrected analysis package suitable for subsequent iGEM Measurement Wiki writing.
+Do not stop after changing labels or regenerating plots. Perform the actual downstream recalibration and validation.
+2. Exact Experimental Correction
+2.1 Corrected S7 AC fractions
+The original S7 AC/INAC reference series was recorded as:
+0%, 5%, 15%, 20%, 30%, 40%, 50%, 75%, 90%, and 100%.
+The experimental team now reports that the samples originally labeled 75% AC and 90% AC were probably interchanged.
+Apply the following correction:
+Original recorded label	Corrected experimental interpretation
+75% AC — well A	90% AC — well A
+75% AC — well B	90% AC — well B
+90% AC — well A	75% AC — well A
+90% AC — well B	75% AC — well B
+
+
+All other S7 conditions remain unchanged.
+In particular, the previously established correction from 10% to 15% AC must be preserved.
+The final corrected concentration series remains:
+0%, 5%, 15%, 20%, 30%, 40%, 50%, 75%, 90%, 100%.
+Only the experimental identities associated with the 75% and 90% measurements are exchanged.
+2.2 Preserve raw-data provenance
+Do not rename or overwrite original FCS files.
+Do not change their event-level fluorescence measurements.
+Do not modify the original RAS calculation.
+Instead, preserve:
+- Original sample ID.
+- Original acquisition ID.
+- Original filename.
+- Original recorded AC fraction.
+- Corrected AC fraction.
+- Correction source.
+- Correction date.
+- Correction status.
+Use a metadata field such as:
+original_ac_mass_fraction
+and:
+corrected_ac_mass_fraction
+Record the correction source as:
+Experimental team-reported probable label transposition, 2026-10-13.
+The correction is authorized for the primary analysis but has not been independently verified from contemporaneous experimental records.
+Maintain this distinction in the scientific provenance.
+Do not claim that improved model performance independently proves the original labels were incorrect.
+3. Preserve the Existing Layer 0–1 Analysis
+The previous reconstruction has already implemented and evaluated:
+- FCS processing.
+- Context calibration.
+- Background estimation.
+- Cell and singlet selection.
+- RAS calculation.
+- Reporter-population analysis.
+- BFP co-expression analysis.
+- Measurement repeatability.
+- Gate and background sensitivity.
+These analyses are not affected by changing the nominal AC fraction associated with the S7 reference wells.
+Therefore:
+Do not refit or modify Layer 0–1 merely because the reference labels have changed.
+Preserve the existing RAS values and their associated uncertainties.
+The main RAS definition remains:
+\[
+RAS_{\mathcal P}
+=
+\frac{\sum_{i\in\mathcal P}g_i}
+{\sum_{i\in\mathcal P}r_i}
+\]
+The correction must change the correspondence between S7 reference inputs and their observed RAS values, not the fluorescence measurements themselves.
+Required baseline verification
+Before applying the correction:
+1. Reproduce the existing v3 analysis.
+2. Record its configuration and output hashes.
+3. Verify the current Layer 0–1 results.
+4. Apply the label correction through versioned metadata.
+5. Confirm that all unaffected RAS values remain identical.
+If a previously unknown implementation error is discovered, report it separately rather than silently combining it with the label correction.
+4. Reconstruct the Corrected S7 Calibration Dataset
+The previous analysis reported the following approximate mean RAS values:
+Originally assigned AC fraction	Mean RAS
+0%	0.534
+5%	0.513
+15%	0.561
+20%	0.561
+30%	0.679
+40%	0.678
+50%	0.744
+75%	1.132
+90%	0.979
+100%	1.130
+
+
+These values are included only for orientation.
+Recalculate the corrected calibration table from the existing verified well-level RAS results.
+After correction, the approximate high-end response should become:
+Corrected AC fraction	Expected mean RAS from existing data
+50%	0.744
+75%	0.979
+90%	1.132
+100%	1.130
+
+
+Verify all values independently rather than hardcoding the expected numbers.
+Preserve the actual A/B observations and their uncertainties.
+Important scientific questions
+Investigate whether the corrected series now exhibits:
+- Improved monotonicity.
+- A more consistent dose–response relationship.
+- Reduced calibration residuals.
+- Improved interpolation.
+- Better inverse identifiability.
+- Improved held-out reference-fraction recovery.
+Also investigate whether the near-identical responses at 90% and 100% represent a high-end plateau or remain distinguishable within experimental uncertainty.
+The low-fraction regions must be evaluated independently.
+Do not assume that fixing the 75%/90% reversal resolves all calibration limitations.
+5. Refit Layer 2 Reporter Calibration
+Objective
+Perform a complete reanalysis of the corrected S7 AC/INAC reference-response relationship and determine whether a quantitatively useful RES calibration can now be established.
+The intended relationship remains:
+\[
+RAS=g(A)
+\]
+and:
+\[
+RES=g^{-1}(RAS)
+\]
+where \(A\) denotes the explicitly documented reference-input fraction.
+5.1 Preserve reference-input semantics
+The S7 mixtures were prepared using AC/INAC DNA mass fractions.
+Continue reporting the verified mass-fraction basis unless reliable plasmid lengths allow conversion to a molar-input basis.
+Do not interpret AC DNA input fraction as an experimentally measured RNA-editing percentage.
+If molar conversion is supported, preserve both the original mass fraction and corrected molar fraction.
+5.2 Refit all previously evaluated models
+Refit the following models using the corrected labels:
+Model A — Affine calibration
+\[
+RAS=\alpha+\beta A
+\]
+Model B — Isotonic calibration
+A monotonic, shape-constrained reporter response.
+Model C — Monotone hinge calibration
+Retain the previously evaluated piecewise model with its documented knot-selection policy.
+Do not automatically select the most flexible model.
+Compare the models based on actual predictive and inverse-calibration performance.
+5.3 Reevaluate calibration performance
+For each model, calculate:
+- Fitted parameters.
+- Training residuals.
+- Training \(R^2\), where appropriate.
+- Leave-one-well-out prediction error.
+- Leave-one-AC-level-out prediction error.
+- RMSE.
+- MAE.
+- Systematic bias.
+- Calibration uncertainty.
+- Inverse-identifiability intervals.
+- Sensitivity to independent wells.
+- Sensitivity to the high-AC reference points.
+Use the correct independent experimental units.
+The 20 S7 transfection wells must not be treated as more independent measurements through their constituent flow events.
+5.4 Compare original and corrected calibrations
+Preserve the original v3 calibration as the pre-correction baseline.
+Generate a direct comparison between:
+- Original recorded-label calibration.
+- Corrected-label calibration.
+A preliminary independent analysis suggested that exchanging the 75% and 90% labels could improve:
+- Affine \(R^2\) from approximately 0.907 to 0.965.
+- Isotonic leave-one-AC-level RMSE from approximately 0.107 to 0.040.
+These values are preliminary and must not be used as targets.
+Recompute all comparison metrics from the actual archived data and new model fits.
+Determine whether the improvement is reproduced.
+Critically distinguish:
+Improved agreement with a monotonic calibration model
+from:
+Independent evidence proving the labels were interchanged.
+The first does not establish the second.
+6. Reevaluate RES Identifiability
+This is one of the most important objectives of the correction.
+Previously, the S7 calibration was considered insufficient to support reliable RES inversion because of:
+- Low-end response overlap.
+- The 75%/90% reversal.
+- High-end response compression.
+- Limited independent reference samples.
+The corrected labels may eliminate one major source of nonmonotonicity.
+Reassess the entire inverse-calibration problem using the corrected data.
+For each candidate model, determine:
+1. Whether a unique inverse exists.
+2. Which AC-input intervals are distinguishable.
+3. Which RAS intervals support meaningful inverse estimates.
+4. Whether uncertainty remains acceptable for quantitative interpretation.
+5. Whether 90% and 100% are distinguishable.
+6. Whether low-input regions remain poorly resolved.
+7. Whether the inverse is sufficiently stable under held-out validation.
+Where a smooth model is locally invertible, examine how the local slope affects inverse uncertainty.
+Where a model has a plateau, report an interval or non-identifiability rather than choosing an arbitrary point.
+Explicit RES reporting
+Recalculate RES where supported.
+Each reported RES value must include:
+- Input RAS.
+- Population mode.
+- Calibration-model ID.
+- Corrected reference-basis ID.
+- RES estimate or identifiable interval.
+- Uncertainty.
+- Calibration validity status.
+- Applicable experimental domain.
+Distinguish:
+- VALIDATED_WITHIN_DOMAIN
+- EXPLORATORY
+- NONIDENTIFIABLE
+- OUT_OF_CALIBRATION_RANGE
+- NOT_CALIBRATED
+The exact status definitions must be documented.
+Do not automatically declare RES validated simply because the corrected calibration appears monotonic.
+Conversely, do not retain the earlier conclusion that RES is unusable without repeating the actual calibration and validation.
+The purpose of this phase is to determine whether the corrected data change that conclusion.
+7. Reevaluate S7-to-S10 Calibration Transfer
+The previous v3 analysis concluded that the S7 AC/INAC calibration could not automatically be transferred to S10.
+The label correction may improve S7 calibration quality, but it does not by itself establish biological compatibility.
+Reassess the following:
+- Reporter construct compatibility.
+- Reference-state identity.
+- HEK293T cell context.
+- Reporter DNA loading.
+- Total DNA loading.
+- Editor presence.
+- BFP linkage.
+- Population-selection mode.
+- Fluorescence acquisition profile.
+- Treatment and sampling conditions.
+Specifically distinguish:
+S7 reporter-population calibration
+from:
+S10 reporter-population RAS
+and:
+S10 BFP-positive co-expression RAS.
+Do not assume that all three represent interchangeable measurement domains.
+If transfer is supportable
+Apply the corrected S7 calibration to eligible S10 samples and recalculate RES.
+Document the transfer evidence and uncertainty.
+If transfer remains unsupported
+Retain the corrected S7 calibration as a reference-specific model.
+Report any S10 RES mappings as exploratory sensitivity analyses only.
+Do not silently promote them to validated sample-level measurements.
+8. Update Layer 3 Biological Calibration
+The previous Work session reconstructed the S10 OpenA candidate amplicon and analyzed 48 original Sanger AB1 reads.
+It established:
+- A provisional 523 bp OpenA reference.
+- Candidate C280 C→T editing-associated signal.
+- Bidirectional chromatogram analysis.
+- Twelve independent S10 transfection-well molecular summaries.
+- Flow–molecular pairing.
+- Exploratory direct prediction models.
+The S7 label correction does not alter these original S10 molecular measurements.
+Therefore, do not unnecessarily repeat the entire Sanger analysis.
+Preserve the original AB1-derived results unless an actual error is identified.
+8.1 Direct RAS-to-molecular analysis
+Retain the existing direct association and prediction analysis:
+\[
+RAS\rightarrow M_{\mathrm{RNA}}
+\]
+where \(M_{\mathrm{RNA}}\) is the qualified molecular endpoint or, where absolute calibration is unavailable, the explicitly labeled relative chromatogram index.
+The previous analysis found weak correspondence between RAS and the molecular signal.
+Do not change this conclusion merely because S7's reference labels have been corrected.
+Update the direct analysis only if a dependency or implementation problem is discovered.
+8.2 Staged RES-to-molecular analysis
+If corrected RES calibration is now sufficiently supported and transferable to S10, perform or update:
+\[
+RAS\rightarrow RES\rightarrow M_{\mathrm{RNA}}
+\]
+Where the molecular endpoint supports an actual edited-RNA fraction, evaluate PER:
+\[
+PER=100h(RES)\%
+\]
+Where the Sanger data only support a relative chromatogram index, do not call the resulting prediction PER.
+Use an appropriately named exploratory molecular-signal prediction model instead.
+8.3 Model comparison
+Where scientifically permissible, compare:
+\[
+RAS\rightarrow M_{\mathrm{RNA}}
+\]
+against:
+\[
+RAS\rightarrow RES\rightarrow M_{\mathrm{RNA}}
+\]
+using the same independent validation samples.
+Also preserve the previous BFP-related comparison.
+The earlier analysis found that BFP-positive fraction was more strongly associated with the S10 molecular signal than RAS.
+This finding should remain available unless the corrected analysis provides evidence requiring revision.
+Do not assume that improved S7 calibration necessarily improves S10 molecular prediction.
+8.4 Update dependent results only
+Recalculate:
+- Any RES-dependent S10 predictions.
+- Calibration-domain checks.
+- Model uncertainty.
+- Cross-validation results involving RES.
+- Relevant integrated scientific conclusions.
+Preserve unaffected:
+- Original FCS measurements.
+- Layer 0–1 RAS.
+- BFP-positive fractions.
+- Original Sanger chromatograms.
+- Verified S10 molecular summaries.
+- Direct RAS-to-molecular analysis.
+9. Update Figures and Scientific Reports
+Regenerate all figures affected by the corrected S7 reference labels.
+At minimum, update:
+A. S7 empirical response
+Show actual A/B well-level RAS values under the corrected AC fractions.
+B. Calibration model comparison
+Show the corrected reference points and fitted model predictions.
+C. Original versus corrected calibration
+Show how the 75%/90% correction changes the response relationship and the model evaluation.
+This comparison is essential for transparency.
+D. RES inverse uncertainty
+Update the identifiable and non-identifiable regions.
+E. S7-to-S10 compatibility
+Update the calibration-transfer assessment and any exploratory S10 mappings.
+F. Integrated SONAR summary
+Update any figure or table that currently describes the pre-correction Layer 2 conclusions.
+Do not change figures containing unaffected measurements merely for consistency.
+All actual data figures must remain reproducible from exported source tables.
+10. Required Deliverables
+Deliver an updated versioned SONAR analysis package.
+Suggested release identifier:
+sonar-s7-s10-layer23-v4-label-corrected
+A. Correction Registry
+Create:
+reports/S7_Label_Correction_Record.md
+Include:
+- Original 75%/90% identities.
+- Corrected identities.
+- User-reported reason.
+- Date of correction.
+- Evidence status.
+- Files and analyses affected.
+- Files and analyses deliberately preserved.
+- Reproducibility and versioning implications.
+B. Corrected Calibration Results
+Export:
+- Corrected S7 manifest.
+- Corrected reference-response table.
+- Refit model parameters.
+- Model-comparison metrics.
+- Cross-validation predictions.
+- Inverse-identifiability results.
+- Recalculated RES.
+- Calibration-model metadata.
+C. Original-versus-Corrected Comparison
+Create:
+reports/S7_Calibration_Before_After_Comparison.md
+This report should clearly answer:
+1. How much did the correction improve calibration?
+2. Which previous anomalies disappeared?
+3. Which limitations remain?
+4. Did the preferred model change?
+5. Did the valid RES range expand?
+6. Can RES now be estimated reliably?
+7. Is additional experimental calibration still required?
+Include the actual quantitative results.
+D. Updated Layer 2 Report
+Update:
+reports/Layer2_RES_Calibration.md
+Explain the corrected empirical response, selected models, validation results, uncertainty, and supported calibration range.
+E. Updated Layer 3 Report
+Update:
+reports/Layer3_PER_Calibration.md
+Report whether the corrected RES changes the possibility of meaningful biological calibration.
+Preserve the distinction between a relative Sanger chromatogram signal and a validated RNA-editing percentage.
+F. Updated Integrated Evidence Report
+Update:
+SONAR_Measurement_Evidence_Report.md
+Clearly distinguish:
+- Measurement capabilities demonstrated by Layer 0.
+- RAS quantification and repeatability supported by Layer 1.
+- Corrected reference-calibration results from Layer 2.
+- Molecular measurement and prediction results from Layer 3.
+- Remaining experimental limitations.
+- Reproducibility evidence.
+The report should be suitable for subsequent scientific writing.
+G. Chinese Scientific Summary
+Create:
+SONAR_S7_Correction_Scientific_Summary_ZH.md
+This is particularly important.
+Write a clear Chinese-language explanation of:
+- Why the labels were corrected.
+- How the correction affected Layer 2.
+- Whether RES is now usable.
+- Whether PER becomes more feasible.
+- Which findings should be highlighted in the iGEM Measurement Wiki.
+Avoid lengthy implementation details.
+Focus on actual scientific findings and their interpretation.
+H. Reproducibility Package
+Preserve the original v3 output as an archived baseline.
+Provide:
+- Updated source code.
+- Corrected metadata.
+- Updated model objects.
+- Regenerated results.
+- Updated tests.
+- Figure-generation scripts.
+- Reproducibility instructions.
+- Before/after output comparison.
+Run the complete updated analysis again after freezing the revised configuration.
+Verify that the new results can be reproduced.
+11. Scientific Integrity Requirements
+Apply the 75%/90% correction as explicitly instructed by the experimental team.
+Do not require another confirmation before performing the corrected analysis.
+However, preserve the original labels and document that the correction is based on the team's retrospective recollection rather than independently verified preparation records.
+Do not treat the improved monotonicity of the calibration curve as proof of the correction.
+Do not modify original FCS or Sanger data.
+Do not alter Layer 0–1 RAS to improve calibration.
+Do not fabricate additional AC/INAC reference measurements.
+Do not remove poorly fitting points merely to obtain a more attractive model.
+Do not treat AC DNA fraction as RNA editing percentage.
+Do not force a unique RES where the calibration remains non-identifiable.
+Do not transfer calibration between incompatible population modes.
+Do not report PER unless the molecular endpoint and predictive calibration support that interpretation.
+Do not describe internal cross-validation as independent external experimental validation.
+All reported conclusions must correspond to the corrected analysis version and actual supporting data.
+12. Final Execution Instructions
+Proceed directly with the existing v3 project.
+Do not rebuild SONAR from scratch.
+Perform the correction and complete all dependent analyses.
+Prioritize:
+1. Apply and document the 75%/90% label correction.
+2. Preserve and verify existing Layer 0–1 outputs.
+3. Reconstruct the corrected S7 reference-response dataset.
+4. Refit all Layer 2 calibration models.
+5. Reevaluate cross-validation and RES identifiability.
+6. Determine whether RES can now be used over a supported quantitative range.
+7. Reassess S7-to-S10 transfer.
+8. Update Layer 3 analyses where calibration-dependent.
+9. Regenerate affected figures and tables.
+10. Deliver the complete corrected evidence package.
+Do not stop after demonstrating that the curve looks more monotonic.
+The central scientific question is whether the corrected experimental labels materially improve the reliability and interpretability of RES, and whether that improvement supports any additional biological calibration in Layer 3.
+Conclude the project with a clear answer to:
+After correcting the S7 75%/90% label transposition, can SONAR now provide a quantitatively defensible RES, and does this change what can be claimed about the complete four-layer measurement framework?
+
+Deliver the actual corrected results, not another implementation plan.

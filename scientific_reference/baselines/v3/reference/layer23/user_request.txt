@@ -1,0 +1,835 @@
+SONAR — Layer 2–3 Calibration, Molecular Reconstruction, and Integrated Validation
+1. Mission
+You are continuing the development of SONAR (System for Optical Normalization and Analysis of RNA Editing), a four-layer quantitative measurement framework developed by SUSTech-China for iGEM 2026.
+The previous Work session successfully reconstructed and implemented SONAR Layers 0–1 using the original S7 and S10 experimental datasets.
+The existing project is provided as:
+SONAR_Reconstruction_S7_S10_20261012.zip
+Your task is to continue this existing implementation, resolve its remaining scientific and technical blockers, and perform actual Layer 2–3 calibration and validation to the greatest extent supported by the available experimental evidence.
+This is an implementation and analysis task, not a planning exercise.
+Do not stop after providing recommendations, theoretical models, or another implementation prompt.
+The primary objectives are:
+1. Preserve and extend the existing Layer 0–1 implementation.
+2. Independently reconstruct and verify the S10 OpenA reporter amplicon and candidate RNA-editing site.
+3. Perform quantitative analysis of the existing S10 bidirectional Sanger chromatograms.
+4. Fit, evaluate, and where justified establish the Layer 2 Reporter Calibration model and RES.
+5. Fit and evaluate the Layer 3 Biological Calibration model and PER wherever sufficiently qualified molecular measurements exist.
+6. Investigate and resolve previously identified inconsistencies wherever possible.
+7. Deliver a complete, reproducible, evidence-based analysis package for subsequent iGEM Wiki Measurement writing.
+Do not write the final Wiki page or generate final publication figures in this stage.
+The final scientific narrative and figure designs will be developed separately after reviewing your results.
+2. Provided Materials and Source Priority
+You should have access to the following files.
+A. Existing SONAR reconstruction
+SONAR_Reconstruction_S7_S10_20261012.zip
+This is the current implementation baseline.
+It contains the existing source code, original experimental inputs, reconstructed sample metadata, flow-cytometry analysis, RAS results, tests, diagnostic figures, and scientific reports.
+Important internal files include:
+- README.md
+- reproduce.py
+- src/
+- config/
+- inventory/
+- contexts/
+- results/ras_results.csv
+- results/response_summary.csv
+- results/flow_RNA_well_registry.csv
+- reports/Layer0_Context_Calibration.md
+- reports/Layer1_Flow_Quantification.md
+- reports/Layer2_Reporter_Calibration_Feasibility.md
+- reports/Layer3_Biological_Calibration_Audit.md
+- SONAR_Measurement_Evidence_Report.md
+Review the actual code, configuration, data, and tests before making changes.
+B. Scientific design specification
+The existing archive includes:
+reference/SONAR_Work_EN_v3.1.md
+Use this document as the scientific design reference for the four-layer framework.
+Its mathematical definitions and measurement objectives remain relevant, but proposed methods must not be treated as experimentally validated merely because they appear in the specification.
+The canonical layer names are:
+Layer	Name	Output
+0	Context Calibration	Measurement context
+1	Flow Quantification	RAS
+2	Reporter Calibration	RES
+3	Biological Calibration	PER
+
+
+C. Newly reconstructed candidate OpenA reference
+Two additional files are provided:
+S10_OpenA_edit523_provisional_amplicon.fasta
+S10_OpenA_edit523_reconstruction_notes.md
+These files contain an independently generated preliminary reconstruction of the S10 OpenA reporter amplicon using the original S10 AB1 chromatograms and recorded PCR primers.
+They are intended to resolve a major blocker encountered during the previous Work session.
+They are provisional scientific leads, not validated sequence or molecular-editing references.
+You must independently verify the reconstruction against the original experimental evidence before using it for editing-rate quantification.
+Do not automatically accept the candidate editing position merely because it is biologically plausible.
+3. Strict Experimental Scope
+Only experimental measurements from S7 and S10 are authorized.
+Do not introduce measurements from S1–S6, S8, S9, or unrelated experiments.
+Associated controls, experimental records, construct documentation, and analytical references are permitted when they pertain to S7/S10.
+The newly provided candidate OpenA sequence is permitted because it was reconstructed exclusively from the authorized S10 materials.
+General scientific literature and documented software methods may be consulted, but external experimental measurements must not be incorporated as if they belonged to S7/S10.
+Important established metadata
+The following information has already been confirmed by the experimental team.
+Cell type
+The reporter experiments were conducted using HEK293T cells.
+Record this as user-confirmed experimental metadata rather than leaving the cell type unknown.
+S7
+The experiment contains AC/INAC DNA mixtures with actual AC mass fractions:
+0%, 5%, 15%, 20%, 30%, 40%, 50%, 75%, 90%, and 100%.
+The original condition labeled 10% was corrected to 15%.
+Retain its original source filename and acquisition ID, but analyze it using the corrected 15% label.
+The mixtures were prepared on a DNA mass basis.
+Do not assume that mass fractions equal molar fractions without verifying plasmid lengths.
+S10
+S10 uses a constant reporter DNA input of 100 ng per well and total DNA input of 1,000 ng per well.
+The reporter:editor ratios are:
+1:0, 1:0.5, 1:1, 1:2, 1:4, and 1:8.
+The corresponding editor DNA inputs are:
+0, 50, 100, 200, 400, and 800 ng.
+The editor construct contains ORCA–P2A–BFP, as confirmed by the experimental team.
+Independent experimental units
+A and B represent independent transfection wells under each condition.
+They do not establish independent culture-day replication.
+S10 molecular samples
+The molecular sample suffixes map to flow-cytometry wells as follows:
+- Molecular labels 1 and 2 correspond to well A.
+- Molecular labels 3 and 4 correspond to well B.
+RNA was extracted after flow cytometry at the same experimental time point.
+The precise elapsed time, molecular-label preparation relationship, and sampled cell population remain undocumented.
+Do not ask the user to reconfirm these established facts.
+Continue with the available evidence.
+4. Phase I — Preserve and Audit the Existing Layer 0–1 Implementation
+4.1 Do not rebuild the existing pipeline
+The previous reconstruction has already implemented:
+- FCS decoding and channel mapping.
+- Matched Mock background estimation.
+- Cell and singlet-like event selection.
+- Acquisition-time QC.
+- Reporter-positive population selection.
+- BFP-associated co-expression analysis.
+- RAS calculation.
+- Repeatability and sensitivity analysis.
+- Reproducible result generation.
+- Automated scientific tests.
+Preserve this implementation wherever it is correct.
+Do not create a separate, incompatible SONAR project.
+Extend the existing codebase with Layer 2–3 modules.
+Existing RAS definition
+Maintain:
+\[
+RAS_{\mathcal P}
+=
+\frac{\sum_{i\in\mathcal P}g_i}
+{\sum_{i\in\mathcal P}r_i}
+\]
+where \(g_i\) and \(r_i\) are background-corrected linear EGFP and mCherry measurements.
+The numerator and denominator must use the same selected events.
+Do not change the RAS formula, event-selection logic, or background model merely to improve subsequent calibration results.
+If you discover an actual implementation error, document it, justify the correction, introduce an appropriate new analysis version, and regenerate all affected downstream outputs.
+Baseline verification
+Before extending the pipeline:
+1. Run the existing reproducibility command.
+2. Verify the existing tests.
+3. Record the original analysis version and output hashes.
+4. Check that the current implementation reproduces its archived results.
+5. Establish a versioned baseline for future comparison.
+The existing analysis version is:
+sonar-fresh-s7-s10-20261012-v2
+Do not overwrite its scientific record.
+4.2 Existing optical limitation
+The previous analysis found an identity compensation matrix with USCOMP=False and no matched single-color compensation controls.
+This means the existing RAS values are mathematically reproducible, but complete multicolor optical validity has not been independently established.
+Do not infer missing compensation coefficients from experimental EGFP/BFP correlations.
+Investigate whether any suitable optical controls or instrument configuration evidence are already present in the archive.
+If none exist, retain the optical-validation limitation and proceed with analyses that remain scientifically supportable.
+This issue must not automatically halt sequence reconstruction or exploratory downstream calibration.
+5. Phase II — Reconstruct and Verify the S10 OpenA Reporter Amplicon
+Objective
+Resolve the main molecular-reference blocker identified during the previous Work session.
+The complete OpenA plasmid GenBank file is unavailable.
+Do not stop or request the complete plasmid sequence.
+A full plasmid is not required if the relevant reporter amplicon, molecular editing site, and surrounding sequence can be reconstructed and independently supported by existing data.
+5.1 Existing primer information
+The original S10 workbook 523RepEdit.xlsx contains the following primers:
+Forward primer
+ATGGCCGATAAGCAGAAGAACG
+Reverse primer
+CCACACTTTTCACCCAGGTCAC
+The primers delimit a 544 bp region in the available generic reporter design.
+However, the actual S10 sample is identified as OpenA1-edit523.
+The previous analysis correctly recognized that the generic 544 bp reference could not automatically be treated as the exact S10 OpenA reference.
+A subsequent independent reconstruction found a candidate 523 bp amplicon with an approximately 21 bp internal difference.
+The provisional sequence is included in:
+S10_OpenA_edit523_provisional_amplicon.fasta
+5.2 Independently reconstruct the amplicon
+Use the original AB1 chromatograms rather than merely accepting the provided FASTA.
+Begin with the no-editor S10 samples.
+Construct a consensus reference using:
+- Forward and reverse Sanger reads.
+- Verified read orientation.
+- Appropriate quality trimming.
+- Read-overlap consistency.
+- Local sequence alignment.
+- Primer anchoring.
+- Independent no-editor molecular samples.
+Use the actual AB1 base calls and chromatogram data as the primary sequencing evidence.
+The previous audit found discrepancies between the .seq exports and AB1 calls in 19 of 48 reads.
+Do not silently replace AB1 calls with edited or vendor-exported text sequences.
+Report disagreements explicitly.
+Reconstruction requirements
+Determine:
+- The most strongly supported amplicon length.
+- Primer positions.
+- Forward/reverse overlap.
+- Internal insertions or deletions relative to the generic reporter.
+- Base-level consensus confidence.
+- Regions supported directly by chromatograms.
+- Regions inferred from primer or generic design information.
+- Ambiguous or low-confidence positions.
+The preliminary reconstruction reported approximately 500 central positions supported by bidirectional reads, with terminal sequence supplied through primer-anchored reference information.
+Verify this claim independently.
+Do not represent inferred terminal bases as independently sequence-verified positions.
+Compare the reconstructed sequence against the generic reporter design to determine whether the inferred architecture is consistent with the intended EGFP–editing-switch–ecDHFR-DD reporter.
+5.3 Investigate the candidate editing site
+The preliminary reconstruction identified:
+Candidate position: C280
+Coordinate convention:
+523 bp amplicon, 1-based indexing, forward orientation.
+The candidate local codon is:
+\[
+CGA \longrightarrow TGA
+\]
+The corresponding RNA transition is:
+\[
+CGA \longrightarrow UGA
+\]
+This could introduce a premature stop codon and is consistent with the intended editing-dependent reporter mechanism.
+However:
+C280 is a candidate site, not a verified molecular target.
+Independently evaluate:
+1. Whether C280 is supported by the reconstructed reference sequence.
+2. Whether it is located in the expected coding frame.
+3. Whether the local sequence and predicted amino-acid consequence are consistent with the reporter architecture.
+4. Whether forward and reverse sequencing independently support the reference base.
+5. Whether other cytidine positions could represent the actual intended editing target.
+6. Whether the position can be established without selecting the site solely because it shows the strongest editor-dose association.
+For forward reads, the expected C→U edit appears as a C/T mixture in RT-derived cDNA.
+For reverse reads, the corresponding signal appears as a G/A mixture.
+Use correct reverse-complement coordinates and fluorescence-channel assignments.
+Do not select the target site based solely on the largest secondary peak.
+5.4 Examine other possible editing sites
+Analyze additional cytidine positions in the reconstructed amplicon.
+Identify possible:
+- Background secondary peaks.
+- Sequencing artifacts.
+- Bystander editing signatures.
+- Alignment ambiguities.
+- Other biologically plausible editable positions.
+Distinguish site identification from editing-rate quantification.
+If the available evidence supports C280 most strongly, explain why.
+If another candidate is better supported, report that finding.
+If no unique target can be established, retain multiple candidates with explicit confidence assessments rather than forcing a single answer.
+Required molecular-reference output
+Produce:
+results/molecular/OpenA_amplicon_consensus.fasta
+results/molecular/OpenA_reference_alignment.csv
+results/molecular/OpenA_candidate_editing_sites.csv
+reports/OpenA_Amplicon_Reconstruction.md
+The report must distinguish sequence-derived observations, mechanistic inference, and experimentally verified conclusions.
+6. Phase III — Quantitative Analysis of the S10 Sanger Data
+Objective
+Go beyond the previous Sanger data audit and actually analyze the editing-associated chromatogram signals.
+The S10 dataset contains:
+- 48 AB1 reads.
+- 24 molecular sample labels.
+- 12 independent transfection wells.
+- Six reporter:editor conditions.
+- Two independent transfection wells per condition.
+Each well contributes two molecular labels, each with forward and reverse sequencing.
+These molecular labels and sequencing directions are technical or nested measurements, not additional independent biological replicates.
+6.1 Read-level processing
+Implement a reproducible chromatogram-processing workflow.
+For each AB1 file:
+1. Read and verify the AB1 metadata.
+2. Determine sequence orientation.
+3. Retrieve the appropriate processed fluorescence trace channels.
+4. Verify dye-channel identity from the ABI metadata.
+5. Align the sequence to the reconstructed reference.
+6. Locate the candidate edited position.
+7. Extract the relevant reference and alternative nucleotide peak information.
+8. Evaluate local baseline and peak quality.
+9. Record read quality, ambiguity, and failure reasons.
+The preliminary analysis used processed ABI fluorescence channels DATA9–DATA12, dye-order metadata FWO_1, and called-base positions from PLOC2.
+You may use this as an implementation lead, but verify the actual AB1 format and channel mapping independently.
+Do not assume a universal dye-channel order across files.
+6.2 Quantify the candidate editing signal
+For the candidate C280 position, analyze:
+Forward direction
+Reference base C; candidate edited base T.
+Reverse direction
+Reference base G; candidate edited base A.
+A simple exploratory signal may be expressed as:
+\[
+S_{\mathrm{alt}}
+=
+\frac{I_{\mathrm{alt}}}
+{I_{\mathrm{ref}}+I_{\mathrm{alt}}}
+\]
+However, this is initially a chromatogram peak-composition statistic.
+It is not automatically an accurate RNA-editing fraction.
+Investigate the effects of:
+- Baseline fluorescence.
+- Dye-channel cross-talk.
+- Sequence context.
+- Unequal peak responses.
+- Peak overlap.
+- Read position.
+- Background secondary peaks.
+- Sequence alignment uncertainty.
+Use no-editor samples to characterize the observed background at the candidate position.
+Compare forward and reverse measurements without assuming their raw peak ratios should be numerically identical.
+6.3 Existing preliminary observations
+A separate exploratory analysis of the S10 chromatograms found approximately:
+Editor:reporter DNA ratio	Forward alternative peak ratio	Reverse alternative peak ratio
+0	0.045	0.016
+0.5	0.045	0.049
+1	0.048	0.059
+2	0.074	0.145
+4	0.107	0.164
+8	0.145	0.287
+
+
+These values were obtained from the preliminary C280 analysis.
+They are provided only as diagnostic leads.
+Recompute every value directly from the original AB1 data.
+Do not use these numbers as calibration targets.
+The increasing alternative-peak signal in both directions suggests that the candidate site deserves further investigation.
+Nevertheless, the large forward/reverse differences indicate that quantitative assay bias must be assessed.
+A vendor warning was also identified for 1-8-2.F, indicating mixed peaks.
+Inspect that read carefully rather than automatically deleting it or accepting its value.
+6.4 Background correction and assay qualification
+Develop a defensible strategy for estimating editing-associated signal above the no-editor background.
+Where justified, evaluate:
+- Raw alternative-peak fractions.
+- No-editor-background-corrected signals.
+- Forward/reverse agreement.
+- Technical-read reproducibility.
+- Robustness to peak-processing choices.
+- Sensitivity to individual low-quality reads.
+If an established Sanger deconvolution method is appropriate, it may be implemented and compared.
+However, do not assume that an established algorithm automatically validates the assay for this exact reporter sequence and sequencing context.
+If suitable known-mixture standards are unavailable, do not fabricate them or claim that numerical background correction alone establishes an accurate absolute editing percentage.
+Separate:
+A. Detectable editing-associated chromatogram response
+Evidence that the alternative nucleotide signal changes reproducibly.
+B. Quantitatively calibrated RNA-editing fraction
+An estimate whose accuracy and uncertainty are supported by an appropriate measurement model and reference evidence.
+The second claim requires stronger evidence than the first.
+6.5 RNA origin and DNA contamination
+The experimental team confirmed that RNA was extracted after the flow-cytometry measurement.
+Record this provenance.
+However, the previous audit did not locate complete documentation of DNase treatment, no-RT controls, or residual plasmid-DNA exclusion.
+Search the supplied S10 materials for this information before declaring it absent.
+If those controls are unavailable, explicitly retain the uncertainty.
+Do not claim that an alternative chromatogram peak necessarily represents RNA editing rather than sequence variation, contamination, or another technical process.
+This limitation must not prevent appropriate exploratory analysis.
+6.6 Aggregate measurements at the correct level
+For each independent S10 transfection well:
+- Retain the two molecular sample labels.
+- Retain forward and reverse technical measurements.
+- Summarize their agreement.
+- Quantify technical uncertainty where possible.
+- Produce a single well-level molecular result or explicit unavailable status.
+Never treat 48 AB1 reads as 48 independent biological observations.
+The maximum independent transfection-well count remains 12.
+6.7 Molecular output status
+Use explicit evidence-dependent classifications.
+For example:
+- TARGET_UNRESOLVED
+- CANDIDATE_SITE_SUPPORTED
+- EDITING_ASSOCIATED_SIGNAL_DETECTED
+- MOLECULAR_FRACTION_EXPLORATORY
+- MOLECULAR_FRACTION_QUALIFIED
+- ASSAY_VALIDATION_INSUFFICIENT
+Define the scientific meaning of each status.
+If absolute RNA-editing percentages cannot be justified, preserve valid site-specific relative signals instead of either fabricating percentages or abandoning the entire analysis.
+Required molecular outputs
+Produce:
+results/molecular/S10_read_level_peak_metrics.csv
+results/molecular/S10_bidirectional_concordance.csv
+results/molecular/S10_well_level_molecular_results.csv
+results/molecular/S10_bystander_site_analysis.csv
+reports/S10_Sanger_Quantification.md
+Generate actual diagnostic chromatogram figures, including representative no-editor and editor-positive samples.
+Show the reference and alternative nucleotide signals at the same aligned position.
+7. Phase IV — Actual Layer 2 RES Calibration
+Objective
+Fit and evaluate an empirical reporter-response model using the S7 AC/INAC reference series.
+Do not stop at a feasibility assessment.
+The previous Work session characterized the reference response but did not fit an actual calibration model.
+This time, implement the models and evaluate their performance.
+The intended relationship is:
+\[
+RAS=g(A)
+\]
+with:
+\[
+RES=g^{-1}(RAS)
+\]
+where a valid inverse exists.
+7.1 Reference input definition
+The currently confirmed S7 input axis is AC DNA mass fraction.
+Use the corrected values:
+0, 5, 15, 20, 30, 40, 50, 75, 90, and 100%.
+Investigate whether the existing materials provide exact AC/INAC plasmid lengths and reference-state definitions.
+If the lengths are verified, calculate corresponding molar fractions and distinguish them from the original mass fractions.
+If lengths are unavailable, retain the verified mass-fraction axis.
+Do not silently relabel mass percentages as molar percentages.
+Do not label either as experimentally measured RNA-editing percentages.
+7.2 Investigate the previous calibration anomaly
+The previous reconstruction found:
+- RAS approximately 0.534 at 0% AC.
+- RAS approximately 1.132 at 75% AC.
+- RAS approximately 0.979 at 90% AC.
+- RAS approximately 1.130 at 100% AC.
+There is therefore a substantial reversal between 75% and 90%, while 75% and 100% have similar responses.
+This anomaly must be investigated before promoting an inverse calibration.
+Revisit:
+- Original experimental records.
+- Condition labels.
+- Actual independent A/B wells.
+- Reporter fluorescence distributions.
+- mCherry expression levels.
+- Sample event counts.
+- Background sensitivity.
+- Gate sensitivity.
+- Possible experimental or preparation inconsistencies.
+- Available same-series plate fluorescence measurements.
+Do not relabel or remove the 90% reference merely because it disrupts monotonicity.
+Determine whether the anomaly is compatible with technical variation, a reference-composition problem, or a reproducible biological response.
+If its origin cannot be resolved, retain the anomaly and reflect it in the model uncertainty.
+7.3 Fit candidate calibration models
+Evaluate a small, scientifically justified set of models.
+Include, where appropriate:
+Model A — Affine calibration
+\[
+RAS=\alpha+\beta A
+\]
+Model B — Monotonic shape-constrained calibration
+A piecewise or isotonic response subject to explicit monotonicity assumptions.
+Model C — Low-complexity nonlinear calibration
+Use only if the data density and independent replication justify additional parameters.
+Avoid high-degree polynomial interpolation or flexible models that simply pass through every measured point.
+For each model:
+- Fit using the independent well-level RAS observations.
+- Estimate parameter uncertainty.
+- Examine residuals.
+- Evaluate local response resolution.
+- Assess inversion stability.
+- Compare prediction and reference-fraction recovery.
+- Identify regions where different input fractions are not distinguishable.
+Do not select a model solely because it produces a complete 0–100% inverse.
+7.4 Calibration validation
+Where the existing data permit, perform grouped internal validation.
+Possible analyses include leave-one-well-out and leave-one-reference-level-out evaluation, with their different inferential meanings clearly stated.
+Do not describe either as validation using independently prepared external reference mixtures.
+Report:
+- Calibration residuals.
+- Input-fraction recovery error.
+- Bias.
+- Precision.
+- Bootstrap or other justified intervals.
+- Identifiable response range.
+- Regions of non-identifiability.
+Pay particular attention to the low-AC range, where several reference conditions have similar RAS.
+7.5 Calculate RES where justified
+For samples within a supported identifiable region, estimate:
+\[
+RES=g^{-1}(RAS)
+\]
+Include propagated uncertainty.
+If the inverse is nonunique, return an identifiable interval or explicit non-identifiability status.
+Do not silently extrapolate beyond the reference range or clip values to 0 and 1.
+Use distinct statuses for:
+- Exploratory calibration fit.
+- Internally evaluated calibration.
+- Validated calibration within a stated domain.
+- Non-identifiable response.
+- Out-of-calibration-range response.
+Where molecular reference identity or calibration accuracy remains insufficient, an exploratory reference-equivalent estimate may be reported separately, but must not be presented as a validated RES.
+7.6 Assess S7-to-S10 compatibility
+This is a critical part of the project.
+The S7 AC/INAC references were analyzed using the reporter-population mode.
+S10 contains both reporter-population and editor-linked BFP co-expression measurements.
+Do not automatically apply the S7 reference curve to S10 co-expression RAS.
+Assess compatibility of:
+- Reporter architecture.
+- AC/INAC reference states.
+- HEK293T cellular context.
+- Reporter loading.
+- Treatment conditions.
+- Fluorescence acquisition profile.
+- Population-selection mode.
+- Editor presence.
+- BFP expression.
+The same CytoFLEX acquisition profile alone does not establish biological calibration transferability.
+If a valid transfer cannot be established, keep S7-specific reference calibration separate.
+A clearly labeled exploratory S10 mapping may be examined for sensitivity analysis, but must not be treated as a validated cross-population RES.
+Layer 2 deliverables
+Produce:
+results/calibration/S7_model_comparison.csv
+results/calibration/S7_calibration_predictions.csv
+results/calibration/S7_inverse_identifiability.csv
+results/calibration/S7_RES_results.csv
+reports/Layer2_RES_Calibration.md
+Save all actual fitted models and their parameters.
+Include diagnostic plots of the original calibration points, candidate fits, residuals, inverse uncertainty, and unresolved regions.
+8. Phase V — Layer 3 PER Calibration
+Objective
+Use the molecular results from Phase III and optical results from Layers 0–2 to evaluate whether SONAR can predict an independently measured RNA-editing endpoint.
+Do not assume that successful computation of a Sanger secondary-peak metric automatically qualifies the data for PER.
+8.1 Define the molecular endpoint
+The first intended endpoint is:
+Editing fraction at a named site of S10 OpenA reporter RNA.
+Do not substitute introduced APOE or endogenous APOE editing measurements without appropriate target-specific evidence.
+If C280 is independently confirmed as the target, use its verified sequence and coordinate definition.
+Specify:
+- Target transcript.
+- Site and strand.
+- Reference and alternative nucleotides.
+- Sampling population.
+- Measurement method.
+- Uncertainty.
+- Independent experimental unit.
+The term PER refers to a predicted edited fraction at the sampling time, not a kinetic derivative.
+8.2 Reconstruct the final flow–RNA pairing table
+Use the existing:
+results/flow_RNA_well_registry.csv
+Maintain the established many-to-one pairing between molecular technical measurements and independent transfection wells.
+For every well, join:
+- Reporter-population RAS.
+- Co-expression RAS where available.
+- BFP-positive fraction.
+- Reporter/editor DNA inputs.
+- Molecular result.
+- Molecular result uncertainty.
+- Molecular assay qualification status.
+Preserve the distinction between measured RNA population and flow-selected population.
+If RNA was extracted from bulk remaining cells rather than sorted \(R^+B^+\) cells, do not label the molecular result as a co-expression-gated editing fraction.
+8.3 First evaluate the actual biological relationship
+Before fitting a predictive model, examine the measured relationship between:
+- Editor DNA loading.
+- BFP-positive fraction.
+- RAS.
+- Molecular editing-associated signal or qualified RNA-editing fraction.
+The previous S10 analysis showed that BFP-positive prevalence increases with editor DNA loading, while RAS does not increase monotonically.
+Investigate whether the new molecular results show:
+- A dose-associated editing signal.
+- A relationship with reporter-population RAS.
+- A relationship with co-expression RAS.
+- A relationship with BFP expression.
+- A discrepancy between fluorescence activation and the molecular endpoint.
+Do not hide negative or unexpected associations.
+A strong dose-dependent molecular editing signal combined with weak or nonmonotonic RAS would be an important scientific result, even if it limits the usefulness of PER.
+8.4 Fit a direct RAS-to-RNA baseline
+If qualified molecular editing fractions are available, first establish a simple baseline:
+\[
+E_{\mathrm{RNA}}=f(RAS)
+\]
+Evaluate a model appropriate for the small number of independent wells.
+Avoid unnecessary complexity.
+If only relative chromatogram signals are supported, analyze their relationship with RAS as an exploratory association, not as a PER model.
+8.5 Fit the staged SONAR model
+If a suitable RES calibration exists and can legitimately be transferred to the corresponding S10 reporter population, evaluate:
+\[
+E_{\mathrm{RNA}}=h(RES)
+\]
+and:
+\[
+PER=100h(RES)\%
+\]
+Do not apply an invalid or non-identifiable RES simply to complete the four-layer chain.
+If a valid S7-to-S10 calibration bridge is unavailable, report that limitation and do not present an unsupported staged PER.
+8.6 Compare direct and staged prediction
+This comparison is scientifically important.
+Compare:
+\[
+RAS\rightarrow E_{\mathrm{RNA}}
+\]
+against:
+\[
+RAS\rightarrow RES\rightarrow PER
+\]
+using the same appropriate independent held-out observations.
+Where the data support meaningful evaluation, report:
+- MAE.
+- RMSE.
+- Signed bias.
+- Prediction intervals.
+- Prediction-interval coverage, where estimable.
+- Performance across the observed molecular-response range.
+Use validation splits grouped by independent transfection well.
+Keep all technical sequencing observations from the same well together.
+Explore leave-one-dose-condition-out evaluation if feasible, while acknowledging the small sample size and the uncertainty of extrapolating to unseen doses.
+Do not randomly divide events or sequencing reads from the same well into independent training and test sets.
+Important mathematical consideration
+If RES is a deterministic invertible transformation of RAS, it does not inherently introduce new sample-level information.
+Any apparent improvement must therefore be interpreted carefully.
+The intermediate reference calibration may improve standardization, interpretability, or model behavior, but predictive superiority is not guaranteed.
+Do not claim that adding a calibration layer automatically improves RNA-editing prediction.
+8.7 Evaluate alternative explanatory models
+If the molecular endpoint is qualified but a simple RAS-only model performs poorly, consider a limited exploratory analysis incorporating:
+- Reporter-population RAS.
+- BFP-positive fraction.
+- Co-expression RAS, where defined.
+- Relevant expression covariates.
+Such models must be named separately.
+For example:
+\[
+E_{\mathrm{bulk}}
+=
+h(RAS,CEF,\text{expression covariates})
+\]
+Do not silently redefine the original RAS or RES to incorporate additional predictors.
+Given the small number of independent S10 wells, prioritize model interpretability and conservative complexity.
+Do not interpret editor-dose associations as proof of causal editing efficiency.
+8.8 PER qualification rules
+Only report a validated PER when:
+1. The molecular editing site and endpoint are sufficiently established.
+2. The molecular assay supports quantitative editing-fraction estimation.
+3. Flow and RNA observations are correctly paired.
+4. The relevant population and calibration domains are compatible.
+5. Model performance has been appropriately evaluated on independent experimental observations.
+6. The prediction uncertainty and supported input range are documented.
+If these conditions are not met, complete the computational implementation and any scientifically useful exploratory fitting, but label it appropriately.
+A provisional model must not be presented as a validated RNA-editing predictor.
+Layer 3 deliverables
+Produce:
+results/prediction/S10_flow_molecular_pairs.csv
+results/prediction/S10_direct_model_results.csv
+results/prediction/S10_staged_model_results.csv
+results/prediction/S10_prediction_validation.csv
+reports/Layer3_PER_Calibration.md
+Export fitted models only when the data support fitting.
+Explicitly report which outputs are validated, exploratory, or unavailable.
+9. Phase VI — Resolve Remaining Blockers Systematically
+Do not leave previously identified problems unresolved merely because they were described as limitations in the earlier report.
+Actively investigate each issue using the available evidence.
+Create a blocker-resolution register.
+At minimum, address the following.
+Blocker	Required action
+Missing complete OpenA GenBank	Independently reconstruct the relevant amplicon from primers and AB1 reads; do not require the whole plasmid
+Generic 544 bp versus candidate 523 bp	Verify the actual length, alignment and internal difference
+Candidate C280 target	Confirm sequence position, coding frame, orientation and molecular plausibility
+Forward/reverse Sanger disagreement	Investigate baseline, dye response, alignment, technical quality and strand-specific bias
+Sanger secondary peaks not equal to editing percentages	Implement quantitative analysis and explicitly assess whether absolute molecular calibration is justified
+Unknown RNA sampling population	Search existing metadata; otherwise retain an appropriately defined bulk/unknown-population endpoint
+Incomplete DNA-contamination controls	Search original records; report the remaining limitation if evidence is unavailable
+S7 75%/90% response reversal	Re-examine original labels, replicate measurements, sample behavior and preparation evidence
+Missing AC/INAC plasmid lengths	Search available construct records; use the verified mass-fraction scale if lengths remain unknown
+S7/S10 population mismatch	Perform an explicit compatibility assessment before transferring calibration
+Missing single-color compensation controls	Search existing inputs; do not invent compensation or falsely claim optical validation
+Missing independent experimental batches	Restrict reproducibility and prediction claims to the actual available replication level
+
+
+For each blocker, record:
+- Initial problem.
+- Evidence examined.
+- Action performed.
+- Result.
+- Whether the problem is resolved.
+- Remaining limitation.
+- Consequences for RAS, RES, or PER.
+Distinguish technical problems that can be resolved computationally from experimental evidence that genuinely does not exist.
+Do not request already confirmed metadata again.
+Do not let one unresolved blocker prevent the completion of unrelated supported analyses.
+10. Phase VII — Integrated Four-Layer Evaluation
+After completing the molecular reconstruction and both calibration analyses, evaluate the SONAR system as a whole.
+The scientific objective is not merely to report four numerical outputs.
+It is to establish what additional information and interpretability each layer contributes.
+Use the following questions to structure the integrated evaluation.
+Layer 0
+Can the experimental fluorescence measurements be processed under a consistent, reproducible context?
+Layer 1
+Does continuous mCherry normalization improve the repeatability or interpretability of reporter fluorescence?
+What additional information does editor-linked BFP provide?
+Layer 2
+Does the AC/INAC reference ladder establish a useful quantitative reporter calibration?
+Over what range can RAS be reliably converted into a reference-equivalent input?
+Layer 3
+Can the optical reporter response predict an independently established RNA-editing fraction?
+Does intermediate reporter calibration provide demonstrable value beyond direct RAS-based prediction?
+Overall measurement contribution
+Which properties of SONAR are transferable to other synthetic biology reporter systems?
+Distinguish generalizable measurement principles from reporter-specific calibration curves.
+11. Software Implementation and Validation Requirements
+Extend the existing codebase rather than creating a disconnected replacement.
+Introduce clearly separated modules for:
+- Amplicon reconstruction.
+- AB1 chromatogram processing.
+- Site-level molecular analysis.
+- Reporter calibration.
+- Inverse calibration and uncertainty.
+- Biological calibration.
+- Prediction validation.
+- Integrated reporting.
+Preserve the existing Layer 0–1 interfaces wherever possible.
+New modules should use the existing sample manifest, population definitions, RAS values, and provenance records.
+Required tests
+Add meaningful tests covering:
+Molecular reconstruction
+Correct primer orientation, reverse complement, amplicon coordinates, sequence alignment, and reference/alternative nucleotide identity.
+Sanger processing
+Correct dye-channel mapping, peak selection, handling of low-quality reads, technical-read grouping, and missing-data states.
+Replication
+The 48 AB1 reads must never become 48 independent biological samples.
+Reporter calibration
+Correct reference-fraction units, model inversion, handling of plateaus, out-of-range inputs, and non-identifiable regions.
+Biological calibration
+Correct molecular target identity, flow/RNA grouping, prevention of training-test leakage, and appropriate unavailable states.
+Versioning
+Changes to upstream RAS calculations must invalidate dependent calibration versions unless a justified compatibility relationship is established.
+Reproducibility
+New analysis results and figures must be regenerable from archived inputs and versioned configuration.
+Retain or extend the existing execution entry point.
+If practical, the complete analysis should continue to run through:
+python reproduce.py --verify
+Ensure the new calibration modules are included in the reproducibility checks.
+12. Required Final Deliverables
+This task must produce actual analytical outputs, not just recommendations.
+A. Updated SONAR Codebase
+Deliver a complete, runnable project with the existing Layer 0–1 implementation and newly added Layer 2–3 modules.
+Preserve the previous release and create a new versioned analysis record.
+Include actual model objects, configuration, tests, and execution instructions.
+B. Molecular Reconstruction Package
+Include the reconstructed OpenA reference, candidate editing-site evaluation, sequence-alignment evidence, and base-level quality analysis.
+Clearly identify which sequence regions are experimentally supported and which remain provisional.
+C. Sanger Quantification Package
+Include all 48 read-level analyses, technical-read summaries, 12 well-level molecular results, forward/reverse comparisons, and assay-validation findings.
+Do not invent editing percentages when the available evidence only supports relative chromatogram signals.
+D. Layer 2 Calibration Package
+Include:
+- Candidate model fits.
+- Model comparison.
+- Actual reference-response data.
+- Residuals.
+- Identifiable ranges.
+- Inverse uncertainty.
+- Reference-input recovery analysis.
+- Supported or provisional RES estimates.
+- Exact calibration limitations.
+E. Layer 3 Calibration Package
+Include:
+- Molecular endpoint qualification.
+- Flow/RNA pairing.
+- Direct RAS-to-RNA analysis.
+- Staged RES-to-RNA analysis where supported.
+- Prediction performance.
+- Independent validation diagnostics.
+- Supported or provisional PER estimates.
+- Explicit reasons for unavailable outputs.
+F. Blocker Resolution Report
+Create:
+SONAR_Layer23_Blocker_Resolution.md
+For every previously identified blocker, explain what was investigated, what was resolved, and what remains unsupported.
+This report must focus on actual resolution attempts rather than merely repeating the previous limitations.
+G. Integrated Scientific Evidence Report
+Create:
+SONAR_Layer23_Evidence_Report.md
+This is a critical deliverable.
+It should be written for a scientific writer preparing the iGEM Measurement page.
+Use clear scientific language, not primarily software-development terminology.
+Include:
+1. Scientific objectives of Layers 2 and 3.
+2. Methods actually implemented.
+3. Experimental datasets and independent sample counts.
+4. Key numerical findings.
+5. Validated versus exploratory results.
+6. Unexpected findings and their interpretation.
+7. Model performance and uncertainty.
+8. Calibration-domain limitations.
+9. Scientific implications for the complete SONAR framework.
+10. Exact source tables and figure evidence.
+Make it possible to understand the findings without inspecting every source-code module.
+Provide a concise Chinese scientific summary in a separate file:
+SONAR_Layer23_Scientific_Summary_ZH.md
+The English evidence report should be the primary technical writing reference.
+H. Figure Evidence Package
+Generate actual diagnostic figures supporting the new analyses.
+Prioritize:
+- OpenA reference reconstruction and candidate target site.
+- Representative bidirectional chromatograms.
+- Editing-associated signal across S10 conditions.
+- Forward/reverse agreement and technical uncertainty.
+- S7 AC/INAC empirical response and fitted models.
+- RES inverse identifiability.
+- Flow–molecular association.
+- Direct versus staged prediction comparison, where supported.
+Do not invent data or create publication-style figures suggesting unvalidated model performance.
+Every plot must be generated from real data tables.
+Create:
+SONAR_Layer23_Figure_Evidence_Inventory.md
+For each potential Wiki figure, identify its scientific message, supporting dataset, source table, numerical findings, and limitations.
+A separate subsequent task will prepare the final publication figures.
+I. Updated Integrated Summary
+Update the existing:
+SONAR_Measurement_Evidence_Report.md
+Integrate the actual Layer 2–3 results with the existing Layer 0–1 evidence.
+Do not rewrite the earlier results without cause.
+Clearly report the highest supported output of every layer and the status of the full measurement chain.
+13. Scientific Integrity and Decision Rules
+The goal is to complete the strongest scientifically defensible SONAR system supported by the available data.
+Actively attempt the calibration.
+Do not stop at feasibility discussion when actual model fitting and evaluation can be performed.
+Do not force successful calibration.
+A fitted function is not automatically a validated measurement.
+Preserve the existing numerical foundations.
+Do not alter RAS definitions or Layer 0–1 parameters to improve RES/PER performance.
+Use the original experimental evidence.
+The provisional OpenA reconstruction is a lead to verify, not a ground-truth reference to assume.
+Maintain independent experimental units.
+Technical reads, repeated acquisitions, and flow events do not increase biological sample size.
+Separate molecular signals from editing percentages.
+An uncalibrated secondary-peak ratio must not be reported as a quantitatively verified RNA-editing fraction.
+Separate reporter calibration from molecular calibration.
+An AC DNA input fraction is not an RNA editing percentage.
+Respect population compatibility.
+Do not transfer reporter-population calibration to BFP-gated populations without evidence.
+Report negative results.
+If molecular editing increases while RAS remains weak or nonmonotonic, investigate and report that finding rather than forcing the expected relationship.
+Use the available data efficiently.
+Do not pursue unnecessarily complex models when independent sample size is limited.
+Continue despite partial limitations.
+If PER cannot be validated, deliver the completed molecular analysis, exploratory associations, supported Layer 2 results, reproducible software, and precise reasons preventing further claims.
+14. Execution Priorities
+Proceed directly with execution.
+The required order is:
+First: Verify the existing Layer 0–1 baseline and preserve its results.
+Second: Reconstruct and verify the OpenA amplicon using S10 primers and original AB1 chromatograms.
+Third: Identify the candidate RNA-editing site and perform actual bidirectional Sanger signal analysis.
+Fourth: Fit and evaluate S7 reporter calibration models and their identifiable RES ranges.
+Fifth: Establish qualified S10 molecular endpoints wherever supported.
+Sixth: Fit and validate direct and staged biological prediction models wherever scientifically permissible.
+Seventh: Resolve outstanding blockers and produce the integrated evidence package.
+The molecular reconstruction and S7 reporter calibration may proceed independently, but the final biological model must use compatible, versioned upstream results.
+Do not spend the task primarily rewriting documentation or reproducing analyses already completed correctly.
+Prioritize scientific analysis and model validation.
+15. Final Success Criteria
+At completion, the project should have:
+- A preserved, reproducible Layer 0–1 implementation.
+- An independently evaluated S10 OpenA amplicon reconstruction.
+- A verified or explicitly provisional candidate editing-site definition.
+- Actual bidirectional analysis of all eligible S10 Sanger chromatograms.
+- A well-level molecular measurement table.
+- Fitted and evaluated S7 reporter calibration models.
+- An explicit assessment of where RES can and cannot be estimated.
+- Actual biological calibration attempts whenever molecular evidence permits.
+- A direct RAS-to-molecular baseline.
+- A staged RES-to-molecular comparison where supported.
+- Documented uncertainty, model validation, and applicability limits.
+- Complete, reproducible Layer 2–3 code and results.
+- A clear scientific evidence package ready for subsequent Wiki writing.
+The objective is not to manufacture a complete four-layer success story.
+The objective is to determine, using the available S7/S10 evidence, exactly how far SONAR can progress from fluorescence quantification toward calibrated RNA-editing prediction.
+A scientifically meaningful partial calibration, with identified limitations and transparent validation, is preferable to an unsupported numerical PER.
+However, do not stop at theoretical feasibility when actual quantitative analysis is possible.
+Complete the work now using the available materials, and deliver the full analytical results and evidence package.

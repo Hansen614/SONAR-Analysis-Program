@@ -1,0 +1,1210 @@
+SONAR — Final Scientific Consolidation, RES Model Finalization, and Codex Handoff
+1. Mission and Overall Objectives
+You are continuing the development of SONAR (System for Optical Normalization and Analysis of RNA Editing), a four-layer quantitative measurement framework developed for the SUSTech-China iGEM 2026 project.
+The latest completed scientific analysis is provided as:
+SONAR_S7_S10_Layer23_v4_label_corrected_20261013.zip
+This archive contains the corrected S7/S10 reconstruction, Layers 0–3 implementation, calibration analyses, molecular measurements, validation results, source code, and scientific reports.
+Your task is to complete the final scientific consolidation of SONAR before handing the project to Codex for software engineering and user-interface development.
+This is not another reconstruction from scratch.
+It is not a request for a new theoretical framework.
+It is an execution task intended to produce a scientifically coherent, reproducible, and software-ready measurement system.
+The existing four-layer architecture must be preserved:
+Layer	Name	Primary function	Output
+Layer 0	Context Calibration	Establish a reproducible fluorescence measurement context	Context profile
+Layer 1	Flow Quantification	Quantify reporter-normalized fluorescence	RAS
+Layer 2	Reporter Calibration	Convert RAS to reference-equivalent reporter activity	RES
+Layer 3	Biological Calibration	Evaluate and, where justified, predict molecular RNA editing	PER
+
+
+Strategic priorities
+The final SONAR system should be centered on three established or actively developed contributions:
+First: reliable fluorescence quantification.
+Layers 0–1 should provide a reproducible method for extracting interpretable reporter responses from multicolor flow-cytometry data.
+Second: reference-calibrated measurement.
+Layer 2 and RES should become the principal mathematical modeling contribution.
+This is the highest priority of the current task.
+Third: molecular evaluation.
+Layer 3 should retain the complete molecular reconstruction, Sanger analysis, modeling attempts, and actual validation results, while clearly distinguishing relative molecular signals from quantitatively validated RNA-editing percentages.
+The objective is not to make every layer appear equally successful.
+Instead, develop a complete, scientifically defensible measurement system whose strongest quantitative contributions are reproducible RAS measurement and empirical RES calibration.
+Final software handoff
+After completing the scientific consolidation, prepare a fully self-contained Codex handoff package containing:
+- Complete SONAR source code.
+- Original authorized experimental data.
+- Corrected metadata.
+- Final scientific definitions.
+- Frozen model parameters.
+- Executable analysis modules.
+- Tests and expected outputs.
+- Scientific documentation.
+- Software interface specifications.
+- A complete, ready-to-use English Codex implementation prompt.
+The user must be able to upload one ZIP archive into a new Codex conversation and proceed directly with software development without reconstructing previous project history.
+Do not develop the full graphical application yourself in this stage.
+Your responsibility is to deliver a scientifically finalized, well-tested analytical foundation and a complete software-development handoff.
+2. Scientific Scope, Data Integrity, and Version Control
+2.1 Use the corrected v4 project as the authoritative starting point
+Begin by inspecting the complete v4 archive.
+Identify the actual source-code structure, analysis entry points, configurations, model implementations, results, scientific reports, and tests.
+Do not assume a previously suggested filename or directory structure is present without checking.
+Preserve scientifically valid existing implementations.
+Avoid unnecessary refactoring that does not improve the scientific analysis or prepare an essential software interface.
+Experimental data restriction
+Only the original S7 and S10 experimental datasets and their associated experimental records are authorized.
+Do not introduce measurements from other SONAR experimental series.
+Associated construct information, instrument metadata, matched controls, and methodological references may be used where relevant.
+All newly reported numerical results must be traceable to the authorized data.
+2.2 Preserve established experimental corrections
+The following corrections and metadata are authoritative for the primary analysis.
+Cell type
+The reporter experiments were performed using HEK293T cells.
+S7
+The corrected AC DNA mass-fraction series is:
+0%, 5%, 15%, 20%, 30%, 40%, 50%, 75%, 90%, and 100%.
+Preserve both historical corrections:
+- The originally mislabeled 10% sample corresponds to 15%.
+- The originally recorded 75% and 90% sample groups were interchanged.
+The 75%/90% correction applies to both A and B wells.
+The latter correction was reported retrospectively by the experimental team.
+Keep the original recorded labels and the correction provenance available.
+Do not treat the improved model fit as independent proof that the historical labels were wrong.
+S10
+The reporter input is 100 ng per well.
+Total DNA input is 1,000 ng per well.
+Reporter:editor ratios are:
+1:0, 1:0.5, 1:1, 1:2, 1:4, and 1:8.
+The editor is associated with BFP through ORCA–P2A–BFP.
+A and B are independent transfection wells under each condition.
+Do not treat technical sequencing observations or individual flow events as independent experimental replicates.
+2.3 Preserve historical results
+Before making changes:
+1. Reproduce the existing v4 analysis.
+2. Record the original configuration and output hashes.
+3. Identify the scientific definitions currently implemented.
+4. Establish regression tests for all major outputs.
+5. Create a new versioned development branch or release directory.
+All modifications must be traceable.
+Do not silently overwrite v4 scientific results.
+For each material change, record:
+- What changed.
+- Why it changed.
+- Which data were affected.
+- Which downstream analyses were recalculated.
+- Whether previous conclusions changed.
+2.4 Separate scientific validity from software functionality
+Throughout the project, distinguish:
+Computational implementation
+The algorithm can execute and produce a numerical result.
+Internal empirical support
+The algorithm has been evaluated against available S7/S10 observations.
+Validated quantitative interpretation
+The measurement demonstrates adequate precision, accuracy, and applicability within a clearly defined experimental domain.
+External transferability
+The method has been independently shown to work across additional experimental conditions, batches, reporters, or laboratories.
+Do not conflate these levels.
+However, do not unnecessarily suppress scientifically meaningful exploratory outputs merely because stronger external validation is unavailable.
+Instead, report the numerical results together with their actual evidence status and uncertainty.
+3. Phase I — Final Refinement of Layer 0
+Objective
+Preserve the existing Context Calibration implementation while improving its scientific clarity, quality-control reporting, reproducibility, and suitability for future software users.
+Do not redesign Layer 0 unless a genuine error or important deficiency is identified.
+3.1 Verify the existing context pipeline
+Review:
+- FCS decoding and numerical interpretation.
+- Fluorescence channel mapping.
+- Compensation handling.
+- Acquisition-time QC.
+- Scatter-based population selection.
+- Singlet selection.
+- Background estimation.
+- Positivity thresholds.
+- Reporter quantification thresholds.
+- Event-count accounting.
+The quantitative representation must remain linear and appropriately compensated where the evidence supports that representation.
+Display transforms such as arcsinh or logicle must not enter the RAS numerical sums.
+Verify that the selected gates and background estimates are reproducible from saved configurations.
+3.2 Improve the measurement-context definition
+Create a clearly defined, versioned Context Profile.
+It should describe:
+- Cell type.
+- Reporter and fluorescence-channel identities.
+- Instrument and acquisition profile.
+- Channel mapping.
+- Compensation status.
+- Background-control identity.
+- Cell-selection rules.
+- Singlet-selection rules.
+- Fluorescence thresholds.
+- Quantifiable mCherry range.
+- Event-support requirements.
+- Applicable QC criteria.
+- Relevant uncertainty.
+- Compatibility conditions.
+The Context Profile must be machine-readable and suitable for loading by a future software application.
+It should not rely on undocumented Python state or manually reconstructed plotting parameters.
+3.3 Distinguish measurement background from fluorescence detection
+Retain the conceptual separation between:
+Linear background correction
+Used to estimate corrected fluorescence intensity.
+Fluorescence positivity thresholds
+Used to classify reporter or editor-associated expression.
+Make sure the implementation does not accidentally substitute fluorescence-positivity thresholds for additive background estimates.
+For RAS, retain signed background-corrected EGFP measurements.
+Do not rectify negative values simply to improve numerical appearance.
+3.4 Evaluate remaining optical limitations
+The previous analysis identified an identity compensation matrix and insufficient independent evidence for full multicolor optical correction.
+Review the existing evidence.
+Determine whether the available files provide any additional information about:
+- Single-color controls.
+- Channel spillover.
+- Compensation provenance.
+- Negative-population spreading.
+- Detector saturation.
+- Instrument configuration.
+Do not estimate missing compensation coefficients from the experimental relationships between EGFP and BFP.
+Do not create artificial controls.
+If optical validation remains incomplete, encode the limitation in the Context Profile and analysis report.
+It should be visible in the software outputs without automatically preventing scientifically useful exploratory analysis.
+3.5 Improve QC reporting
+Develop a concise, consistent QC summary for each sample.
+At minimum, report:
+- Recorded event count.
+- Events after acquisition QC.
+- Cell-gated event count.
+- Singlet-selected event count.
+- Reporter-positive event count.
+- Quantifiable reporter event count.
+- BFP-positive and co-expression event counts where applicable.
+- Background and threshold provenance.
+- Saturation or clipping warnings.
+- Relevant limitations.
+Separate qc_state from score availability.
+A sample may have technically usable data but lack an applicable RES calibration.
+This should not cause its RAS to be discarded.
+Required Layer 0 output
+Produce an updated:
+Layer0_Context_Final_Report.md
+It must identify the actual implemented methods, numerical evidence, remaining limitations, and final context interface.
+The report should be concise enough to support Wiki writing but retain links to complete technical details.
+4. Phase II — Final Refinement of Layer 1 and RAS
+Objective
+Preserve the established Reporter Activity Score while strengthening its statistical evaluation and preparing it for direct software use.
+The primary estimator remains:
+\[
+\boxed{
+RAS_{\mathcal P}
+=
+\frac{\sum_{i\in\mathcal P}g_i}
+{\sum_{i\in\mathcal P}r_i}
+}
+\]
+where \(g_i\) and \(r_i\) are the background-corrected linear EGFP and mCherry intensities.
+This definition must not be changed merely to improve calibration performance.
+4.1 Preserve both analysis populations
+Retain:
+\[
+\mathcal P_R=\mathcal V\cap R_q^+
+\]
+and:
+\[
+\mathcal P_{RB}=\mathcal V\cap R_q^+\cap B^+
+\]
+The first measures the reporter-normalized response of the reporter-expressing population.
+The second measures reporter response conditional on detectable editor-linked BFP expression.
+Report both when supported.
+Do not force samples lacking editor-linked BFP through the co-expression gate.
+Do not treat BFP fluorescence as an exact measure of active ORCA abundance.
+4.2 Reevaluate the main normalization evidence
+Verify and retain the existing comparison between raw EGFP fluorescence and RAS.
+The previous analysis indicated improved median well-pair CV in both S7 and S10.
+Reproduce these results from the current authoritative output tables.
+Report:
+- The actual independent experimental units.
+- The precise CV definition.
+- The number of matched conditions.
+- The magnitude of improvement.
+- Conditions where normalization did not improve repeatability.
+- Appropriate uncertainty or descriptive limitations.
+The purpose is to establish what mCherry normalization actually improves.
+Do not equate lower CV with greater molecular-editing accuracy.
+4.3 Investigate reporter-expression dependence
+This is an important refinement.
+RAS uses mCherry as a continuous reference, but the ratio-of-sums estimator weights cells according to their reporter-associated red signal.
+Evaluate whether the available data show:
+- Dependence of RAS on reporter expression.
+- Changes in reporter-positive population size.
+- Changes in mCherry intensity distribution.
+- Contributions from highly expressing cells.
+- Instability near the red quantification threshold.
+Include effective red-weighted support where appropriate:
+\[
+N_{\mathrm{eff},R}
+=
+\frac{\left(\sum_i r_i\right)^2}
+{\sum_i r_i^2}
+\]
+Do not treat this quantity as biological replicate count.
+Determine whether the estimator behaves acceptably over its observed experimental range.
+If limitations are found, record them rather than changing the principal formula.
+Alternative statistics may be included as sensitivity analyses, not silently substituted as the primary RAS.
+4.4 Refine statistical uncertainty
+Ensure RAS uncertainty estimates distinguish:
+1. Event-level sampling variability.
+2. Background and gate uncertainty.
+3. Between-well variability.
+4. Between-condition biological differences.
+Where resampling is appropriate, preserve the paired multichannel event structure.
+Shared controls should not be treated as independent for each associated sample.
+Report the independent well as the relevant experimental unit when evaluating repeatability between transfections.
+Do not present narrow event-bootstrap intervals as evidence of equivalent biological repeatability.
+4.5 Consolidate BFP results
+Preserve the existing BFP analyses.
+Evaluate the distinction between:
+- Reporter-population RAS.
+- Co-expression RAS.
+- BFP-positive fraction.
+- BFP intensity.
+- Editor DNA loading.
+Retain the observed increase in detectable editor-associated expression across the S10 dose series, subject to verification of the actual values.
+Do not interpret BFP positivity as direct evidence of RNA editing.
+If existing common-BFP-range analyses are informative, retain them.
+If their support is weak, classify them as exploratory.
+4.6 Final RAS reporting contract
+Each RAS result must identify:
+- Sample.
+- Experimental condition.
+- Population mode.
+- Context-profile ID.
+- Estimator version.
+- Selected event count.
+- Effective event support.
+- Corrected green and red sums.
+- RAS value.
+- Uncertainty.
+- QC status.
+- Scientific interpretation status.
+Make these fields available through a stable analysis interface.
+Required Layer 1 output
+Produce:
+Layer1_RAS_Final_Report.md
+Include a clear explanation of the estimator, verified normalization results, statistical robustness, BFP contribution, and appropriate use cases.
+Preserve the previous v4 RAS results unless a genuine implementation correction is required.
+5. Phase III — RES as the Primary Scientific and Mathematical Contribution
+Objective
+This is the central task of the project.
+Finalize Layer 2 as a complete empirical reporter-calibration module, with a defined primary model, executable forward and inverse functions, uncertainty estimation, calibration diagnostics, and real sample-level RES calculations.
+The goal is to make RES a usable and reproducible reference-equivalent reporter measurement, while transparently describing its actual experimental support.
+Do not stop at another calibration-feasibility report.
+Do not merely compare three curves and conclude that external validation is insufficient.
+Implement a complete operational model and evaluate it rigorously.
+At the same time, do not manufacture validation or force biological conclusions unsupported by the data.
+5.1 Preserve the correct scientific meaning of RES
+The intended mathematical relationship is:
+\[
+RAS=g(A)
+\]
+where \(A\) is the reference-input composition.
+RES is defined through the inverse calibration:
+\[
+\boxed{RES=g^{-1}(RAS)}
+\]
+The current S7 reference mixtures were prepared on an AC/INAC DNA mass-fraction basis.
+Unless reliable construct lengths permit a verified molar conversion, use:
+\[
+A=A_{\mathrm{DNA,mass}}
+\]
+Accordingly, the output represents an AC reference-input equivalent under the fitted experimental calibration.
+Do not present RES as an independently measured RNA-editing percentage.
+Preserve the established name:
+RES — Relative Editing Score
+But explain its operational meaning precisely.
+A suitable software label is:
+RES — AC Reference-Equivalent Score
+Include the actual input basis and model domain alongside every displayed numerical value.
+5.2 Reproduce the corrected v4 calibration
+Begin by reproducing the corrected S7 reference-response relationship.
+The 75%/90% label correction must remain in effect.
+Verify the original A/B well-level RAS measurements, corrected labels, and reference fractions.
+Reproduce the existing model-comparison results.
+The previous v4 analysis indicated that the monotone hinge model achieved the lowest leave-one-reference-level forward-prediction RMSE among the evaluated candidates.
+The approximate reported values were:
+Model	Leave-one-AC-level RMSE
+Affine	0.0497
+Isotonic	0.0400
+Monotone hinge	0.0364
+
+
+These are forward-prediction errors in RAS units.
+Recalculate them from the authoritative v4 data rather than hardcoding the values.
+Preserve the distinction between forward calibration error and inverse reference-fraction recovery error.
+5.3 Select and freeze a primary RES model
+Treat the existing monotone hinge model as the leading candidate for the final operational RES model.
+However, make the final selection based on the following considerations:
+- Scientific interpretability.
+- Model complexity.
+- Agreement with observed reference data.
+- Internal cross-validation.
+- Inverse-calibration error.
+- Numerical stability.
+- Uncertainty.
+- Behavior near the reference endpoints.
+- Ease of transparent software implementation.
+Retain Affine and Isotonic as benchmark models.
+Do not repeatedly search for new model families merely to improve the apparent fit.
+If the monotone hinge model remains preferable, freeze it as the primary operational model.
+If another model is materially better justified, explain the evidence clearly.
+A model should not be selected because it produces desired PUF rankings or convenient S10 editing predictions.
+Mathematical definition
+For a monotone hinge model, an appropriate general form is:
+\[
+g(A)
+=
+\alpha+\beta A+\gamma\max(0,A-k)
+\]
+where \(k\) is the hinge location.
+The slopes on both sides must satisfy the declared monotonicity constraints.
+Verify the actual model implemented in v4, including the knot-selection policy.
+Do not silently retune the hinge location using the same evaluation data simply to obtain a lower reported error.
+After selecting the primary model, save:
+- Mathematical specification.
+- Model parameters.
+- Input fraction basis.
+- Fitting method.
+- Constraints.
+- Training sample IDs.
+- Model version.
+- Calibration-domain identity.
+- Residual statistics.
+- Validation results.
+- Inverse-calibration policy.
+- Uncertainty model.
+The model must be serializable in a machine-readable format.
+It must not depend on an opaque notebook state.
+5.4 Establish the complete inverse-calibration procedure
+Implement the inverse mapping explicitly.
+For each input RAS, determine:
+1. Whether the RAS falls within the calibration response range.
+2. Whether the mapping is unique.
+3. Whether the local response is sufficiently informative.
+4. Whether the numerical inversion is stable.
+5. Whether the result falls within an empirically supported calibration region.
+6. What uncertainty should accompany the estimate.
+The software must distinguish a mathematically available inverse from an empirically reliable one.
+Where the mapping is nonunique, return an identified interval or explicit non-identifiability status.
+Do not invent a unique point estimate for a flat calibration region.
+Where the response lies outside the calibration range, do not silently extrapolate or clip to the nearest endpoint.
+5.5 Quantify inverse-calibration performance
+This analysis is more important than the forward \(R^2\).
+Evaluate how accurately the model can recover the known reference-input fractions.
+Use appropriate grouped internal validation.
+Distinguish:
+Leave-one-well-out
+Evaluates performance on a withheld well when the same reference fraction may still be represented in training.
+Leave-one-reference-level-out
+Evaluates interpolation or prediction for a reference composition excluded from fitting.
+Both are useful, but they answer different questions.
+For inverse recovery, report:
+- Mean absolute error in AC-fraction percentage points.
+- RMSE in AC-fraction percentage points.
+- Signed bias.
+- Error distribution across the reference range.
+- Fraction of held-out cases yielding a unique inverse.
+- Fraction returning non-identifiable or out-of-range status.
+- Dependence of error on AC input fraction.
+- Uncertainty intervals and empirical coverage, where estimable.
+The previous v4 analysis reported an inverse MAE of approximately 5.85 percentage points for a subset of held-out cases.
+Verify the exact model, denominator, and selection conditions associated with that result.
+Do not report inverse accuracy only for successfully inverted samples without also reporting the fraction of cases that failed to produce a valid inverse.
+Otherwise, excluding difficult points could make calibration performance appear artificially strong.
+Where possible, provide separate results for the full held-out set and the subset meeting explicitly stated inverse-identifiability requirements.
+5.6 Propagate uncertainty into RES
+Develop an appropriate uncertainty estimation procedure.
+Consider:
+- Variation between independent reference wells.
+- RAS measurement uncertainty.
+- Model parameter uncertainty.
+- Calibration-curve uncertainty.
+- Local inverse sensitivity.
+- Non-identifiable or weakly identifiable regions.
+Use well-level resampling or another justified method.
+Do not treat individual flow events as independent calibration replicates.
+The uncertainty analysis should be computationally reproducible and stored with the model.
+A local inverse approximation may be used diagnostically:
+\[
+SE(RES)\approx
+\frac{SE(RAS)}{|g'(RES)|}
+\]
+However, the final uncertainty procedure should also account for calibration-model uncertainty where supported.
+Particularly investigate regions where the fitted response approaches a plateau.
+5.7 Define the supported RES range
+The previous v4 analysis suggested a restricted exploratory region around:
+\[
+RAS\approx0.785-1.007
+\]
+corresponding approximately to:
+\[
+RES\approx54\%-80\%
+\]
+on the AC DNA mass-equivalent scale.
+This was not an externally validated measurement range.
+It was an internally evaluated region with comparatively more favorable inverse behavior.
+Reassess it using the finalized model and uncertainty procedure.
+Do not automatically adopt the previous limits without verification.
+For the final model, distinguish:
+Numerical domain
+Where the fitted function can be evaluated or inverted.
+Observed calibration domain
+Where empirical reference data exist.
+Internally supported estimation region
+Where the available data provide meaningful evidence about inverse performance.
+Transfer domain
+Where use in additional experimental contexts has actually been supported.
+These domains must not be conflated.
+5.8 Make RES a real, computable output
+This requirement is essential.
+The final project must not end with a calibration curve and a statement that RES remains unvalidated.
+Implement the selected model so that it can generate sample-level outputs.
+For each eligible S7 sample, calculate or explicitly assess:
+- Input RAS.
+- Primary-model point estimate, where mathematically defined.
+- RES uncertainty or identifiable interval.
+- Calibration-region classification.
+- Numerical status.
+- Scientific evidence status.
+Retain results even when uncertainty is substantial.
+However, do not force a point estimate where the inverse is nonunique.
+For exploratory outputs, use an explicit research status.
+The final software architecture should support two distinct forms of use:
+Research analysis mode
+Allows numerical exploration of the fitted model with full uncertainty and applicability warnings.
+Routine quantitative mode
+Only permits interpretations supported by the declared calibration requirements.
+An exploratory value must not silently appear as a fully validated quantitative result.
+Conversely, the program should not discard every scientifically useful number simply because external validation has not been performed.
+5.9 Create real worked examples
+Prepare a complete calculation demonstration using actual S7 data.
+Show:
+\[
+\text{Raw FCS}
+\rightarrow
+\text{Context Correction}
+\rightarrow
+RAS
+\rightarrow
+g^{-1}
+\rightarrow
+RES
+\]
+Select representative actual examples, where possible including:
+- A sample in a relatively informative calibration region.
+- A sample near a weakly identifiable region.
+- A sample near a plateau or calibration boundary.
+For each example, show:
+- RAS.
+- Reference-model equation.
+- Relevant fitted parameters.
+- Computed RES or identified interval.
+- Uncertainty.
+- Scientific interpretation.
+- Calibration status.
+This will become one of the most important demonstrations in the Measurement Wiki and future software application.
+Do not generate artificial experimental examples when real S7 observations are available.
+5.10 Explicitly address the S7-to-S10 limitation
+The corrected S7 calibration does not automatically establish transferability to S10.
+Review:
+- Reporter architecture.
+- AC/INAC reference identities.
+- HEK293T experimental context.
+- Reporter and total DNA loading.
+- Editor presence.
+- BFP linkage.
+- Treatment conditions.
+- Sampling time.
+- Population mode.
+- Acquisition profile.
+In particular, the S7 reporter-population calibration must not automatically be applied to S10 BFP-gated co-expression measurements.
+If transferability remains unsupported, retain the restriction.
+You may calculate explicitly labeled exploratory mappings for sensitivity analysis where mathematically possible, but do not present them as validated S10 RES.
+Required Layer 2 outputs
+Produce:
+Layer2_RES_Final_Report.md
+RES_Primary_Model_Specification.md
+RES_Model_Comparison.csv
+RES_Inverse_Validation.csv
+RES_Calibration_Domain.json
+RES_Sample_Results.csv
+RES_Model_Card.md
+RES_Worked_Examples.md
+Save the fitted model and all parameters in a reproducible, portable representation.
+6. Phase IV — Final Scientific Evaluation of PER
+Objective
+Retain and refine the existing Layer 3 analysis without forcing an unsupported absolute RNA-editing prediction.
+Layer 3 is an important part of SONAR because it evaluates whether fluorescence-derived measurements correspond to molecular RNA editing.
+The existing molecular analysis must remain scientifically useful even if a validated PER cannot be established.
+6.1 Preserve the S10 molecular reconstruction
+The previous analysis reconstructed a provisional 523 bp OpenA reporter amplicon and identified C280 as a candidate editing site.
+It processed 48 Sanger AB1 files associated with 12 independent transfection wells.
+Preserve the existing reconstruction and analysis unless a genuine error is found.
+Review the evidence supporting:
+- Amplicon length.
+- Sequence alignment.
+- Candidate C280 coordinate.
+- Reference and alternative nucleotides.
+- Coding-frame interpretation.
+- Forward/reverse read agreement.
+- Read-level quality control.
+- Molecular sample grouping.
+Do not promote a plausible candidate editing site to independently verified construct identity without appropriate evidence.
+6.2 Preserve relative molecular measurements
+The previous analysis established editing-associated chromatogram signals.
+However, the Sanger peak-derived index has not been fully calibrated against known RNA-editing fractions.
+Therefore, preserve a clear distinction between:
+Relative chromatogram index
+An observed editing-associated molecular signal.
+Quantitatively calibrated RNA-editing fraction
+An independently supported estimate of the fraction of edited RNA molecules.
+Do not rename the relative chromatogram index as an absolute RNA-editing percentage.
+Maintain read-level and well-level uncertainty where possible.
+Keep the actual independent experimental unit at the transfection-well level.
+6.3 Refine molecular prediction comparisons
+The previous analysis found that RAS was weakly associated with the relative molecular signal, whereas BFP-positive fraction showed a substantially stronger association.
+Reproduce the existing findings before making changes.
+Preserve comparisons involving:
+- Mean-only baseline.
+- RAS.
+- BFP-positive fraction.
+- RAS plus BFP-positive fraction.
+Additionally, investigate whether the apparent predictive contribution of BFP can be distinguished from its shared relationship with editor DNA loading.
+Where statistically sensible, add an editor-dose-only benchmark.
+This is important because both BFP positivity and molecular editing-associated signal may increase with editor input.
+A strong BFP–molecular correlation does not by itself prove that BFP adds independent predictive information beyond the experimental dose.
+Given the limited number of independent wells, treat adjusted or multivariable analyses cautiously.
+Do not overfit a complex model.
+6.4 Retain appropriate validation
+Preserve the distinction between:
+- Leave-one-well-out validation.
+- Leave-one-dose-condition-out validation.
+The latter should be emphasized when discussing prediction for an unobserved experimental dose.
+Report:
+- MAE.
+- RMSE.
+- Signed bias.
+- Independent sample count.
+- Dose-condition count.
+- Prediction interval or uncertainty where supported.
+- Extrapolation status.
+Inspect whether held-out predictions fall outside the training predictor range.
+Report extrapolation explicitly.
+Do not describe internally held-out dose predictions as externally validated generalization.
+6.5 Evaluate the final RES–molecular relationship
+After freezing the final Layer 2 model, determine whether any meaningful RES-to-molecular analysis can be supported.
+Consider:
+\[
+RAS\rightarrow M_{\mathrm{RNA}}
+\]
+and:
+\[
+RAS\rightarrow RES\rightarrow M_{\mathrm{RNA}}
+\]
+where \(M_{\mathrm{RNA}}\) denotes the available qualified molecular metric.
+Only evaluate the staged model as an empirical comparison if the required calibration and population compatibility conditions are satisfied.
+Do not force S10 through an incompatible S7 calibration.
+If a staged model remains unsupported, provide a precise explanation.
+Also explain the mathematical fact that a deterministic invertible transformation of RAS does not automatically introduce new sample-level information.
+Any claimed advantage of RES must be demonstrated through reference interpretation, standardization, or validated predictive behavior.
+6.6 Final PER implementation
+Retain the PER mathematical framework:
+\[
+E_{\mathrm{RNA}}=h(RES)
+\]
+\[
+PER=100h(RES)\%
+\]
+But do not emit a validated PER merely because a model can be fitted.
+The Layer 3 software module should distinguish:
+- Molecular-reference data available.
+- Candidate editing signal detected.
+- Relative molecular index available.
+- Absolute molecular fraction qualified.
+- Predictive model fitted.
+- Predictive model internally evaluated.
+- Predictive model validated within a declared domain.
+- Prediction unavailable or out of domain.
+Where an absolute RNA-editing fraction is not supported, the program should return the relevant relative molecular analysis and a clear PER status.
+It must not substitute a chromatogram index into a percentage field.
+Required Layer 3 outputs
+Produce:
+Layer3_PER_Final_Report.md
+Molecular_Reference_Status.md
+Molecular_Prediction_Comparison.csv
+PER_Model_Interface_Specification.md
+PER_Limitations_and_Future_Validation.md
+Preserve the actual molecular analysis tables, chromatogram evidence, and prediction results.
+7. Phase V — Integrated Scientific Validation
+Objective
+Evaluate SONAR as a coherent four-layer framework rather than four unrelated analytical modules.
+The final scientific report should identify what each layer contributes and how the components interact.
+7.1 Layer-level evidence
+Evaluate:
+Layer 0
+What evidence supports reproducible measurement context construction?
+Layer 1
+What improvement in fluorescence measurement does RAS demonstrate?
+Layer 2
+What quantitative reference-equivalent information can the finalized RES model provide?
+Layer 3
+What do the molecular measurements establish about the relationship between reporter fluorescence, editor-associated expression, and RNA editing?
+7.2 Cross-layer consistency
+Check that:
+- Every RAS uses a declared context profile.
+- Every RES references an identified RAS estimator and calibration model.
+- Every PER analysis references a correctly identified molecular endpoint.
+- Model versions are consistent.
+- Units are correct.
+- Population definitions are preserved.
+- Changes to upstream models invalidate incompatible downstream calibration identities.
+Do not allow different parts of the software to use slightly different scientific definitions of the same metric.
+7.3 Explicitly distinguish measurement accuracy and repeatability
+A repeatable measurement is not automatically accurate.
+A good reporter calibration fit is not automatically a validated RNA-editing predictor.
+A computationally reproducible analysis is not automatically reproducible across laboratories.
+Ensure these distinctions appear in the final scientific reports.
+7.4 Produce a final evidence matrix
+Create a concise table with one row per major scientific claim.
+For each claim, include:
+- Scientific statement.
+- Supporting dataset.
+- Independent sample count.
+- Numerical result.
+- Uncertainty or limitation.
+- Evidence strength.
+- Source table.
+- Applicable experimental domain.
+- Suitability for the Wiki.
+The evidence matrix should enable a scientific writer to distinguish major results from exploratory findings without re-reading the entire codebase.
+8. Phase VI — Freeze the Scientific Model for Software Development
+Objective
+Create a stable, documented computational foundation that Codex can convert into a reusable software application.
+Codex should implement and package the finalized science, not independently redesign it.
+Your responsibility is to provide a clear boundary between scientific modeling and software engineering.
+8.1 Scientific freeze
+After completing the final analyses, freeze:
+- Context-processing definitions.
+- RAS estimator.
+- Analysis population modes.
+- Primary RES model.
+- RES inverse-calibration policy.
+- Uncertainty calculations.
+- Scientific output units.
+- QC and availability statuses.
+- PER model interface.
+- Supported and unsupported calibration domains.
+Assign a clear release identifier.
+For example:
+sonar-science-v1.0-s7s10
+This identifies a reproducible scientific implementation.
+It must not imply that every biological prediction has received independent external validation.
+8.2 Create a modular analytical API
+Provide clean, documented interfaces for the future application.
+At minimum, support functionality equivalent to:
+load_experiment(...)validate_metadata(...)build_context(...)process_fcs(...)calculate_ras(...)fit_reporter_calibration(...)calculate_res(...)analyze_molecular_reference(...)fit_biological_calibration(...)predict_per(...)generate_measurement_report(...)
+
+
+These names are illustrative.
+Use the actual module structure where appropriate, but ensure equivalent functionality is exposed through a stable public interface.
+The analytical core should be usable independently of a graphical user interface.
+Do not make scientific calculations depend on Streamlit, browser state, interactive widgets, or notebook variables.
+8.3 Establish machine-readable model contracts
+Each saved calibration model should include:
+- Model ID.
+- Version.
+- Model family.
+- Mathematical definition.
+- Numerical parameters.
+- Input and output units.
+- Reference mixture basis.
+- Valid population mode.
+- Supported reporter context.
+- Calibration domain.
+- Inverse policy.
+- Uncertainty procedure.
+- Training source IDs.
+- Internal validation results.
+- Output-status policy.
+- Known limitations.
+- Source-code and configuration hashes.
+Use portable formats such as JSON, YAML, CSV, or another clearly documented representation.
+Avoid making the application dependent on opaque serialized objects when an explicit numerical model can be represented transparently.
+8.4 Standardize sample-level outputs
+A complete SONAR sample report should provide:
+Sample identity
+Experimental condition, sample ID, and independent experimental unit.
+Context
+Selected event counts, background information, channel metadata, and QC.
+RAS
+Value, uncertainty, population mode, and estimator version.
+RES
+Reference-equivalent estimate or interval, model ID, numerical status, evidence status, and applicable domain.
+PER
+Prediction only when supported, otherwise a clear unavailable or exploratory molecular-analysis result.
+Provenance
+Input hashes, software version, configuration, and calibration identity.
+Missing values must not be represented as zero.
+8.5 Separate numerical outputs from interpretation permissions
+This is especially important for RES.
+The analytical engine should be capable of producing exploratory numerical results without automatically authorizing a quantitative biological interpretation.
+For example, a result may contain:
+RAS: available
+RES numerical estimate: available
+RES internal calibration: exploratory
+RES transfer to current sample: not established
+PER: not calibrated
+
+Do not solve this by globally suppressing all exploratory RES outputs.
+Instead, make availability and scientific support explicit.
+For scientifically incompatible samples, do not populate an ordinary quantitative RES field with an unqualified extrapolation.
+8.6 Prepare robust test fixtures
+Create unit and integration tests for:
+- Correct FCS channel interpretation.
+- Background correction.
+- Fixed population selection.
+- Ratio-of-sums RAS.
+- Positive-denominator requirements.
+- Missing BFP.
+- Reporter versus co-expression populations.
+- Calibration-model loading.
+- RES forward evaluation.
+- RES inverse calculation.
+- Calibration plateaus.
+- Out-of-domain inputs.
+- Uncertainty calculations.
+- Missing molecular references.
+- PER prediction restrictions.
+- Version compatibility.
+- Deterministic outputs.
+Include actual verified S7/S10 examples as golden-reference test cases.
+Synthetic unit-test fixtures may be used to test mathematical edge cases, but must be clearly labeled and must not appear as experimental evidence.
+8.7 Keep the software implementation reproducible
+Provide:
+- Exact dependency versions.
+- A reproducible environment.
+- A tested execution command.
+- Relative input paths.
+- Versioned configuration files.
+- Expected output tables.
+- Numerical comparison tolerances.
+- Automated regression tests.
+Do not invent a command in the documentation.
+Run the actual command and verify that it works.
+9. Phase VII — Prepare the Codex Software Handoff
+Objective
+After the scientific model is frozen, create a complete handoff package for a new Codex session.
+This package is a mandatory final deliverable, not an optional supplementary document.
+The user intends to upload the package directly into a new Codex conversation.
+It must contain everything necessary to understand, reproduce, and extend the project.
+9.1 Required package name
+Create:
+SONAR_Codex_Handoff_Ready.zip
+The archive must be self-contained.
+Do not create a ZIP that depends on undocumented files elsewhere in the previous Work environment.
+Do not use absolute local paths as required runtime inputs.
+Do not include only analysis reports without the underlying executable code and data.
+9.2 Package contents
+The ZIP should contain a clearly organized structure equivalent to:
+SONAR_Codex_Handoff/
+│
+├── START_HERE.md
+├── CODEX_IMPLEMENTATION_PROMPT.md
+├── README.md
+├── RELEASE_MANIFEST.json
+│
+├── science/
+│   ├── SONAR_Scientific_Overview.md
+│   ├── SONAR_Four_Layer_Definitions.md
+│   ├── SONAR_Scientific_Freeze.md
+│   ├── RAS_Mathematical_Definition.md
+│   ├── RES_Primary_Model_Specification.md
+│   ├── RES_Model_Card.md
+│   ├── PER_Model_Interface_Specification.md
+│   ├── Calibration_Domains.md
+│   ├── Scientific_Limitations.md
+│   └── Scientific_Decision_Log.md
+│
+├── src/
+│   └── [complete runnable SONAR source code]
+│
+├── models/
+│   ├── context_profiles/
+│   ├── res_primary/
+│   ├── res_alternative/
+│   └── molecular/
+│
+├── config/
+│   └── [complete versioned configurations]
+│
+├── data/
+│   ├── raw/
+│   │   ├── S7/
+│   │   └── S10/
+│   ├── metadata/
+│   ├── controls/
+│   ├── molecular/
+│   └── examples/
+│
+├── results/
+│   ├── layer0/
+│   ├── layer1/
+│   ├── layer2/
+│   ├── layer3/
+│   └── integrated/
+│
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── golden_reference/
+│
+├── figures/
+│   ├── diagnostic/
+│   └── source_tables/
+│
+├── documentation/
+│   ├── DATA_DICTIONARY.md
+│   ├── API_CONTRACT.md
+│   ├── MODEL_IO_SCHEMAS.md
+│   ├── QC_AND_STATUS_DEFINITIONS.md
+│   ├── REPRODUCTION_GUIDE.md
+│   ├── SOFTWARE_REQUIREMENTS.md
+│   ├── SCIENTIFIC_ACCEPTANCE_TESTS.md
+│   └── KNOWN_ISSUES.md
+│
+├── reports/
+│   ├── Layer0_Context_Final_Report.md
+│   ├── Layer1_RAS_Final_Report.md
+│   ├── Layer2_RES_Final_Report.md
+│   ├── Layer3_PER_Final_Report.md
+│   └── SONAR_Integrated_Evidence_Report.md
+│
+└── environment/
+    └── [dependency and environment files]
+
+Adapt the directory structure to the actual implementation.
+Do not duplicate large raw files unnecessarily.
+However, the full handoff ZIP must include all available authorized inputs needed to reproduce its promised results.
+If any required original file is genuinely unavailable, document that fact explicitly and do not claim that the package is fully reproducible from absent data.
+9.3 Include original experimental data
+The handoff must include the authorized S7/S10 data required by the analytical pipeline.
+Where present, include:
+- Original FCS files.
+- Matched controls.
+- S7 AC/INAC reference information.
+- Corrected sample manifests.
+- Original S10 AB1 chromatograms.
+- OpenA candidate sequence and reconstruction evidence.
+- Relevant experimental metadata.
+- Final analysis configurations.
+- Reproduced numerical results.
+Preserve original data integrity and hashes.
+Distinguish immutable source data from generated or corrected metadata.
+Do not assume the project is ready for unrestricted public redistribution merely because the data are included in the internal Codex handoff.
+Document any release or sharing restrictions separately.
+9.4 Prepare a ready-to-use Codex prompt
+Create:
+CODEX_IMPLEMENTATION_PROMPT.md
+This is one of the most important deliverables.
+It must contain a complete English prompt that the user can copy directly into a new Codex conversation.
+It must not be a short, generic instruction such as:
+“Please build a Streamlit application from this project.”
+Instead, it must incorporate the actual finalized scientific implementation.
+The prompt must explain:
+Project background
+What SONAR is, why it was developed, and the role of its four layers.
+Existing implementation
+Which functions, modules, models, and tests already exist.
+Scientific definitions that must not change
+Especially:
+- Context Calibration.
+- RAS ratio-of-sums.
+- Population modes.
+- Primary RES model.
+- Calibration uncertainty.
+- Calibration-domain rules.
+- PER qualification requirements.
+Software development objectives
+What Codex should build and in what order.
+Input specifications
+What kinds of files and metadata users will provide.
+Output specifications
+Which results and reports the application must produce.
+Interface requirements
+How users should interact with the program.
+Scientific guardrails
+Which results are exploratory, which are supported, and when the program must refuse an unsupported numerical interpretation.
+Testing requirements
+How Codex must verify that the application reproduces the frozen scientific outputs.
+Final deliverables
+The expected source code, runnable application, documentation, example datasets, tests, and release files.
+The Codex prompt must use the actual file paths and tested program interfaces present in the final handoff package.
+Do not write it based on hypothetical modules that do not exist.
+10. Requirements for the Future Codex Application
+Use this section to define the future software requirements.
+Do not implement the complete graphical interface yourself during this Work task.
+Codex will handle software engineering after the scientific handoff.
+10.1 Intended product
+The future software should be named:
+SONAR — RNA Editing Reporter Measurement Toolkit
+It should provide an accessible interface for analyzing compatible multicolor fluorescence reporter data.
+The scientific engine must remain independent of the interface.
+A Python analysis backend with a lightweight Streamlit interface is a reasonable initial architecture.
+Codex may choose a technically equivalent solution if justified.
+10.2 Core software workflow
+The intended user workflow is:
+Step 1 — Import experimental data
+Upload FCS files, matched controls, reference information, and required metadata.
+Step 2 — Context Calibration
+Inspect fluorescence channels, background estimates, cell selection, event counts, and QC.
+Step 3 — RAS Quantification
+Calculate reporter-normalized fluorescence and display relevant population information.
+Step 4 — RES Calibration
+Load a compatible reference model or fit a new model from suitable user-provided reference data.
+Display the calibration curve, inverse estimates, uncertainty, and applicable domain.
+Step 5 — Molecular Evaluation
+Where molecular reference data exist, evaluate their relationship with the reporter measurements.
+Only calculate PER where the required biological calibration has been established.
+Step 6 — Export
+Generate a reproducible measurement report containing results, plots, methods, model versions, and limitations.
+10.3 RES must be a prominent software feature
+The interface should allow users to:
+- Inspect the primary calibration model.
+- View calibration-reference observations.
+- Compare RAS and RES.
+- Display the inverse-calibration calculation.
+- Understand uncertainty.
+- Identify poorly resolved regions.
+- Recognize out-of-domain inputs.
+- Export individual sample results.
+- Fit their own reporter calibration using compatible reference experiments.
+The S7-derived model must not be treated as a universal calibration for arbitrary reporters or cell types.
+For other systems, users should establish their own appropriately supported reference models.
+10.4 PER must remain scientifically transparent
+The user interface may include the molecular-analysis module and the existing S10 exploratory findings.
+However, it must not display the S10 relative Sanger index as a validated RNA-editing percentage.
+If PER is unavailable, the interface should display an informative scientific status rather than a fabricated value.
+The future program should support properly calibrated PER models when suitable reference data are supplied.
+10.5 Preserve exact numerical behavior
+Codex must not independently refit the frozen S7 primary RES model merely to simplify software implementation.
+Any model change must be explicit, versioned, and scientifically reviewed.
+The software application should reproduce the authoritative results within declared numerical tolerances.
+The handoff package must provide golden-reference test cases for this purpose.
+10.6 Software implementation priorities
+The embedded Codex prompt should specify the following development order:
+Priority 1: Verify the frozen analytical engine and reproduce the supplied results.
+Priority 2: Refactor the analysis into a stable, installable Python package without changing its numerical definitions.
+Priority 3: Implement command-line data analysis and report generation.
+Priority 4: Build the graphical interface.
+Priority 5: Implement interactive calibration-model loading and user-provided reference fitting.
+Priority 6: Add comprehensive error handling, data validation, and export functionality.
+Priority 7: Complete documentation, installation instructions, examples, and release packaging.
+Do not let interface development compromise the scientific engine.
+11. Phase VIII — Prepare the Measurement Wiki Evidence Package
+Objective
+Prepare the scientific evidence needed for the final iGEM Measurement page.
+Do not write the final Wiki narrative.
+The final writing and figure design will be completed separately.
+Your task is to make the evidence easy to interpret and directly reusable.
+11.1 Create the integrated evidence report
+Produce:
+SONAR_Integrated_Evidence_Report.md
+Use clear scientific English.
+Organize the report around:
+1. The measurement problem.
+2. The SONAR four-layer architecture.
+3. Layer 0 methods and evidence.
+4. Layer 1 RAS definition and normalization results.
+5. Layer 2 RES modeling and calibration results.
+6. Layer 3 molecular analysis and predictive evaluation.
+7. Integrated validation and reproducibility.
+8. Usefulness, limitations, and potential transferability.
+For every main result, provide:
+- Scientific question.
+- Experimental evidence.
+- Actual numerical result.
+- Relevant uncertainty.
+- Supported interpretation.
+- Source table.
+- Suitable visualization.
+- Remaining limitation.
+Do not fill the report with software implementation details that are irrelevant to the scientific narrative.
+11.2 Prepare the strongest RES evidence
+The Layer 2 evidence deserves particular attention.
+Prepare enough material to support at least three distinct scientific messages.
+A. Establishing the empirical calibration
+Show the corrected S7 AC/INAC reference-response relationship and the fitted primary model.
+B. Evaluating inverse-calibration performance
+Show the actual ability of the model to recover reference-input fractions, including unsuccessful inversions and weakly identifiable regions.
+C. Calculating RES from real data
+Demonstrate a complete RAS-to-RES calculation with uncertainty and calibration status.
+Do not present a model prediction as an experimentally measured RNA-editing fraction.
+11.3 Prepare figure evidence rather than finished Wiki illustrations
+Create:
+SONAR_Final_Figure_Evidence_Inventory.md
+For each recommended figure, specify:
+- Scientific message.
+- Relevant experiment.
+- Data source.
+- Key numerical findings.
+- Suggested panels.
+- Appropriate axes and units.
+- Required independent sample counts.
+- Potential interpretation.
+- Scientific limitations.
+- Source tables and reproducible plotting code.
+Provide actual diagnostic plots where useful.
+Prefer data-driven figures over decorative schematics.
+Do not fabricate experimental points or confidence intervals.
+The final Figure prompts and publication layouts will be developed by the user and ChatGPT in a separate stage.
+11.4 Prioritize the actual scientific contributions
+The evidence report should clearly highlight:
+Layer 0
+Reproducible measurement context and transparent fluorescence processing.
+Layer 1
+Continuous mCherry normalization and its actual effects on repeatability.
+Layer 2
+Empirical AC/INAC calibration, model comparison, reference-equivalent RES computation, and quantified inverse limitations.
+Layer 3
+Independent molecular measurements showing the importance and limitations of fluorescence-based prediction.
+Software and contribution
+A reproducible analysis engine with documented interfaces, models, tests, and a pathway for other teams to adapt the measurement.
+Do not claim that the complete system predicts absolute RNA-editing percentages when the existing evidence does not establish that capability.
+12. Final Deliverables
+Produce two clearly identifiable outputs.
+Deliverable A — Final Scientific Release
+Create a complete scientific release containing:
+- Final Layer 0 implementation.
+- Final RAS implementation.
+- Frozen primary RES model.
+- Actual RES results.
+- RES uncertainty and validation analyses.
+- Preserved PER and molecular analyses.
+- Integrated scientific reports.
+- Diagnostic figures.
+- Source tables.
+- Reproducibility configuration.
+- Tests.
+- Model definitions.
+- Scientific limitations.
+Suggested name:
+SONAR_Scientific_Final_S7_S10.zip
+This is the authoritative scientific reference for the eventual Wiki.
+Deliverable B — Complete Codex Handoff
+Create:
+SONAR_Codex_Handoff_Ready.zip
+This must include the complete scientific implementation, original required data, finalized models, configuration, tests, documentation, and the ready-to-use Codex prompt.
+The user should not need to manually combine the original v4 archive, scientific reports, and several other ZIP files.
+The Codex handoff must be complete on its own.
+It is acceptable for the Codex handoff to contain material also included in the scientific release.
+The purpose is to make the software-development transition simple and reliable.
+13. Final Acceptance Tests
+Before declaring the task complete, verify the following.
+Scientific consistency
+- The corrected S7 labels are preserved.
+- All source FCS and AB1 measurements remain unchanged.
+- The RAS numerical definition has not been silently modified.
+- The primary RES model is explicitly identified.
+- Its parameters and inverse policy are reproducible.
+- RES numerical estimates and uncertainty are available where mathematically justified.
+- Non-identifiable or unsupported cases are correctly labeled.
+- PER does not present a relative Sanger index as an absolute editing percentage.
+- Independent experimental sample counts are reported accurately.
+Calibration validation
+- Forward model errors are distinguished from inverse errors.
+- Unsuccessful inverse predictions are not excluded from performance summaries without accounting for them.
+- Calibration plateaus and weakly resolved regions are identified.
+- Cross-validation does not split dependent observations improperly.
+- Model selection and internal validation limitations are documented.
+- S7-to-S10 calibration transfer is not assumed without evidence.
+Computational reproducibility
+- The entire project executes from saved files.
+- Model parameters are loaded from versioned artifacts.
+- Repeated execution produces consistent outputs.
+- Critical numerical results match expected reference values.
+- All required dependencies are documented.
+- No hidden notebook state is needed.
+Codex readiness
+- The handoff ZIP contains actual source code.
+- It contains the required raw data.
+- It contains the corrected metadata.
+- It contains the frozen models.
+- It contains the scientific reports.
+- It contains the software interface contracts.
+- It contains executable tests.
+- It contains golden-reference examples.
+- It contains a complete English Codex prompt.
+- Its internal paths are valid after extraction.
+- It has been tested in a clean extraction directory.
+Do not declare the package ready if key files are missing or the documented reproduction commands have not been tested.
+14. Final Execution Instructions
+Proceed directly with the provided v4 project.
+Do not create another unrelated SONAR implementation.
+Do not spend the task primarily rewriting theoretical documentation.
+The required workflow is:
+Stage 1 — Baseline verification
+Inspect and reproduce the corrected v4 project.
+Stage 2 — Layer 0–1 refinement
+Improve technical validation, uncertainty reporting, result interpretation, and software interfaces while preserving valid numerical results.
+Stage 3 — RES finalization
+Select and freeze the primary reference-calibration model.
+Complete inverse estimation, uncertainty analysis, calibration-region definition, and actual sample-level RES output.
+Stage 4 — PER consolidation
+Preserve and refine the molecular evidence and predictive comparisons, including the limitations of absolute RNA-editing prediction.
+Stage 5 — Scientific release
+Produce a coherent, versioned four-layer analytical engine and final scientific evidence package.
+Stage 6 — Codex preparation
+Generate the complete Codex implementation prompt, software contracts, data package, tests, and executable handoff.
+Stage 7 — Final verification
+Reproduce the scientific results and verify that the Codex handoff package is genuinely self-contained.
+Do not stop at another project plan.
+Do not merely provide recommendations for what Codex should do.
+Implement and finalize the scientific system now, leaving only software engineering, application development, and interface design for Codex.
+If particular validation limitations cannot be resolved from the existing experiments, document them and continue with all supported work.
+15. Final Scientific Objective
+The final SONAR system should establish a complete progression:
+\[
+\boxed{
+\text{Flow Cytometry}
+\rightarrow
+\text{Context Calibration}
+\rightarrow
+RAS
+\rightarrow
+\text{Reference Calibration}
+\rightarrow
+RES
+}
+\]
+with a molecular evaluation layer that investigates:
+\[
+\boxed{
+\text{Fluorescence-derived Measurements}
+\longleftrightarrow
+\text{Independent Molecular Evidence}
+}
+\]
+The central quantitative contribution should be a transparent and reproducible reference-equivalent reporter calibration, supported by empirical data, inverse-performance evaluation, and explicit uncertainty.
+The molecular prediction layer should preserve the full scientific analysis without claiming capabilities that have not been established.
+The software foundation should enable other researchers to reproduce the calculations, inspect the calibration, and adapt the method to their own compatible reporter systems.
+Final guiding principle
+Build the strongest complete measurement system that the existing evidence can support.
+Do not confuse incomplete validation with an inability to implement a useful quantitative method.
+Do not confuse mathematical computability with demonstrated measurement accuracy.
+Finalize the scientific definitions, make the RES model operational, preserve the molecular evidence, and prepare the complete software handoff.
+The final response must contain:
+1. A concise summary of the final scientific decisions.
+2. The identity and performance of the frozen primary RES model.
+3. The range and status of available RES results.
+4. The final status of Layer 0, RAS, and PER.
+5. A summary of unresolved scientific limitations.
+6. Links to the final scientific release.
+7. A link to SONAR_Codex_Handoff_Ready.zip.
+8. Confirmation that the handoff includes a complete, ready-to-use CODEX_IMPLEMENTATION_PROMPT.md.
+9. Confirmation that the package was extracted and its documented reproduction procedure successfully executed.
+Complete the scientific consolidation and deliver both packages in this execution.

@@ -1,0 +1,577 @@
+Work Prompt — SONAR Measurement: Complete Reconstruction and Evidence Analysis
+1. Mission and Scope
+You are working on SONAR (System for Optical Normalization and Analysis of RNA Editing), a four-layer quantitative measurement framework developed for the SUSTech-China iGEM 2026 project.
+Your task is to reconstruct the SONAR analysis pipeline entirely from scratch, using only the original experimental data from S7 and S10, and to produce a comprehensive, scientifically rigorous evidence package for the subsequent development of our iGEM Wiki Measurement page.
+This is a fresh implementation, not an update to any previous SONAR build.
+Several earlier versions of SONAR have already been developed or attempted. However, their implementations, intermediate results, parameter choices, and conclusions must not be inherited.
+Start again from the original S7 and S10 experimental data.
+The accompanying SONAR_Work_EN_v3.1.md is provided as a reference for the scientific architecture, mathematical definitions, and intended measurement objectives.
+It is not an implementation that must be continued, nor does it establish that any previous analysis was correct.
+Your responsibilities are to:
+- Reconstruct the data-processing and quantitative-analysis pipeline.
+- Verify the scientific and statistical validity of its key components.
+- Perform all analyses that can be supported by the available S7/S10 data.
+- Evaluate the feasibility and limitations of downstream calibration.
+- Generate reproducible analytical results and supporting visualizations.
+- Prepare a structured evidence package for subsequent Wiki writing and figure production.
+Do not write the final Wiki page or produce publication-ready Wiki figures in this stage.
+Those tasks will be completed separately after the scientific results have been reviewed.
+2. Strict Data and Implementation Boundaries
+2.1 Exclusive experimental data sources
+Only the following experimental datasets are authorized:
+- S7
+- S10
+These are two specifically named experimental series, not a continuous range of S7–S10.
+You may use their associated:
+- Original FCS files.
+- Matched Mock and optical controls.
+- Experimental records and sample manifests.
+- Construct information.
+- Transfection and treatment records.
+- Instrument metadata.
+- Actual independent replicate information.
+Do not incorporate experimental measurements from:
+- S1–S6.
+- S8 or S9.
+- Other SONAR experiments.
+- Previous calibration experiments outside S7/S10.
+- Historical analysis reports whose values have not been independently reproduced from S7/S10.
+If the v3.1 specification mentions values or conclusions obtained from other datasets, treat them as background information only.
+They must not enter this analysis.
+Do not use historical numerical results as targets that the new implementation should reproduce.
+All reported results must be independently recalculated from the authorized original data.
+2.2 Rebuild from scratch
+Create a completely new, isolated project directory.
+Do not reuse:
+- Previous SONAR source code.
+- Existing gating definitions.
+- Previously fitted background models.
+- Existing RAS, RES, or PER values.
+- Previous calibration curves.
+- Previously generated intermediate tables.
+- Earlier validation conclusions.
+- Previous Wiki figures.
+You may use established third-party scientific libraries, provided their versions and relevant processing behavior are documented.
+Develop a new implementation based on independently verified data definitions and the scientific principles described in v3.1.
+All source files, configurations, parameters, and outputs must be created or regenerated during this reconstruction.
+Keep the original experimental data unchanged.
+2.3 Relationship to v3.1
+Use SONAR_Work_EN_v3.1.md to understand the intended four-layer framework:
+Layer	Name	Intended output
+Layer 0	Context Calibration	Measurement context and quality-controlled data
+Layer 1	Flow Quantification	Reporter Activity Score (RAS)
+Layer 2	Reporter Calibration	Relative Editing Score (RES)
+Layer 3	Biological Calibration	Predicted Editing Rate (PER)
+
+
+The former "Layer −1" in v3.1 is now called Layer 0.
+Preserve the established scientific meaning of RAS, RES, and PER.
+However, do not assume that every algorithmic choice proposed in v3.1 is already validated.
+Where necessary, distinguish:
+1. Theoretical definitions.
+2. Proposed implementation choices.
+3. Empirically validated decisions.
+4. Unresolved scientific or technical questions.
+The actual S7/S10 evidence must determine which methods and conclusions can be supported.
+3. Phase I — Data Inventory and Experimental Reconstruction
+Before implementing the quantitative pipeline, reconstruct the actual experimental design.
+Read the original S7 and S10 files, associated records, and instrument metadata.
+Do not infer experimental identities merely from filenames.
+For every acquisition, establish:
+- Experiment series.
+- Sample identity.
+- Biological sample and well identity.
+- Experimental condition.
+- Reporter construct.
+- Editor construct.
+- Presence or absence of editor-linked BFP.
+- AC/INAC identity or mixture composition, where applicable.
+- Reporter DNA amount.
+- Editor DNA amount.
+- Total DNA amount.
+- Treatment conditions.
+- Sampling time.
+- Instrument and acquisition profile.
+- Available fluorescence channels.
+- Compensation status.
+- Matched controls.
+- Independent replicate structure.
+3.1 Sample manifest
+Create a complete sample manifest containing one row per actual acquisition, while retaining its relationship to the original biological sample and well.
+Distinguish:
+- Independent wells.
+- Biological replicates.
+- Technical acquisitions.
+- Duplicate files.
+- Re-exported files.
+Do not treat multiple acquisitions from one well as independent biological replicates.
+3.2 Construct and control verification
+Verify the actual roles of:
+- mCherry.
+- EGFP.
+- BFP.
+- AC.
+- INAC.
+- Any other relevant reporter or editor constructs present in S7/S10.
+Confirm whether BFP is physically linked to ORCA in each applicable experimental condition.
+Do not assume all BFP-positive samples represent editor-linked expression.
+Verify the molecular meanings of AC and INAC before interpreting their mixture as a reporter calibration reference.
+3.3 Data integrity
+Inspect:
+- Raw FCS metadata.
+- Channel assignments.
+- Area/height parameters.
+- Compensation matrices and application status.
+- Event counts.
+- Acquisition anomalies.
+- Missing or inconsistent records.
+Produce an explicit reconciliation report.
+If particular files cannot be interpreted reliably, document the problem and continue analyzing the valid samples.
+Deliverable: A complete, auditable inventory of the S7/S10 data and their experimental relationships.
+4. Phase II — Layer 0: Context Calibration
+Objective
+Establish a reproducible measurement context that allows fluorescence signals to be analyzed consistently.
+The output of Layer 0 is a verified context definition and quality-controlled event population, not a biological activity score.
+4.1 FCS preprocessing
+Implement and verify:
+- Native FCS value interpretation.
+- Correct fluorescence channel mapping.
+- Compensation or verified use of already compensated data.
+- Acquisition-time quality control, where supported.
+- Scatter-based cell selection.
+- Singlet selection, where pulse parameters are available.
+- Signal saturation and clipping diagnostics.
+Maintain separate data representations for:
+1. Immutable original measurements.
+2. Linear, compensated fluorescence values.
+3. Transformed values used for visualization and gating.
+Quantitative fluorescence calculations must use the appropriate linear representation.
+Do not calculate RAS using logicle- or arcsinh-transformed intensities.
+4.2 Population selection
+Develop a consistent and interpretable cell-selection strategy using appropriate matched reference controls.
+The final accepted selection rules must be applied consistently across compatible experimental samples.
+Record:
+- Original event counts.
+- Events remaining after acquisition QC.
+- Events remaining after cell selection.
+- Events remaining after singlet selection.
+- Final eligible event counts.
+- Retention percentages.
+Do not adjust individual experimental gates to improve an expected biological result.
+Do not describe scatter-selected cells as confirmed viable cells unless actual viability measurements exist.
+4.3 Fluorescence background
+Estimate the background behavior of:
+- mCherry.
+- EGFP.
+- BFP.
+Distinguish two operations:
+Background subtraction: Estimating the expected additive fluorescence background in linear units.
+Positivity classification: Defining suitable boundaries for detecting fluorescence expression.
+Investigate whether the available matched controls support reliable thresholds for the three channels.
+Do not assume that a fixed Mock quantile is automatically sufficient for multicolor classification.
+Where independent optical controls are unavailable, document the resulting limitation.
+4.4 Context reproducibility
+Evaluate the consistency of background and gating behavior using the actual available S7/S10 controls.
+Where supported, examine:
+- Background agreement between independent controls.
+- Negative-boundary transfer.
+- Population-retention stability.
+- Sensitivity to reasonable gate perturbations.
+- Sensitivity of downstream RAS to background estimation.
+Do not describe checks against the same data used to select a threshold as independent validation.
+Layer 0 report
+Provide:
+- Selected methods and parameters.
+- Justification for each important decision.
+- Actual sample and control results.
+- Event retention summaries.
+- Background and threshold estimates.
+- Quality-control findings.
+- Unresolved limitations.
+- Diagnostic plots generated from real data.
+Conclude by answering:
+To what extent does S7/S10 support a consistent and reproducible fluorescence measurement context?
+5. Phase III — Layer 1: Flow Quantification
+Layer 1 is the primary quantitative focus of this reconstruction.
+5.1 Main estimator
+Preserve the scientific definition of the Reporter Activity Score:
+\[
+\boxed{
+RAS_{\mathcal P}
+=
+\frac{\sum_{i\in\mathcal P}g_i}
+{\sum_{i\in\mathcal P}r_i}
+}
+\]
+where:
+\[
+g_i=G_i-\widehat b_{G,i}
+\]
+\[
+r_i=R_i-\widehat b_{R,i}
+\]
+The corrected red and green values must come from exactly the same selected events.
+RAS is the ratio of population-level fluorescence sums, not the arithmetic mean of individual cell ratios.
+Do not:
+- Gate on EGFP positivity when computing the primary RAS.
+- Remove EGFP-negative cells solely because they are green-negative.
+- Rectify negative background-corrected green values to zero.
+- Introduce an arbitrary denominator epsilon.
+- Compute the ratio using display-transformed values.
+- Silently truncate high-intensity events.
+Establish an empirically justified requirement for adequate mCherry reference signal and denominator precision.
+If a sample cannot support a reliable RAS estimate, return an explicit unavailable status rather than an artificial numerical result.
+5.2 Analysis populations
+Support two clearly distinguished population modes.
+Reporter population:
+\[
+\mathcal P_R=\mathcal V\cap R_q^+
+\]
+Reporter–editor co-expression population:
+\[
+\mathcal P_{RB}=\mathcal V\cap R_q^+\cap B^+
+\]
+The first measures the normalized reporter response within the quantitatively usable reporter-expressing population.
+The second measures the response conditional on detectable reporter and editor-linked BFP expression.
+Compute both modes when the experimental construct and data support them.
+Do not force samples without editor-linked BFP into the co-expression mode.
+Report co-expression fractions and relevant population counts separately.
+5.3 Quantitative RAS analysis
+Calculate the primary RAS independently for each valid experimental well.
+Provide:
+- Raw green fluorescence summaries.
+- Corrected green fluorescence summaries.
+- Corrected red fluorescence summaries.
+- RAS.
+- EGFP-positive fraction as an auxiliary metric.
+- Reporter-positive fraction.
+- Reporter–editor co-expression fraction.
+- Selected event counts.
+- Quantification and QC status.
+- Appropriate uncertainty estimates.
+Maintain all results at the correct independent experimental unit.
+Do not pool events from independent wells and interpret the resulting event count as biological replication.
+5.4 Evaluate mCherry normalization
+A central scientific question is:
+Does continuous mCherry normalization improve the interpretability and repeatability of reporter measurements?
+Use appropriate S7/S10 comparisons to evaluate this question.
+Where experimental conditions and independent replicates permit, compare:
+- Raw EGFP fluorescence.
+- Background-corrected EGFP fluorescence.
+- RAS.
+Evaluate well-to-well variability using clearly defined statistics.
+If coefficient of variation is used, state exactly how it was calculated and which independent wells contribute.
+Do not treat different biological conditions as technical replicates.
+Importantly, a reduction in variability is not automatically evidence of biological accuracy.
+Assess whether RAS behaves consistently across the relevant reporter-expression range.
+Where possible, distinguish variation in common expression scale from genuine effects of changing reporter abundance on the biological response.
+5.5 Evaluate BFP as an additional measurement dimension
+Determine what information is gained by detecting editor-linked BFP.
+Using eligible S10 samples, investigate:
+- BFP-positive fractions.
+- Reporter–editor co-expression fractions.
+- BFP intensity distributions.
+- Differences between reporter-population and co-expression RAS.
+- Associations with experimental editor DNA loading.
+Where there is sufficient common signal support, explore response profiles within matched BFP-intensity ranges.
+Do not interpret BFP fluorescence as an exact measure of active ORCA molecular abundance.
+Do not automatically interpret an increasing BFP-positive fraction as increasing RNA-editing efficiency.
+Separate observable co-expression behavior from biological editing activity.
+5.6 Robustness and uncertainty
+Perform feasible robustness analyses using the actual data.
+Prioritize:
+Event-count sensitivity
+Investigate how RAS varies with repeated subsampling of selected events.
+Background sensitivity
+Evaluate the effect of reasonable, justified changes in background estimation.
+Gate sensitivity
+Assess the influence of reasonable changes in population-selection boundaries.
+High-expression influence
+Check whether a small number of highly expressing cells disproportionately determine the population RAS.
+Well-level repeatability
+Evaluate variation between independent wells under matched experimental conditions.
+Population-mode sensitivity
+Determine how the reported response changes between reporter-population and co-expression modes.
+Clearly distinguish uncertainty due to event sampling, controls, and independent experimental replication.
+Layer 1 report
+Produce a comprehensive analysis answering:
+1. What does RAS measure mathematically and biologically?
+2. How does RAS differ from raw EGFP fluorescence?
+3. Does normalization improve measurement repeatability?
+4. What additional information does BFP provide?
+5. How robust is RAS to event selection and background estimation?
+6. Under what experimental conditions can RAS be interpreted reliably?
+7. Which limitations remain unresolved?
+This section should receive the greatest analytical attention.
+6. Phase IV — Layer 2: Reporter Calibration Feasibility
+Objective
+Determine what the authorized S7/S10 data can support regarding AC/INAC reporter calibration.
+Do not assume that a valid RES estimator must be produced.
+The intended relationship is:
+\[
+RAS=g(A)
+\]
+with a possible inverse:
+\[
+RES=g^{-1}(RAS)
+\]
+where \(A\) represents an explicitly defined active-reference input fraction.
+6.1 Reference verification
+Inspect the actual AC/INAC experimental design.
+Confirm:
+- Reference construct identity.
+- Reference-state integrity.
+- Mixture preparation method.
+- Plasmid lengths.
+- Actual mixture amounts.
+- Nominal molar input fractions.
+- Reporter loading.
+- Presence or absence of editor-linked BFP.
+- Relevant experimental conditions.
+Do not equate a nominal AC DNA fraction with actual intracellular edited RNA fraction.
+6.2 Empirical response characterization
+Use the newly calculated Layer 1 RAS results to characterize the available reference-response relationship.
+Examine:
+- Response trends.
+- Monotonicity.
+- Dynamic range.
+- Low-end separation.
+- Plateaus.
+- Unexpected nonmonotonicity.
+- Independent-well variability.
+- Compatibility across available experimental conditions.
+Plot the actual measured reference points, including independent wells.
+Do not force the observations to follow an attractive monotonic curve.
+6.3 Identifiability assessment
+Determine whether the available data support a sufficiently precise and identifiable inverse mapping.
+If a valid model can be justified and evaluated using the available independent samples, report its supported range and uncertainty.
+Otherwise, provide the empirical calibration characterization without presenting an unsupported RES estimate.
+Any exploratory model must be explicitly labeled as exploratory.
+Do not use downstream editing expectations or preferred sample rankings to select the calibration model.
+6.4 Calibration compatibility
+Pay particular attention to the compatibility between:
+- AC/INAC reference samples.
+- Reporter-population RAS.
+- Co-expression RAS from BFP-linked editor samples.
+Do not assume a calibration developed without BFP can automatically be transferred to a BFP-selected population.
+If the necessary bridging evidence is absent, state so explicitly.
+Layer 2 report
+Answer:
+What does the S7/S10 reference-response evidence establish, and what additional validation would be required before RES could be used as a reliable quantitative output?
+Distinguish demonstrated results from proposed downstream calibration.
+7. Phase V — Layer 3: Biological Calibration Requirements
+Objective
+Evaluate whether the authorized S7/S10 materials include sufficient independent molecular measurements to support biological calibration.
+The intended model is:
+\[
+E_{\mathrm{RNA}}=h(RES)
+\]
+and:
+\[
+PER=100h(RES)\%
+\]
+However, a mathematical definition is not evidence of a validated prediction.
+7.1 Molecular evidence audit
+Check whether the S7/S10 materials contain genuine, independently measured RNA-editing fractions paired with the corresponding flow-cytometry samples.
+Identify:
+- Molecular target.
+- Reporter RNA versus introduced or endogenous target RNA.
+- Molecular assay.
+- Sampling time.
+- RNA sampling population.
+- Flow/RNA sample pairing.
+- Independent biological replicate structure.
+- Reference-measurement uncertainty.
+Do not use nominal AC DNA fractions as measured RNA-editing values.
+Do not use EGFP intensity, RAS, or RES as substitutes for independent molecular measurements.
+7.2 Feasibility and missing evidence
+If sufficient paired molecular data are not available within S7/S10:
+Do not fit a PER prediction model.
+Instead, provide a precise account of:
+- Which molecular data are missing.
+- Which experimental pairing strategy would be appropriate.
+- How the molecular endpoint should be defined.
+- What independent validation would be required.
+- Which population-matching issues must be resolved.
+Also specify an appropriate future comparison between:
+\[
+RAS\rightarrow E_{\mathrm{RNA}}
+\]
+and:
+\[
+RAS\rightarrow RES\rightarrow E_{\mathrm{RNA}}
+\]
+This comparison should test whether the intermediate reporter calibration provides meaningful benefits beyond directly predicting RNA editing from RAS.
+Do not fabricate molecular references, fit synthetic prediction curves, or claim an achieved PER performance.
+Layer 3 report
+Explain what the available evidence supports and identify the exact requirements for a future validated biological prediction.
+8. Cross-Layer Validation and Scientific Evaluation
+After completing the supported analyses, evaluate SONAR as an integrated measurement framework.
+Address the following questions.
+8.1 Measurement consistency
+Do matched controls and standardized processing rules support consistent analysis?
+8.2 Quantitative repeatability
+Does RAS improve repeatability compared with raw fluorescence measurements?
+8.3 Biological interpretability
+What can RAS and the available reference-response information legitimately tell us about reporter activity?
+8.4 Calibration validity
+Which portions of the proposed RAS → RES → PER framework are empirically supported?
+Which remain conceptual or exploratory?
+8.5 Reproducibility
+Can the entire analysis be reproduced from the original S7/S10 data using documented code and configuration?
+Separate:
+- Computational reproducibility.
+- Within-experiment measurement repeatability.
+- Between-experiment reproducibility.
+- Cross-instrument or cross-laboratory transfer.
+Do not claim a level of reproducibility that has not actually been tested.
+8.6 Biological conclusions
+Determine which scientifically defensible conclusions emerge from the analysis.
+Do not prioritize obtaining expected editor rankings or attractive calibration results.
+Negative, inconclusive, or nonmonotonic results are valid findings and must be retained.
+9. Required Deliverables
+Organize all results in a new, self-contained project directory.
+Use clear names and a documented structure.
+Deliverable A — Reproducible Analysis Pipeline
+Provide the complete new source code, including:
+- FCS reading and validation.
+- Preprocessing.
+- Context calibration.
+- Population selection.
+- RAS calculation.
+- Auxiliary metrics.
+- Statistical analyses.
+- Calibration feasibility analysis.
+- Figure generation.
+- Quality-control reporting.
+Include dependency versions, configuration files, execution instructions, and appropriate tests.
+The entire supported analysis should be reproducible without relying on any previous SONAR implementation.
+Deliverable B — Data Inventory and Reconciliation
+Provide complete sample and acquisition manifests.
+Document verified experimental identities, replicate relationships, missing information, and exclusions.
+Deliverable C — Layer 0–3 Scientific Reports
+Produce separate scientific reports for all four layers.
+Layer 0 and Layer 1 should contain complete analytical results wherever the data permit.
+Layer 2 should distinguish reference-response characterization from validated inverse calibration.
+Layer 3 should document the molecular-prediction evidence and remaining requirements.
+Do not fill unsupported sections with invented numerical outputs.
+Deliverable D — Quantitative Results Tables
+Export machine-readable tables for:
+- Sample identities.
+- Event counts and gate retention.
+- Background estimates.
+- Fluorescence thresholds.
+- Reporter-positive and co-expression populations.
+- Raw and corrected fluorescence metrics.
+- RAS and uncertainty.
+- Repeatability analyses.
+- Event-count sensitivity.
+- Gate and background sensitivity.
+- AC/INAC response characterization.
+- QC results and limitations.
+Include appropriate units, population definitions, independent sample counts, and analysis-version identifiers.
+Deliverable E — Diagnostic Figures
+Generate real-data diagnostic visualizations useful for scientific evaluation.
+These may include:
+- Gating and control distributions.
+- Fluorescence background comparisons.
+- RAS normalization comparisons.
+- Independent-well repeatability.
+- BFP co-expression behavior.
+- Event-count sensitivity.
+- AC/INAC response plots.
+These are analytical outputs, not final Wiki figures.
+Every data plot must be reproducible from an exported source table.
+Do not use generative illustration to invent experimental data.
+Deliverable F — Measurement Evidence Package
+This deliverable is especially important.
+Prepare a separate report titled:
+SONAR_Measurement_Evidence_Report.md
+It must be written for a scientific writer who will subsequently prepare the iGEM Wiki Measurement page.
+Use clear scientific language rather than software-development language.
+For each layer, include:
+1. Scientific question: What measurement problem does the layer address?
+2. Method: What approach was actually implemented?
+3. Experimental evidence: Which S7/S10 samples support the analysis?
+4. Key numerical findings: What were the most important actual results?
+5. Interpretation: What do those findings mean scientifically?
+6. Limitations: What has not been established?
+7. Figure opportunities: Which real datasets could support effective Wiki figures?
+8. Source references: Exact filenames, result tables, and relevant analysis versions.
+Identify the most important findings that deserve prominent presentation in the Wiki.
+Distinguish strong evidence from interesting but preliminary observations.
+Provide a concise Chinese-language scientific summary alongside the English technical evidence report, so that the results can be used directly in subsequent Chinese Wiki drafting.
+Deliverable G — Figure Evidence Inventory
+Create:
+SONAR_Figure_Evidence_Inventory.md
+This should not contain final illustration prompts.
+Instead, identify potential Wiki figures according to:
+- Scientific message.
+- Relevant data.
+- Recommended plot type.
+- Available result tables.
+- Available independent replicates.
+- Important limitations.
+- Whether the proposed figure is fully supported, partially supported, or conceptual only.
+Prioritize figures that demonstrate scientific findings rather than merely decorate the page.
+A subsequent independent stage will determine the final figure layout and prompts.
+Deliverable H — Final Executive Summary
+Produce a concise summary addressing:
+- What has been successfully reconstructed?
+- Which Layer 0–1 results are the strongest?
+- What improvement, if any, does mCherry normalization demonstrate?
+- What does BFP add to measurement?
+- Does the S7/S10 reference response support reliable RES calibration?
+- Is PER estimation currently supported by the authorized data?
+- What are the strongest defensible claims for the Measurement Wiki?
+- What should be investigated next?
+Clearly distinguish completed analysis from proposed future work.
+10. Scientific Integrity Requirements
+Throughout this project, follow these rules.
+No inherited results.
+All experimental statistics must be derived anew from authorized S7/S10 data.
+No outcome-driven optimization.
+Do not select gates, background estimators, or scoring formulas because they produce desirable biological rankings.
+No unsupported calibration.
+Do not report RES or PER as validated measurements without appropriate reference and independent validation evidence.
+No false replication.
+Do not use event counts as biological sample sizes.
+No invented data.
+Never synthesize experimental observations, replicate wells, molecular editing measurements, or successful calibration curves.
+No unsupported universality.
+Measurement conclusions apply only to experimental conditions supported by the actual evidence.
+No conflation of metrics.
+Keep fluorescence intensity, RAS, RES, PER, reference DNA fraction, and independently measured RNA-editing fraction conceptually distinct.
+No silent correction of inconsistencies.
+When experimental records disagree, document and resolve the discrepancy from primary evidence wherever possible.
+No unnecessary complexity.
+Prefer scientifically interpretable, well-supported methods over more sophisticated algorithms that cannot be validated with the available data.
+No automatic rejection of inconvenient results.
+Unexpected, weak, or nonmonotonic findings must be investigated rather than removed to improve the narrative.
+11. Execution Priorities
+The purpose of this task is to obtain a reliable, usable SONAR evidence package, not merely to propose another implementation plan.
+Proceed directly with the available S7/S10 files.
+Do not stop at conceptual recommendations or generate another prompt for a future implementation.
+Prioritize work in the following order:
+Priority 1: Verify the complete S7/S10 inventory and reconstruct the experimental design.
+Priority 2: Implement and validate Layer 0.
+Priority 3: Implement Layer 1 and quantitatively evaluate RAS, normalization, BFP, and measurement robustness.
+Priority 4: Characterize the available AC/INAC response and assess Layer 2 feasibility.
+Priority 5: Audit Layer 3 molecular evidence and define the remaining validation requirements.
+Priority 6: Produce complete reproducible results, diagnostic figures, and the Measurement Evidence Package.
+If some analyses cannot be completed because essential experimental evidence is missing, document the limitation and finish all other supported analyses.
+Do not sacrifice the quality of Layer 0–1 implementation merely to present superficial completion of Layers 2–3.
+12. Final Objective
+The final deliverable should enable a separate scientific writing process to construct a rigorous and visually compelling iGEM Measurement page without needing to repeat the raw-data analysis.
+The evidence package should make it possible to explain:
+Why SONAR was needed.
+How the four-layer framework was designed.
+How fluorescence was converted into a reporter-normalized quantitative readout.
+What the actual S7/S10 experiments demonstrated.
+Which calibration steps are supported and which remain unvalidated.
+How SONAR could eventually support molecular RNA-editing prediction.
+Why the measurement approach could be useful to other synthetic biology teams.
+The overarching scientific goal is:
+Transform fluorescence from a qualitative observation into an interpretable, reproducible, and progressively calibrated measurement of RNA-editing reporter activity.
+
+Deliver the complete analysis and evidence package, not the final Wiki narrative.

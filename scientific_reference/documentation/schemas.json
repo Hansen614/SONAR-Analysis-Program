@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "release_id": "sonar-science-v1.0-s7s10",
+  "contracts": {
+    "context": {
+      "type": "object",
+      "required": [
+        "context_id",
+        "ras_estimator_id",
+        "instrument_fingerprint",
+        "gate_parameters",
+        "support_requirements",
+        "limitations"
+      ]
+    },
+    "RAS": {
+      "type": "object",
+      "required": [
+        "sample_id",
+        "population_mode",
+        "context_profile_id",
+        "estimator_version",
+        "ras",
+        "score_status",
+        "qc_state"
+      ],
+      "properties": {
+        "ras": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "n_selected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sum_G_corrected": {
+          "type": "number"
+        },
+        "sum_R_corrected": {
+          "type": "number"
+        }
+      }
+    },
+    "RES": {
+      "type": "object",
+      "required": [
+        "RAS",
+        "model_id",
+        "input_basis",
+        "output_unit",
+        "res_mass_fraction",
+        "numerical_status",
+        "scientific_status",
+        "calibration_region",
+        "routine_status"
+      ],
+      "properties": {
+        "res_mass_fraction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "research_res_mass_fraction": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "hypothetical_incompatible_mapping": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "exact_inverse_interval": {
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "compatibility_intervals": {
+          "type": "array"
+        }
+      }
+    },
+    "PER": {
+      "type": "object",
+      "required": [
+        "PER",
+        "unit",
+        "PER_status"
+      ],
+      "properties": {
+        "PER": {
+          "type": "null"
+        },
+        "unit": {
+          "const": "percent_edited_RNA"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "record_id": "USER_METADATA_20261013",
+  "review_date": "2026-10-13",
+  "source_type": "direct_user_confirmation_in_this_conversation",
+  "replies_verbatim": ["123 都是，4 12 为 a，34 为 b", "质量，是的，跑完流式提的 rna"],
+  "question_context": [
+    "1: S7/S10 A and B are independent transfection wells under the same condition. 2: S7 label 10 was corrected to 15% AC; ask mass or molar basis. 3: S10 reporter 100 ng/well, total DNA 1000 ng/well, ORCA linked to BFP through P2A. 4: ask mapping of molecular labels 1-4 to flow A/B and RNA timing.",
+    "Clarify mass versus molar S7 mixture and whether RNA was sampled at the same experimental time point as the corresponding flow measurement."
+  ],
+  "experimental_AB_wells_independent_transfections": true,
+  "independent_culture_or_batch_verified": false,
+  "S7_actual_AC_mass_percent_by_source_label": {"0": 0, "5": 5, "10": 15, "20": 20, "30": 30, "40": 40, "50": 50, "75": 75, "90": 90, "100": 100},
+  "S7_mixture_basis": "mass",
+  "S10_reporter_dna_ng_per_well": 100,
+  "S10_total_dna_ng_per_well": 1000,
+  "S10_editor_BFP_linkage": "ORCA-P2A-BFP_user_confirmed_not_sequence_verified",
+  "S10_molecular_suffix_to_flow_replicate": {"1": "A", "2": "A", "3": "B", "4": "B"},
+  "S10_RNA_origin_user_confirmed": true,
+  "S10_RNA_sampling_relation": "same_experimental_timepoint_RNA_extracted_after_flow",
+  "flow_to_extraction_elapsed_minutes": null,
+  "molecular_labels_within_well_subtype": "unresolved_extraction_RT_PCR_or_aliquot_relationship",
+  "RNA_population_selection": "unresolved_bulk_remainder_or_sorted_population",
+  "DNase_noRT_controls_verified": false,
+  "scope": "Experimental wells only; does not resolve physical independence of the two Mock acquisitions. User confirmation establishes experiment metadata, not sequence or quantitative assay validation."
+}

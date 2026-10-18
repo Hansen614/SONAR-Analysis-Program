@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "archive_sha256": "3701754b45ae5e4f009971b2b565a57588de67c36c0c2a43c1384ff87b83d7a5",
+  "results_files_byte_identical": 71,
+  "RAS_unchanged": true,
+  "config_sha256": "c7efa3af6a22c2b54c39fec9e0b552e1ec0ff14ff18b5ccb554a745ef9257089",
+  "test_output": ".....................................                                    [100%]\n37 passed in 2.26s\n",
+  "interpretation": "Existing v3 reproduced before applying correction; no source event or molecular measurements changed"
+}

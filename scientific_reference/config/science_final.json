@@ -1,0 +1,23 @@
+{
+  "release_id": "sonar-science-v1.0-s7s10",
+  "release_date": "2026-10-13",
+  "primary_model": "monotone_hinge_50",
+  "model_id": "sonar-science-v1.0-s7s10::S7-hinge-k050",
+  "ras_estimator_id": "ratio_of_paired_linear_sums-v2",
+  "context_id": "SONAR-CytoFLEXS-22cac3269aa6-v1",
+  "calibration_domain_id": "S7_AC_DNA_mass_team_corrected_20261013",
+  "seed": 20261013,
+  "cv_bootstrap_repeats": 500,
+  "cv_resampling_unit": "well_stratified_by_reference_level",
+  "domain_grid_step_RAS": 0.0005,
+  "compatibility_width_limit": 0.2,
+  "inverse_slope_numerical_tolerance": 1e-12,
+  "res_region_policy": "largest_contiguous_primary_and_isotonic_union_width_le_0.20_interior",
+  "external_validation": false,
+  "routine_quantitative_enabled": false,
+  "float_comparison": {
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "sharing_status": "internal_authorized_S7_S10_handoff_public_redistribution_not_established"
+}

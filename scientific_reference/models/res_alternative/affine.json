@@ -1,0 +1,35 @@
+{
+  "model": "affine",
+  "knots": [
+    0.0,
+    1.0
+  ],
+  "values": [
+    0.4653482737855935,
+    1.1375110685299832
+  ],
+  "coefficients": [
+    0.4653482737855935,
+    0.6721627947443897
+  ],
+  "x_min": 0.0,
+  "x_max": 1.0,
+  "fraction_basis": "AC_DNA_mass_fraction",
+  "fitting_unit": "independent_transfection_well",
+  "qualification": "EXPLORATORY_INTERNALLY_EVALUATED",
+  "version": "sonar-s7-s10-layer23-v4-label-corrected",
+  "calibration_model_id": "sonar-s7-s10-layer23-v4-label-corrected::affine",
+  "reference_basis_id": "S7_AC_DNA_mass_team_corrected_20261013",
+  "corrected_reference_sha256": "212cf9768d85b0be3b480ee1d1d89f31a5a1f0abcc276c65197a91c5143d8151",
+  "label_correction_sha256": "66198b09c1dc19dea4296cec8d9111d76d30ea67e661d69ba3e2a3bf90eb7673",
+  "upstream_RAS_sha256": "0e487e7ace56dab223ee4828c3f0308e657c1310342e43b8440db71546e01d9b",
+  "internal_discrepancy_q95": 0.08638630448253709,
+  "bootstrap": "stratified two wells per level with replacement plus shared-control event draws; n2 limitation",
+  "bootstrap_repeats": 1000,
+  "provenance": {
+    "layer23_config_sha256": "c35bbfdd4477286cf2bd788f9a7561d490b020923473e2af48910557d373b609",
+    "source_manifest_sha256": "8640f2e615a73feb0dfef3a6d7ea5fb98845d9690aa51de5c694318427470949"
+  },
+  "benchmark_only": true,
+  "release_id": "sonar-science-v1.0-s7s10"
+}

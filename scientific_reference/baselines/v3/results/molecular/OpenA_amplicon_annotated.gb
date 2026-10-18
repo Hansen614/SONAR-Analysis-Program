@@ -1,0 +1,31 @@
+LOCUS       OpenA523_v3              523 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  Reconstructed amplicon; not complete clone; target C280 candidate.
+ACCESSION   OpenA523_v3
+VERSION     OpenA523_v3
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     primer_bind     1..22
+                     /label="forward primer"
+     primer_bind     complement(502..523)
+                     /label="reverse primer"
+     misc_feature    1..258
+                     /label="EGFP terminal segment; mapped general architecture"
+     misc_feature    259..288
+                     /label="reconstructed linker"
+     misc_feature    280..282
+                     /label="candidate C280 CGA to TGA; intended target
+                     unconfirmed"
+ORIGIN
+        1 atggccgata agcagaagaa cggcattaag gtgaacttta agatccggca caacatcgag
+       61 gatggcagcg tgcagctggc cgaccattac cagcagaaca cccccatcgg agacggccct
+      121 gtgctgctgc ccgataacca ctacctgtcc acccagagcg ccctgagcaa agaccccaat
+      181 gaaaaacggg accacatggt gctgctggaa tttgtgaccg ccgccggaat caccttgggc
+      241 atggatgagc tgtacaaggg cagcgacatg gaggacgtgc gagggtcaat gatttccctc
+      301 attgcagcgc tcgcggtgga tagagtgatt ggcatggaaa cggtgatgcc ttggaacctg
+      361 cctgccgatc tggcctggtt caagcggaat accctgaata agccagtgat catgggcagg
+      421 cacacatggg agtccatcgg caggcccctg cctggaagga agaatatcat tctgagttca
+      481 cagccttcca ccgacgacag agtgacctgg gtgaaaagtg tgg
+//

@@ -1,0 +1,218 @@
+{
+  "context_id": "SONAR-CytoFLEXS-22cac3269aa6-v1",
+  "version": "sonar-science-v1.0-s7s10",
+  "ras_estimator_id": "ratio_of_paired_linear_sums-v2",
+  "acquisition_profile_id": "22cac3269aa6",
+  "instrument": "CytoFLEX S",
+  "instrument_serial": "AS52073",
+  "instrument_fingerprint": {
+    "cyt": "CytoFLEX S",
+    "cytsn": "AS52073",
+    "compgaina": "50\t1\t400",
+    "ch1gain": "50",
+    "ch2gain": "100",
+    "ch3gain": "50",
+    "ch8gain": "1",
+    "ch13gain": "400",
+    "p1g": "1.0",
+    "p2g": "1.0",
+    "p6g": "1.0",
+    "p8g": "1.0",
+    "p10g": "1.0",
+    "spillover": "6,FL1-H,FL6-H,FL11-H,FL1-A,FL6-A,FL11-A,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1",
+    "uscomp": "False"
+  },
+  "cell_type": "HEK293T",
+  "channel_map": {
+    "EGFP": {
+      "index_0based": 5,
+      "name": "FL1-A"
+    },
+    "mCherry": {
+      "index_0based": 9,
+      "name": "FL11-A"
+    },
+    "BFP": {
+      "index_0based": 7,
+      "name": "FL6-A"
+    }
+  },
+  "numerical_representation": "native_linear_detector_au_identity_operation_only",
+  "compensation_status": "IDENTITY_FILE_MATRIX_NOT_VALIDATED_MULTICOLOR_COMPENSATION",
+  "background_method": "equal_control_acquisition_weighted_arithmetic_means_of_gated_singlets",
+  "controls": [
+    {
+      "id": "S7_MOCK1",
+      "file_path": "inputs/S7/MOCK1.fcs",
+      "sha256": "8abfdbb5443c6dd6b7fda15f7a7a63cca9502d4e3c99d051020fd282136e0ca8"
+    },
+    {
+      "id": "S7_MOCK2",
+      "file_path": "inputs/S7/MOCK2.fcs",
+      "sha256": "60b604a41b11b87c5ba1bf2ba58c1cc77c796975662949ebb4b96611bfaa3243"
+    }
+  ],
+  "gate_parameters": {
+    "location": [
+      5.702438949828192,
+      5.628250794784004
+    ],
+    "precision": [
+      [
+        50.97025827445972,
+        -24.280673393655352
+      ],
+      [
+        -24.280673393655356,
+        51.19897980536583
+      ]
+    ],
+    "covariance": [
+      [
+        0.025345099571713933,
+        0.012019694282384204
+      ],
+      [
+        0.012019694282384204,
+        0.02523187524581823
+      ]
+    ],
+    "distance_cutoff": 9.21034037197618,
+    "singlet_center": 0.3513226126596334,
+    "singlet_scale": 0.039129848153536845,
+    "training_control": "S7_MOCK1",
+    "background": [
+      227446.5242884882,
+      516080.6705811537,
+      226382.14973011028,
+      428294.39012864046,
+      1833.1546391379065,
+      2999.9212886524256,
+      1456.5611261416807,
+      196.50288894998914,
+      866.3848788216176,
+      1149.4815105907214,
+      2303.698226737416,
+      29.20450955306676
+    ],
+    "background_event_se": [
+      164.97656695649417,
+      424.40848812831547,
+      177.80884906836008,
+      382.1079031767346,
+      1.7708505967838963,
+      3.65053716029191,
+      0.9564466129810467,
+      0.7538979013020549,
+      1.0180233364881794,
+      1.6657008948646053,
+      0.5154490333955959,
+      0.042341097835433626
+    ],
+    "positivity_thresholds": [
+      421705.56281249976,
+      1056625.125624999,
+      482461.6765624987,
+      1007822.2074999961,
+      4814.549082031198,
+      9295.027666015605,
+      2603.6029589843706,
+      985.8885202026362,
+      2303.796413574214,
+      3395.724011230456,
+      2943.645988769531,
+      58.835056399999985
+    ],
+    "red_quantitative_boundary": 3395.724011230456
+  },
+  "config": {
+    "analysis_version": "sonar-fresh-s7-s10-20261012-v2",
+    "review_date": "2026-10-13",
+    "status": "exploratory_detector_scale_not_optically_validated",
+    "seed": 20261012,
+    "context_training_control": "S7_MOCK1",
+    "transfer_control": "S7_MOCK2",
+    "scatter_mcd_support_fraction": 0.8,
+    "scatter_fit_max_events": 8000,
+    "scatter_chi2_probability": 0.99,
+    "singlet_log_area_height_mad_multiplier": 3.0,
+    "time_bin_seconds": 1.0,
+    "time_rate_mad_multiplier": 6.0,
+    "positivity_quantile": 0.995,
+    "red_min_background_sd_multiplier": 3.0,
+    "minimum_selected_events": 100,
+    "maximum_denominator_relative_se": 0.1,
+    "bootstrap_repeats": 2000,
+    "subsample_repeats": 100,
+    "subsample_sizes": [
+      100,
+      500,
+      1000,
+      5000,
+      10000,
+      20000
+    ],
+    "max_red_weight_warning": 0.05,
+    "display_asinh_cofactor": 1000,
+    "optical_policy": "verify_identity_then_preserve_native_linear_values_no_invented_correction",
+    "threshold_validation": "Mock_transfer_only_multicolor_boundaries_unvalidated",
+    "quantification_policy": "provisional_precision_screen_not_empirical_LOQ",
+    "metadata_overrides": {
+      "source": "config/user_confirmations.json",
+      "reviewed": "2026-10-13"
+    }
+  },
+  "kernel_sha256": "d7237412e283ceb3ba13cfd3fd73a28c639f0e7df093d838b29cacf5155564a9",
+  "config_sha256": "9b25c20f8d37799a4c00efee143d854d17cfe7a41825b8dce9e423eb58d7f057",
+  "background_GR_covariance": [
+    [
+      13.326421558672104,
+      3.9283982786841105
+    ],
+    [
+      3.9283982786841105,
+      2.774559471152739
+    ]
+  ],
+  "positivity_policy": "maximum_control_99.5th_percentile_per_channel",
+  "red_quantification": {
+    "raw_lower_exclusive": 3395.724011230456,
+    "validated_upper": null,
+    "reported_channel_range": 16777216.0,
+    "status": "PROVISIONAL_PRECISION_BOUNDARY_NOT_EMPIRICAL_LOQ",
+    "upper_policy": "retain_flag_and_sensitivity_test_not_clip"
+  },
+  "population_modes": {
+    "reporter": "singlets & raw_mCherry > red_quantitative_boundary",
+    "blue_positive_reporter": "reporter & raw_BFP > BFP_positivity_threshold; linked editor required"
+  },
+  "support_requirements": {
+    "minimum_events": 100,
+    "maximum_denominator_relative_se": 0.1,
+    "corrected_red_sum_positive": true
+  },
+  "qc_rules": {
+    "state": "WARN unless acquisition or score fails",
+    "saturation": "counts at/above PnR and at observed maximum; metadata range exceedance does not establish physical clipping",
+    "missing_BFP": "reporter remains possible in a separately qualified context; coexpression unavailable"
+  },
+  "uncertainty": {
+    "event": "paired multichannel resampling; 2000 draws",
+    "shared_controls": "one GR noise draw per bootstrap ID used jointly across wells",
+    "gates": "fixed primary; perturbations reported separately",
+    "between_wells": "n=2 independent transfection wells per condition; not event CI"
+  },
+  "compatibility": {
+    "profile_must_match": true,
+    "cell_type": "HEK293T",
+    "RAS_estimator": "ratio_of_paired_linear_sums-v2",
+    "RES_requires_separate_reference_domain": true
+  },
+  "limitations": [
+    "no single-color controls or FMO",
+    "no viability marker",
+    "no validated detector upper limit",
+    "S7 construct identity/loading/treatment unresolved",
+    "not transferable solely on instrument match"
+  ]
+}

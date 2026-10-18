@@ -1,0 +1,2 @@
+﻿model,status,fitted,PER,reasons,reference_basis_id,maximum_affine_prediction_difference
+RAS_to_corrected_S7_RES_to_RNA_fraction,NOT_CALIBRATED,False,,S7 inverse improved conditionally; S7/S10 construct/loading/treatment/population transfer still unqualified; molecular endpoint remains uncalibrated chromatogram index,S7_AC_DNA_mass_team_corrected_20261013,3.469446951953614e-16

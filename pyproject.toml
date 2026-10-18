@@ -1,0 +1,17 @@
+[build-system]
+requires = []
+build-backend = "build_backend"
+backend-path = ["."]
+
+[project]
+name = "sonar-platform"
+version = "1.4.0rc1"
+description = "Local SONAR platform with immutable scientific reference engine"
+requires-python = ">=3.13,<3.14"
+dynamic = ["dependencies"]
+
+[project.scripts]
+sonar = "sonar_app.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

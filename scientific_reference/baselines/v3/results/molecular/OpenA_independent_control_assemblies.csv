@@ -1,0 +1,5 @@
+﻿sample_label,forward_seam_index_1based,reverse_oriented_seam_index_1based,Q30_exact_overlap_positions,left_primer_exact_overlap,right_primer_exact_overlap,assembled_length,left_terminal_primer_only_nominal,right_terminal_primer_only_nominal
+1-0-1,229,251,387,11,10,523,11,12
+1-0-2,228,263,387,11,10,523,11,12
+1-0-3,228,251,382,10,10,523,12,12
+1-0-4,227,250,387,10,10,523,12,12

@@ -1,0 +1,33 @@
+{
+  "version": "sonar-s7-s10-layer23-v4-label-corrected",
+  "reference_basis_id": "S7_AC_DNA_mass_team_corrected_20261013",
+  "correction_date": "2026-10-13",
+  "correction_source": "Experimental team-reported probable label transposition, 2026-10-13.",
+  "correction_status": "USER_AUTHORIZED_PRIMARY_RETROSPECTIVE_PROBABLE_NOT_INDEPENDENTLY_VERIFIED",
+  "independently_verified": false,
+  "source_request_sha256": "c45d4c670ec2d3bfe5a813673dd195ef2b6fea55df4680895d26a68e639d9fd1",
+  "original_request_path": "/Users/hansensmbp/.codex/attachments/67477edd-3189-4ebf-a343-9887872ce4ee/已粘贴的文本.txt",
+  "swap_by_acquisition_id": {
+    "S7_75A": 0.9,
+    "S7_75B": 0.9,
+    "S7_90A": 0.75,
+    "S7_90B": 0.75
+  },
+  "preserve_prior_10_to_15": true,
+  "model_selection": "primary: leave_one_reference_level_out forward RMSE with inverse availability and error separately evaluated",
+  "sensitivity_scenarios": [
+    "A_wells_only",
+    "B_wells_only",
+    "omit_75",
+    "omit_90",
+    "omit_100",
+    "omit_90_and_100"
+  ],
+  "status_definitions": {
+    "VALIDATED_WITHIN_DOMAIN": "Requires qualified reference/optical assay, supported uncertainty and independent external validation; no v4 sample assigned.",
+    "EXPLORATORY": "An in-domain model-conditional estimate under retrospectively corrected S7 metadata; not validated RNA or AC accuracy.",
+    "NONIDENTIFIABLE": "Exact plateau has an interval inverse; no arbitrary point.",
+    "OUT_OF_CALIBRATION_RANGE": "Response outside fitted range; unavailable, not clipped or extrapolated.",
+    "NOT_CALIBRATED": "Missing or incompatible calibration population/domain."
+  }
+}

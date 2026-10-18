@@ -1,0 +1,10 @@
+﻿file,channel,wavelength,run_time,spatial_scan,instrument,optical_response_compensation,blank_wells_documented
+inputs/S10/酶标仪/LAYER 2&3 pbs blank.xlsx,BFP,"Ex 405 nm, Em 460 nm",2026/9/23 20:48:35,True,Varioskan LUX,No,A01 only
+inputs/S10/酶标仪/LAYER 2&3 pbs blank.xlsx,EGFP,"Ex 488 nm, Em 510 nm",2026/9/23 20:48:35,True,Varioskan LUX,No,A01 only
+inputs/S10/酶标仪/LAYER 2&3 pbs blank.xlsx,mCherry,"Ex 587 nm, Em 611 nm",2026/9/23 20:48:35,True,Varioskan LUX,No,A01 only
+inputs/S10/酶标仪/LAYER 3 NEW EDIT.xlsx,BFP,"Ex 405 nm, Em 460 nm",2026/9/23 20:13:35,True,Varioskan LUX,No,
+inputs/S10/酶标仪/LAYER 3 NEW EDIT.xlsx,EGFP,"Ex 488 nm, Em 510 nm",2026/9/23 20:13:35,True,Varioskan LUX,No,
+inputs/S10/酶标仪/LAYER 3 NEW EDIT.xlsx,mCherry,"Ex 587 nm, Em 611 nm",2026/9/23 20:13:35,True,Varioskan LUX,No,
+inputs/S10/酶标仪/LAYER 3 单点测光edit.xlsx,BFP,"Ex 405 nm, Em 460 nm",2026/9/23 18:02:42,False,Varioskan LUX,No,
+inputs/S10/酶标仪/LAYER 3 单点测光edit.xlsx,EGFP,"Ex 488 nm, Em 510 nm",2026/9/23 18:02:42,False,Varioskan LUX,No,
+inputs/S10/酶标仪/LAYER 3 单点测光edit.xlsx,mCherry,"Ex 587 nm, Em 611 nm",2026/9/23 18:02:42,False,Varioskan LUX,No,

@@ -1,0 +1,80 @@
+[
+  {
+    "packaged_path": "reference/layer23/S10_OpenA_edit523_provisional_amplicon.fasta",
+    "original_path": "/Users/hansensmbp/Downloads/S10_OpenA_edit523_provisional_amplicon.fasta",
+    "sha256": "2be2580f5c5acb87132b36f7d083c8e90d3f8a54a39c4e6545468d3dbe4b9105",
+    "bytes": 700
+  },
+  {
+    "packaged_path": "reference/layer23/S10_OpenA_edit523_reconstruction_notes.md",
+    "original_path": "/Users/hansensmbp/Downloads/S10_OpenA_edit523_reconstruction_notes.md",
+    "sha256": "d93bbc4838f509fc3c48c332e15beb260c5c2e1566acccf67d78b6a557b99312",
+    "bytes": 4495
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/REPORTER_assembled_from_4_primers.dna",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/REPORTER_assembled_from_4_primers.dna",
+    "sha256": "cf25e2d239003c10c38a200bdc6cddf85d58ba2c22293514a809d6bb00d33767",
+    "bytes": 567618
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/REPORTER_assembled_from_4_primers.fasta",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/REPORTER_assembled_from_4_primers.fasta",
+    "sha256": "02a4506f01d3dbe1a1a752cc3b49f420a3e4d0a0919d1540e2e388917a037377",
+    "bytes": 7711
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/REPORTER_assembled_from_4_primers.gb",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/REPORTER_assembled_from_4_primers.gb",
+    "sha256": "187c784d54657d0ccdbf166a5a7110710f41e321c7ece85490f53fe38f3417a0",
+    "bytes": 14053
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/REPORTER_shipping.dna",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/REPORTER_shipping.dna",
+    "sha256": "382c9b3702220d4ca0c9924f73a3199d74ac8fcbbfda47453f9e31273295fa23",
+    "bytes": 98391
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/REPORTER_vector.dna",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/REPORTER_vector.dna",
+    "sha256": "53b151c6f5c50be2a3c9bcaf31ec876a49f95cb67588a532bf43b75ab9860e43",
+    "bytes": 120240
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/reporter_apoe4_assembled.fasta",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/reporter_apoe4_assembled.fasta",
+    "sha256": "6dad67628072b59d796a98a5e9d2a0a1a4e3c966a826d03d4ce5bd28aaa68590",
+    "bytes": 2099
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/reporter_apoe4_assembled.gb",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/reporter_apoe4_assembled.gb",
+    "sha256": "c426d9ca704323d35505f83ae195f99810a6f3d8a2c3f8b68a9e6cac1cfc8844",
+    "bytes": 5415
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/reporter_universal.fasta",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/reporter_universal.fasta",
+    "sha256": "be25169b4324b7765742b2944f2c5f951ab80547e6408063e0e631d1d750ec5b",
+    "bytes": 2157
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/reporter_universal.gb",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/reporter_universal.gb",
+    "sha256": "6c70f820a5f9afb3ffd69292cf227aa60ebeba043c35125b5f7632cb6b9164cf",
+    "bytes": 5468
+  },
+  {
+    "packaged_path": "reference/layer23/construct_records/reporter_universal_FINAL.dna",
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/序列/reporter_universal_FINAL.dna",
+    "sha256": "979fd87a98c516ed39ee34110cd29bfac60f8411aa0184364bfe6368c260d8b3",
+    "bytes": 52948
+  },
+  {
+    "packaged_path": "reference/layer23/user_request.txt",
+    "original_path": "/Users/hansensmbp/.codex/attachments/faa50036-ef51-4ad7-83f1-1bb67820095d/已粘贴的文本.txt",
+    "sha256": "0d7c95ae6e91efb29d0a3896ab4e51db5368d4eeca08ceba7f9f60ead4ec0ac4",
+    "bytes": 46608
+  }
+]

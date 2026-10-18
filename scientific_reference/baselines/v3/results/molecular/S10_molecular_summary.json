@@ -1,0 +1,147 @@
+{
+  "version": "sonar-s7-s10-layer23-20261013-v3",
+  "read_n": 48,
+  "eligible_reads": 47,
+  "failed_reads": [
+    {
+      "read_id": "1-8-2.F.1391192.E2412B10.H07",
+      "failure_reasons": "LOW_FLANK_ALIGNMENT_IDENTITY"
+    }
+  ],
+  "complete_pairs": 23,
+  "independent_wells": 12,
+  "raw_direction_bias": 0.03655594276377625,
+  "raw_direction_RMSE": 0.06773101506779326,
+  "background_corrected_direction_bias": 0.06564186799219246,
+  "direction_correlation": 0.9277329602312488,
+  "backgrounds": [
+    {
+      "direction": "F",
+      "processing": "raw_peak_ratio",
+      "background": 0.044925821983055975,
+      "well_n": 2,
+      "sd_between_wells": 0.015520373231735676,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "F",
+      "processing": "baseline_peak_ratio",
+      "background": 0.044391787158538774,
+      "well_n": 2,
+      "sd_between_wells": 0.01610992912475199,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "F",
+      "processing": "nearby_max_ratio",
+      "background": 0.05013711165447152,
+      "well_n": 2,
+      "sd_between_wells": 0.01587175679677302,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "F",
+      "processing": "peak_area_ratio",
+      "background": 0.0815508536042572,
+      "well_n": 2,
+      "sd_between_wells": 0.027935334402390752,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "R",
+      "processing": "raw_peak_ratio",
+      "background": 0.015839896754639763,
+      "well_n": 2,
+      "sd_between_wells": 0.01947301842699472,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "R",
+      "processing": "baseline_peak_ratio",
+      "background": 0.015839896754639763,
+      "well_n": 2,
+      "sd_between_wells": 0.01947301842699472,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "R",
+      "processing": "nearby_max_ratio",
+      "background": 0.017337241363329196,
+      "well_n": 2,
+      "sd_between_wells": 0.018686753365524635,
+      "calibrated_to_editing_fraction": false
+    },
+    {
+      "direction": "R",
+      "processing": "peak_area_ratio",
+      "background": 0.023837574749665007,
+      "well_n": 2,
+      "sd_between_wells": 0.01915828297742278,
+      "calibrated_to_editing_fraction": false
+    }
+  ],
+  "condition_summary": [
+    {
+      "dose_ratio": 0.0,
+      "well_n": 2,
+      "signal_mean": 3.469446951953614e-18,
+      "signal_SD": 0.017496695829365198,
+      "F_raw_mean": 0.044925821983055975,
+      "R_raw_mean": 0.015839896754639763,
+      "F_minus_control": 5.204170427930421e-18,
+      "R_minus_control": 0.0
+    },
+    {
+      "dose_ratio": 0.5,
+      "well_n": 2,
+      "signal_mean": 0.016656064355474495,
+      "signal_SD": 0.008702542051009706,
+      "F_raw_mean": 0.04512941568204495,
+      "R_raw_mean": 0.048948431766599784,
+      "F_minus_control": 0.00020359369898897105,
+      "R_minus_control": 0.03310853501196002
+    },
+    {
+      "dose_ratio": 1.0,
+      "well_n": 2,
+      "signal_mean": 0.02305538505549123,
+      "signal_SD": 0.010619704019699775,
+      "F_raw_mean": 0.04806233048618521,
+      "R_raw_mean": 0.058814158362492985,
+      "F_minus_control": 0.0031365085031292376,
+      "R_minus_control": 0.042974261607853226
+    },
+    {
+      "dose_ratio": 2.0,
+      "well_n": 2,
+      "signal_mean": 0.07919864801839795,
+      "signal_SD": 0.03377575173542039,
+      "F_raw_mean": 0.07372949972815207,
+      "R_raw_mean": 0.14543351504633956,
+      "F_minus_control": 0.02880367774509609,
+      "R_minus_control": 0.1295936182916998
+    },
+    {
+      "dose_ratio": 4.0,
+      "well_n": 2,
+      "signal_mean": 0.1047745382727798,
+      "signal_SD": 0.012807487147856025,
+      "F_raw_mean": 0.10651860574626931,
+      "R_raw_mean": 0.16379618953698602,
+      "F_minus_control": 0.06159278376321333,
+      "R_minus_control": 0.14795629278234626
+    },
+    {
+      "dose_ratio": 8.0,
+      "well_n": 2,
+      "signal_mean": 0.2017440758459989,
+      "signal_SD": 0.010481639167393732,
+      "F_raw_mean": 0.16354093737856282,
+      "R_raw_mean": 0.2874474357430802,
+      "F_minus_control": 0.11861511539550686,
+      "R_minus_control": 0.2716075389884404
+    }
+  ],
+  "validated_RNA_fractions": 0,
+  "all_reads_byte_crosschecked": true
+}

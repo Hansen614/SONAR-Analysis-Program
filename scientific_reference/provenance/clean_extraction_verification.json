@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "release_id": "sonar-science-v1.0-s7s10",
+  "packages": [
+    {
+      "archive_name": "SONAR_Codex_Handoff_Ready.zip",
+      "archive_sha256_at_test": "10ac9b336595520b2fa2439a6cac02ebcc74669963b6b772c5191e1b6f8d122c",
+      "extraction_directory": "/private/tmp/sonar_final_clean_pxdzx98r/SONAR_Codex_Handoff",
+      "status": "PASS",
+      "manifest_files_verified": 880,
+      "scientific_payload_sha256": "a476daf5ed1afd91cee4f500461ceae31cfe8127ff86611864c8d320babecc12",
+      "commands": [
+        "python science.py verify",
+        "python science.py example --sample S7_90B --output _work/S7_90B.json",
+        "python science.py example --sample S7_5B --output _work/S7_5B.json",
+        "python science.py example --sample S7_100A --output _work/S7_100A.json",
+        "python science.py example --sample S10_1_8_A --output _work/S10_1_8_A.json",
+        "python science.py reproduce"
+      ],
+      "full_raw_rebuild_executed": true,
+      "raw_reproduction": {
+        "status": "PASS",
+        "release_id": "sonar-science-v1.0-s7s10",
+        "command": "python science.py reproduce",
+        "execution_scope": "raw FCS through paired bootstrap; raw AB1 reconstruction and site metrics; v4 correction/calibration; final contracts and validation",
+        "preserved_RAS_bytes_equal": true,
+        "raw_molecular_tables_compared": 18,
+        "final_tables_compared": 17,
+        "maximum_absolute_numeric_difference": 0.0,
+        "mask_arrays_equal": 204,
+        "frozen_model_objects_equal": 5,
+        "integrated_sample_reports_equal": true,
+        "required_external_data_paths": 0,
+        "tolerance": {
+          "rtol": 1e-12,
+          "atol": 1e-12
+        },
+        "interpretation": "computational reproducibility; no new biological validation"
+      }
+    },
+    {
+      "archive_name": "SONAR_Scientific_Final_S7_S10.zip",
+      "archive_sha256_at_test": "9b8a3f32779f3d2ccc88df5cb69db1ba1933182506f5ab5324c1d9e1e5333463",
+      "extraction_directory": "/private/tmp/sonar_final_clean_pxdzx98r/SONAR_Scientific_Final_S7_S10",
+      "status": "PASS",
+      "manifest_files_verified": 880,
+      "scientific_payload_sha256": "a476daf5ed1afd91cee4f500461ceae31cfe8127ff86611864c8d320babecc12",
+      "commands": [
+        "python science.py verify",
+        "python science.py example --sample S7_90B --output _work/S7_90B.json",
+        "python science.py example --sample S7_5B --output _work/S7_5B.json",
+        "python science.py example --sample S7_100A --output _work/S7_100A.json",
+        "python science.py example --sample S10_1_8_A --output _work/S10_1_8_A.json"
+      ],
+      "full_raw_rebuild_executed": false
+    }
+  ],
+  "same_scientific_payload": true,
+  "environment": "existing pinned Python3.13.7 environment; clean data/source extraction, not a new dependency installation",
+  "finalization_note": "After the clean-extraction execution, only provenance/verification records, the Chinese handoff note, and release manifests were finalized. The exact scientific payload digest is unchanged; sealed archives are checked against the tested payload and every file hash."
+}

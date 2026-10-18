@@ -1,0 +1,14 @@
+[
+  {
+    "original_path": "/Users/hansensmbp/Desktop/iGEM NEW/Reporter/Measurement Pipeline/SONAR_v3.1_Separated_Languages_Measurement/SONAR_Work_EN_v3.1.md",
+    "packaged_path": "reference/SONAR_Work_EN_v3.1.md",
+    "sha256": "51abaa0ca21205c6d1b2dd4923bd6ebfff62baa250823bee22bfee0777cf7f72",
+    "role": "task_or_architecture_reference_not_experimental_numeric_input"
+  },
+  {
+    "original_path": "/Users/hansensmbp/.codex/attachments/8c6a4b48-90f9-4f38-ae72-7fb7a2f0c290/已粘贴的文本.txt",
+    "packaged_path": "reference/User_Work_Prompt.txt",
+    "sha256": "4631fec5601fb68e30077a8f0f7406665df4a62b7bb73288b84c50d6f9b04b79",
+    "role": "task_or_architecture_reference_not_experimental_numeric_input"
+  }
+]

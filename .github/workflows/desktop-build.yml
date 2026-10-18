@@ -1,0 +1,112 @@
+name: SAP desktop candidates
+on:
+  workflow_dispatch:
+    inputs:
+      macos:
+        description: Also build macOS arm64
+        type: boolean
+        default: false
+      windows:
+        description: Build Windows too (requires verified WebView2 inputs)
+        type: boolean
+        default: false
+      webview2_url:
+        description: Official Microsoft x64 Fixed Runtime CAB URL
+        type: string
+      webview2_sha256:
+        description: Expected SHA256 of that CAB
+        type: string
+permissions:
+  contents: read
+jobs:
+  macos:
+    if: inputs.macos
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.7'
+          architecture: arm64
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          python -m venv .desktop-venv
+          .desktop-venv/bin/python -m pip install -r packaging/requirements-macos-arm64.lock.txt
+          .desktop-venv/bin/python -m pytest tests -q
+          node tests/reporter_design.cjs
+          node tests/control_oligos.cjs
+          .desktop-venv/bin/python packaging/build_desktop.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SAP-macos-arm64-candidate
+          path: |
+            desktop-dist/*.dmg
+            desktop-dist/*.json
+            desktop-dist/SHA256SUMS.txt
+  windows:
+    if: inputs.windows
+    runs-on: windows-2022
+    timeout-minutes: 45
+    env:
+      PYTHONUTF8: '1'
+      RUNTIME_URL: ${{ inputs.webview2_url }}
+      RUNTIME_SHA256: ${{ inputs.webview2_sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.7'
+          architecture: x64
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare verified offline browser runtime
+        shell: pwsh
+        run: |
+          $uri = [Uri]$env:RUNTIME_URL
+          if ($uri.Scheme -ne 'https' -or $uri.Host -notmatch '(^|\.)(microsoft\.com|windowsupdate\.com)$') { throw 'Official Microsoft HTTPS URL required' }
+          if ($env:RUNTIME_SHA256 -notmatch '^[a-fA-F0-9]{64}$') { throw 'SHA256 required' }
+          Invoke-WebRequest $uri -OutFile runtime.cab
+          if ((Get-FileHash runtime.cab -Algorithm SHA256).Hash -ne $env:RUNTIME_SHA256) { throw 'Hash mismatch' }
+          New-Item -ItemType Directory runtime
+          expand.exe runtime.cab -F:* runtime
+          if ($LASTEXITCODE -ne 0) { throw 'Extraction failed' }
+          $exe = Get-ChildItem runtime -Recurse -Filter msedgewebview2.exe | Select-Object -First 1
+          if (!$exe) { throw 'No runtime executable' }
+          "SAP_WEBVIEW2_RUNTIME=$($exe.Directory.FullName)" >> $env:GITHUB_ENV
+      - name: Test and build
+        shell: pwsh
+        run: |
+          python -m venv .desktop-venv
+          .desktop-venv/Scripts/python -m pip install -r packaging/requirements-desktop.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          .desktop-venv/Scripts/python -m pytest tests -q
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          node tests/reporter_design.cjs
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          node tests/control_oligos.cjs
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          .desktop-venv/Scripts/python packaging/build_desktop.py
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          .desktop-venv/Scripts/python -m pip freeze > desktop-dist/requirements-windows-x64.lock.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SAP-windows-x64-candidate
+          path: |
+            desktop-dist/*.zip
+            desktop-dist/*.json
+            desktop-dist/SHA256SUMS.txt
+            desktop-dist/requirements-windows-x64.lock.txt
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SAP-windows-build-diagnostics
+          if-no-files-found: ignore
+          path: |
+            _work/frozen-self-test/self-test.json
+            _work/frozen-self-test/FAILED.txt
+            _work/frozen-self-test/logs/
+            _work/desktop-build/SAP/warn-SAP.txt

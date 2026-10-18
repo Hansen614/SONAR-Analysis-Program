@@ -1,0 +1,101 @@
+LOCUS       UniReporter             2027 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  Universal PUF-APOBEC C>U editing GFP reporter (Golden Gate acceptor
+            with stuffer).
+ACCESSION   pREWIRE_UniReporter
+VERSION     pREWIRE_UniReporter
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     regulatory      1..6
+                     /label="Kozak"
+                     /note="GCCACC Kozak consensus"
+                     /ApEinfo_fwdcolor="#bbbbbb"
+                     /ApEinfo_revcolor="#bbbbbb"
+     CDS             7..714
+                     /label="mCherry"
+                     /note="表达内参; P2A下游独立稳定表达"
+                     /ApEinfo_fwdcolor="#d62728"
+                     /ApEinfo_revcolor="#d62728"
+     CDS             715..780
+                     /label="GSG-P2A"
+                     /note="T2A自剪切肽(GSG接头); 核糖体跳跃"
+                     /ApEinfo_fwdcolor="#ff7f0e"
+                     /ApEinfo_revcolor="#ff7f0e"
+     CDS             781..1497
+                     /label="EGFP"
+                     /note="编辑读出报告(turn-ON)"
+                     /ApEinfo_fwdcolor="#2ca02c"
+                     /ApEinfo_revcolor="#2ca02c"
+     misc_feature    1498..1503
+                     /label="GS-linker(GFP侧)"
+                     /note="GGCAGC 柔性接头"
+                     /ApEinfo_fwdcolor="#9edae5"
+                     /ApEinfo_revcolor="#9edae5"
+     protein_bind    1505..1510
+                     /label="BsaI(rev)"
+                     /note="GAGACC; 向内切,释放CAGC突出端"
+                     /ApEinfo_fwdcolor="#e377c2"
+                     /ApEinfo_revcolor="#e377c2"
+     protein_bind    1535..1540
+                     /label="BsaI(fwd)"
+                     /note="GGTCTC; 向内切,释放GGCA突出端"
+                     /ApEinfo_fwdcolor="#e377c2"
+                     /ApEinfo_revcolor="#e377c2"
+     misc_feature    1511..1534
+                     /label="STUFFER"
+                     /note="占位; 含PstI/XbaI/NdeI/BamHI筛选位点"
+                     /ApEinfo_fwdcolor="#7f7f7f"
+                     /ApEinfo_revcolor="#7f7f7f"
+     misc_feature    1542..1547
+                     /label="GS-linker(DHFR侧)"
+                     /note="GGCAGC 柔性接头"
+                     /ApEinfo_fwdcolor="#9edae5"
+                     /ApEinfo_revcolor="#9edae5"
+     CDS             1548..2024
+                     /label="ecDHFR-DD"
+                     /note="C端去稳定域(N18T/A19V/G67S); -TMP降解/+TMP稳定"
+                     /ApEinfo_fwdcolor="#1f77b4"
+                     /ApEinfo_revcolor="#1f77b4"
+     CDS             2025..2027
+                     /label="stop"
+                     /note="TGA 终止子"
+                     /ApEinfo_fwdcolor="#000000"
+                     /ApEinfo_revcolor="#000000"
+ORIGIN
+        1 gccaccatgg tgagcaaggg cgaggaggat aacatggcca tcatcaagga gttcatgcgc
+       61 ttcaaggtgc acatggaggg ctccgtgaac ggccacgagt tcgagatcga gggcgagggc
+      121 gagggccgcc cctacgaggg cacccagacc gccaagctga aggtgaccaa gggtggcccc
+      181 ctgcccttcg cctgggacat cctgtcccct cagttcatgt acggctccaa ggcctacgtg
+      241 aagcaccccg ccgacatccc cgactacttg aagctgtcct tccccgaggg cttcaagtgg
+      301 gagcgcgtga tgaacttcga ggacggcggc gtggtgaccg tgacccagga ctcctccctg
+      361 caggacggcg agttcatcta caaggtgaag ctgcgcggca ccaacttccc ctccgacggc
+      421 cccgtaatgc agaagaagac catgggctgg gaggcctcct ccgagcggat gtaccccgag
+      481 gacggcgccc tgaagggcga gatcaagcag aggctgaagc tgaaggacgg cggccactac
+      541 gacgctgagg tcaagaccac ctacaaggcc aagaagcccg tgcagctgcc cggcgcctac
+      601 aacgtcaaca tcaagttgga catcacctcc cacaacgagg actacaccat cgtggaacag
+      661 tacgaacgcg ccgagggccg ccactccacc ggcggcatgg acgagctgta caagggaagc
+      721 ggagctacta acttcagcct gctgaagcag gctggcgacg tggaggagaa ccctggacct
+      781 atggtgagca agggcgagga gctgttcacc ggggtggtgc ccatcctggt cgagctggac
+      841 ggcgacgtaa acggccacaa gttcagcgtg tccggcgagg gcgagggcga tgccacctac
+      901 ggcaagctga ccctgaagtt catctgcacc accggcaagc tgcccgtgcc ctggcccacc
+      961 ctcgtgacca ccctgaccta cggcgtgcag tgcttcagcc gctaccccga ccacatgaag
+     1021 cagcacgact tcttcaagtc cgccatgccc gaaggctacg tccaggagcg caccatcttc
+     1081 ttcaaggacg acggcaacta caagacccgc gccgaggtga agttcgaggg cgacaccctg
+     1141 gtgaaccgca tcgagctgaa gggcatcgac ttcaaggagg acggcaacat cctggggcac
+     1201 aagctggagt acaactacaa cagccacaac gtctatatca tggccgacaa gcagaagaac
+     1261 ggcatcaagg tgaacttcaa gatccgccac aacatcgagg acggcagcgt gcagctcgcc
+     1321 gaccactacc agcagaacac ccccatcggc gacggccccg tgctgctgcc cgacaaccac
+     1381 tacctgagca cccagtccgc cctgagcaaa gaccccaacg agaagcgcga tcacatggtc
+     1441 ctgctggagt tcgtgaccgc cgccgggatc actctcggca tggacgagct gtacaagggc
+     1501 agcagagacc ctgcagtcta gacatatggg atccggtctc tggcagcatg atcagcctga
+     1561 tcgccgccct ggccgtggac cgcgtgatcg gcatggaaac cgtgatgccc tggaacctgc
+     1621 ccgccgacct ggcctggttc aagcgcaaca ccctgaacaa gcccgtgatc atgggccgcc
+     1681 acacctggga gagcatcggc cgccccctgc ccggccgcaa gaacatcatc ctgagcagcc
+     1741 agcccagcac cgacgaccgc gtgacctggg tgaagagcgt ggacgaggcc atcgccgcct
+     1801 gcggcgacgt gcccgagatc atggtgatcg gcggcggccg cgtgtacgag cagttcctgc
+     1861 ccaaggccca gaagctgtac ctgacccaca tcgacgccga ggtggagggc gacacccact
+     1921 tccccgacta cgagcccgac gactgggaga gcgtgttcag cgagttccac gacgccgacg
+     1981 cccagaacag ccacagctac tgcttcgaga tcctggagcg ccgctga
+//

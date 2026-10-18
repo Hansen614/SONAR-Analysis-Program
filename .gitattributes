@@ -1,0 +1,6 @@
+# Keep the frozen reference bytes identical on Windows and macOS.
+scientific_reference/** -text
+sonar_app/** -text
+*.png binary
+*.ico binary
+*.icns binary

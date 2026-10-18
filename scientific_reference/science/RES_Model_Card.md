@@ -1,0 +1,11 @@
+# RES primary model card
+- Identity: `sonar-science-v1.0-s7s10::S7-hinge-k050`; fixed 50% hinge, three parameters, explicit JSON.
+- Purpose: reference-equivalent interpretation of compatible S7 reporter-population RAS; AC DNA mass basis.
+- Training: 20 wells/10 levels, two wells per level, one experimental series. Source correction is retrospective and not independently verified.
+- Performance: level-held-out forward RMSE 0.036368 RAS (16/20 evaluable forward cases); inverse MAE 6.153 pp, RMSE 7.078 pp on 19/20 unique inverses; one failure. Shared three-model subset MAE 5.848 pp (14 wells).
+- Uncertainty: conditional bootstrap plus separately reported broader discrepancy compatibility set; neither is a validated 95% measurement interval. Conditional held-out coverage is poor.
+- Domains: numerical A 0–1; internal exploratory screen RAS 0.7845–1.0065; no supported S10/external transfer. Only two reference wells occupy the screen's actual sampled level.
+- Allowed: explicitly labeled compatible research estimates; own-model fitting as a new research model.
+- Disallowed interpretation: RNA editing percentage, universal calibration, validated ±10 pp accuracy, routine quantitative claims, unqualified R+B+ transfer.
+- Failure policy: missing/nonfinite/outside range -> null; plateau -> interval without unique point; incompatible -> ordinary RES null with optional separate hypothetical mapping.
+- Maintenance: any input/core/context/calibration change requires dependency invalidation and a new model identity. Default application calls load, never silently refit.

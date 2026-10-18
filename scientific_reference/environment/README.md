@@ -1,0 +1,1 @@
+Use Python 3.13.7 and requirements.lock.txt. This directory records the tested dependency environment; Python and binary wheels are not embedded. Allscientific data and executable source are embedded. Installation may require networkaccess; analysis does not.

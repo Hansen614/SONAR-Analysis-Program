@@ -1,0 +1,17 @@
+series,condition_label,well_n,well_ids,raw_EGFP_CV_percent,RAS_CV_percent,reduction_percentage_points,improved,definition
+S10,0,2,S10_1_0_A_well;S10_1_0_B_well,7.579429630919897,6.0182502893425243,1.5611793415773727,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S10,0.5,2,S10_1_0.5_A_well;S10_1_0.5_B_well,1.0109016879829451,1.9248179326510673,-0.91391624466812216,False,sample_SD_ddof1/abs_mean*100; same reporter events
+S10,1,2,S10_1_1_A_well;S10_1_1_B_well,16.03915916521969,6.9215829650739229,9.1175762001457663,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S10,2,2,S10_1_2_A_well;S10_1_2_B_well,7.4870265693439606,5.8792409811700068,1.6077855881739538,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S10,4,2,S10_1_4_A_well;S10_1_4_B_well,5.9348381445705867,4.4055105444238167,1.5293276001467699,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S10,8,2,S10_1_8_A_well;S10_1_8_B_well,4.3065617433517334,0.52648580858845473,3.7800759347632784,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,0,2,S7_0A_well;S7_0B_well,5.5695118926893317,4.3702405141779925,1.1992713785113391,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,5,2,S7_5A_well;S7_5B_well,3.9489772889309944,1.2295435391960969,2.7194337497348977,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,15,2,S7_10A_well;S7_10B_well,12.666698581605246,5.0630077996497782,7.6036907819554678,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,20,2,S7_20A_well;S7_20B_well,7.4971263163724222,1.7228141018447392,5.7743122145276828,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,30,2,S7_30A_well;S7_30B_well,1.3000683002458082,0.068510660630171819,1.2315576396156365,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,40,2,S7_40A_well;S7_40B_well,0.35155516350137406,1.5724520632107251,-1.220896899709351,False,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,50,2,S7_50A_well;S7_50B_well,5.6179836325343517,2.4105420662176571,3.2074415663166946,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,75,2,S7_90A_well;S7_90B_well,5.4450040017726735,3.2456537388110038,2.1993502629616697,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,90,2,S7_75A_well;S7_75B_well,2.1020855334807202,0.51180544024928676,1.5902800932314336,True,sample_SD_ddof1/abs_mean*100; same reporter events
+S7,100,2,S7_100A_well;S7_100B_well,0.11635943859463663,1.8118751404927802,-1.6955157018981435,False,sample_SD_ddof1/abs_mean*100; same reporter events

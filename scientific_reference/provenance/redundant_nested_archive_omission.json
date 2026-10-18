@@ -1,0 +1,6 @@
+{
+  "omitted_file": "baselines/v2/SONAR_Layer01_v2_preserved.zip",
+  "sha256": "3d1f514328218b718e70b519f55b59f0b96ff87d4fac05a8358a214aa67da542",
+  "reason": "Redundant nested historical archive; all runtime raw data, baseline tables/configs and audit records remain. The original v4 ZIP is unchanged and retains this historical archive.",
+  "required_runtime_input": false
+}

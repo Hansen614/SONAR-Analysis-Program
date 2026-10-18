@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "execution_date": "2026-10-13",
+  "command": "python reproduce.py --verify",
+  "analysis_version": "sonar-fresh-s7-s10-20261012-v2",
+  "numeric_tables_compared": 23,
+  "maximum_absolute_numeric_difference": 0.0,
+  "event_mask_arrays_compared": 204,
+  "diagnostic_PNGs_pixel_equal": 13,
+  "context_equal": true,
+  "tolerance": {
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "tests_log": "reports/test_results.txt",
+  "raw_integrity": "All copied source hashes match; originals also checked when present",
+  "reproduction_level": "computational_only_not_independent_biological_or_cross_lab"
+}

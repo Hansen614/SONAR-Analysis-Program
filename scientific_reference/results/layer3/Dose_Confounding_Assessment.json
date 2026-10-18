@@ -1,0 +1,9 @@
+{
+  "B_fraction_vs_linear_dose_pearson": 0.9833078212499345,
+  "within_dose_difference_pairs": 6,
+  "within_dose_difference_pearson": 0.3449975047357781,
+  "within_dose_difference_slope_through_origin": 0.20038615495597079,
+  "interpretation": "six A/B difference pairs remove dose mean; low support and shared assay limits preclude independent causal BFP contribution",
+  "regression_existing_model_predictions_equal": true,
+  "unchanged_comparisons": 120
+}

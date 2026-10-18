@@ -1,0 +1,76 @@
+﻿file,kind,well,sample_label,channel,point_n,mean_RFU,sd_spatial,minimum,maximum,diagnostic_mean_minus_PBS_scan_mean,blank_compatibility
+LAYER 2&3 pbs blank.xlsx,PBS_spatial_scan,A01,PBS,BFP,81,0.1306574074074074,0.047616027757935074,0.02625,0.3277,0.0,different_time_same_scan_only_single_point_not_matched
+LAYER 2&3 pbs blank.xlsx,PBS_spatial_scan,A01,PBS,EGFP,81,0.04411197530864198,0.019710400770897144,0.01237,0.1028,0.0,different_time_same_scan_only_single_point_not_matched
+LAYER 2&3 pbs blank.xlsx,PBS_spatial_scan,A01,PBS,mCherry,81,0.0031869920987654325,0.02488277880766308,-0.05776,0.06905,0.0,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A01,1:0-a,BFP,81,0.12913555555555556,0.04889094936693293,0.03764,0.2792,-0.0015218518518518298,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A01,1:0-a,EGFP,81,0.08223567901234567,0.021857917326352918,0.04523,0.1321,0.038123703703703694,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A01,1:0-a,mCherry,81,0.016200232098765432,0.03501089088812875,-0.06866,0.1271,0.013013239999999999,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A02,1:0-b,BFP,81,0.1511148148148148,0.04940155761995545,0.05824,0.2891,0.020457407407407424,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A02,1:0-b,EGFP,81,0.07596296296296295,0.02391982161536978,0.02966,0.1545,0.03185098765432098,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A02,1:0-b,mCherry,81,0.013206516049382718,0.03499355747594283,-0.05781,0.1199,0.010019523950617285,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A03,1:0.5-a,BFP,81,0.1513695061728395,0.05216166698115664,0.06078,0.2943,0.02071209876543212,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A03,1:0.5-a,EGFP,81,0.07404,0.025002598015006365,0.01979,0.1332,0.029928024691358017,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A03,1:0.5-a,mCherry,81,0.008239111111111112,0.03236415451876891,-0.05823,0.1358,0.005052119012345679,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A04,1:0.5-b,BFP,81,0.1456520987654321,0.05312672373006002,0.05243,0.3447,0.014994691358024698,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A04,1:0.5-b,EGFP,81,0.07695567901234568,0.02522222660364622,0.02221,0.1357,0.0328437037037037,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,A04,1:0.5-b,mCherry,81,0.012339454320987655,0.032231895316212206,-0.06971,0.1422,0.009152462222222222,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B01,1:1-a,BFP,81,0.1520141975308642,0.05663165104127281,0.05332,0.3532,0.021356790123456815,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B01,1:1-a,EGFP,81,0.0853404938271605,0.02990834920641871,0.02306,0.1777,0.04122851851851852,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B01,1:1-a,mCherry,81,0.009156204938271606,0.030077139087136853,-0.07565,0.08377,0.005969212839506173,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B02,1:1-b,BFP,81,0.1423735802469136,0.05269539911862899,0.02394,0.2883,0.011716172839506211,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B02,1:1-b,EGFP,81,0.07311753086419753,0.02563196088533143,0.02601,0.158,0.029005555555555555,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B02,1:1-b,mCherry,81,0.009970523456790123,0.028664451674056464,-0.07318,0.09196,0.00678353135802469,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B03,1:2-a,BFP,81,0.14644827160493828,0.04395570371948683,0.05804,0.3113,0.015790864197530896,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B03,1:2-a,EGFP,81,0.07326506172839506,0.025149362423501753,0.0265,0.1836,0.02915308641975308,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B03,1:2-a,mCherry,81,0.014831435802469135,0.033726929400600306,-0.04677,0.1161,0.011644443703703702,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B04,1:2-b,BFP,81,0.15086172839506173,0.054185371521982835,0.01285,0.2667,0.020204320987654345,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B04,1:2-b,EGFP,81,0.07530382716049383,0.0227921535055324,0.02153,0.1403,0.031191851851851853,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,B04,1:2-b,mCherry,81,0.0084514987654321,0.02731578228241182,-0.06083,0.08746,0.005264506666666667,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C01,1:4-a,BFP,81,0.14837962962962964,0.04795802467899519,0.05133,0.2713,0.01772222222222225,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C01,1:4-a,EGFP,81,0.08390012345679013,0.02911140689205123,0.02764,0.1659,0.03978814814814815,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C01,1:4-a,mCherry,81,0.007376032098765432,0.03164347132604855,-0.05493,0.1093,0.00418904,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C02,1:4-b,BFP,81,0.1547741975308642,0.06301830876547301,0.0274,0.456,0.0241167901234568,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C02,1:4-b,EGFP,81,0.07839345679012345,0.0251180396906533,0.02763,0.1457,0.034281481481481475,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C02,1:4-b,mCherry,81,0.011845805802469135,0.031142905083806443,-0.0681,0.1317,0.008658813703703703,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C03,1:8-a,BFP,81,0.18351419753086418,0.04816004144683115,0.07511,0.3242,0.05285679012345679,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C03,1:8-a,EGFP,81,0.08140234567901235,0.02637284219948643,0.02369,0.1644,0.03729037037037037,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C03,1:8-a,mCherry,81,0.015362487654320986,0.03453478537134111,-0.04164,0.1202,0.012175495555555553,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C04,1:8-b,BFP,81,0.18000925925925926,0.06456448611229275,0.05573,0.38,0.04935185185185187,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C04,1:8-b,EGFP,81,0.07470617283950617,0.025862450220730304,0.02153,0.1773,0.030594197530864196,different_time_same_scan_only_single_point_not_matched
+LAYER 3 NEW EDIT.xlsx,S10_spatial_scan,C04,1:8-b,mCherry,81,0.012132093827160495,0.026233740019673834,-0.09618,0.0762,0.008945101728395062,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A01,1:0-a,BFP,1,0.1708,,0.1708,0.1708,0.04014259259259262,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A01,1:0-a,EGFP,1,0.3865,,0.3865,0.3865,0.34238802469135804,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A01,1:0-a,mCherry,1,-0.01724,,-0.01724,-0.01724,-0.02042699209876543,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A02,1:0-b,BFP,1,0.2619,,0.2619,0.2619,0.13124259259259263,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A02,1:0-b,EGFP,1,0.4935,,0.4935,0.4935,0.449388024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A02,1:0-b,mCherry,1,-0.00598,,-0.00598,-0.00598,-0.009166992098765432,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A03,1:0.5-a,BFP,1,0.2991,,0.2991,0.2991,0.1684425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A03,1:0.5-a,EGFP,1,0.4301,,0.4301,0.4301,0.385988024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A03,1:0.5-a,mCherry,1,0.05476,,0.05476,0.05476,0.05157300790123457,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A04,1:0.5-b,BFP,1,0.1717,,0.1717,0.1717,0.0410425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A04,1:0.5-b,EGFP,1,0.4008,,0.4008,0.4008,0.356688024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,A04,1:0.5-b,mCherry,1,0.04092,,0.04092,0.04092,0.037733007901234565,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B01,1:1-a,BFP,1,0.2573,,0.2573,0.2573,0.12664259259259258,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B01,1:1-a,EGFP,1,0.4458,,0.4458,0.4458,0.401688024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B01,1:1-a,mCherry,1,0.04683,,0.04683,0.04683,0.043643007901234564,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B02,1:1-b,BFP,1,0.2884,,0.2884,0.2884,0.1577425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B02,1:1-b,EGFP,1,0.5651,,0.5651,0.5651,0.5209880246913581,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B02,1:1-b,mCherry,1,0.04039,,0.04039,0.04039,0.03720300790123457,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B03,1:2-a,BFP,1,0.2901,,0.2901,0.2901,0.15944259259259264,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B03,1:2-a,EGFP,1,0.4834,,0.4834,0.4834,0.439288024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B03,1:2-a,mCherry,1,0.02235,,0.02235,0.02235,0.019163007901234565,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B04,1:2-b,BFP,1,0.244,,0.244,0.244,0.1133425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B04,1:2-b,EGFP,1,0.4432,,0.4432,0.4432,0.399088024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,B04,1:2-b,mCherry,1,0.01179,,0.01179,0.01179,0.008603007901234567,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C01,1:4-a,BFP,1,0.2932,,0.2932,0.2932,0.16254259259259263,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C01,1:4-a,EGFP,1,0.5882,,0.5882,0.5882,0.544088024691358,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C01,1:4-a,mCherry,1,-0.004626,,-0.004626,-0.004626,-0.007812992098765433,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C02,1:4-b,BFP,1,0.2612,,0.2612,0.2612,0.1305425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C02,1:4-b,EGFP,1,0.4903,,0.4903,0.4903,0.44618802469135804,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C02,1:4-b,mCherry,1,0.01484,,0.01484,0.01484,0.011653007901234568,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C03,1:8-a,BFP,1,0.4401,,0.4401,0.4401,0.3094425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C03,1:8-a,EGFP,1,0.4907,,0.4907,0.4907,0.44658802469135805,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C03,1:8-a,mCherry,1,0.01026,,0.01026,0.01026,0.007073007901234567,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C04,1:8-b,BFP,1,0.31,,0.31,0.31,0.1793425925925926,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C04,1:8-b,EGFP,1,0.4937,,0.4937,0.4937,0.44958802469135806,different_time_same_scan_only_single_point_not_matched
+LAYER 3 单点测光edit.xlsx,S10_single_point,C04,1:8-b,mCherry,1,0.02195,,0.02195,0.02195,0.018763007901234568,different_time_same_scan_only_single_point_not_matched

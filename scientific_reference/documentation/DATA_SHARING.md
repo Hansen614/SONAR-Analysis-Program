@@ -1,0 +1,2 @@
+# Data sharing
+This package contains original experimental data and associated source records authorized for internal S7/S10 analysis and Codex handoff. Inclusion is not permission for unrestricted public redistribution. Confirm experimental-team and institution permissions before publishing raw files or the full archive. Wiki may use evidence-bounded derivedresults subject to the team's review. Do not upload source data to thirdparty services merely to implement a localinterface.

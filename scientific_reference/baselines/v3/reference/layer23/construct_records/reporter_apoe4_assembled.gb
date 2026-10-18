@@ -1,0 +1,101 @@
+LOCUS       APOE4reporter           2004 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  APOE4-assembled PUF-APOBEC C>U editing GFP reporter (functional,
+            post Golden Gate).
+ACCESSION   pREWIRE_APOE4rep
+VERSION     pREWIRE_APOE4rep
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     regulatory      1..6
+                     /label="Kozak"
+                     /note="GCCACC Kozak consensus"
+                     /ApEinfo_fwdcolor="#bbbbbb"
+                     /ApEinfo_revcolor="#bbbbbb"
+     CDS             7..714
+                     /label="mCherry"
+                     /note="表达内参; P2A下游独立稳定表达"
+                     /ApEinfo_fwdcolor="#d62728"
+                     /ApEinfo_revcolor="#d62728"
+     CDS             715..780
+                     /label="GSG-P2A"
+                     /note="T2A自剪切肽(GSG接头)"
+                     /ApEinfo_fwdcolor="#ff7f0e"
+                     /ApEinfo_revcolor="#ff7f0e"
+     CDS             781..1497
+                     /label="EGFP"
+                     /note="编辑读出报告(turn-ON)"
+                     /ApEinfo_fwdcolor="#2ca02c"
+                     /ApEinfo_revcolor="#2ca02c"
+     misc_feature    1498..1503
+                     /label="GS-linker(GFP侧)"
+                     /note="GGCAGC"
+                     /ApEinfo_fwdcolor="#9edae5"
+                     /ApEinfo_revcolor="#9edae5"
+     misc_feature    1504..1513
+                     /label="PUF识别位点(10-mer)"
+                     /note="ATGGAGGACG; 天然APOE4序列; PUF足迹"
+                     /ApEinfo_fwdcolor="#8c564b"
+                     /ApEinfo_revcolor="#8c564b"
+     misc_feature    1514..1515
+                     /label="间隔(2nt)"
+                     /note="TG; 天然序列; PUF到靶C几何窗口"
+                     /ApEinfo_fwdcolor="#c49c94"
+                     /ApEinfo_revcolor="#c49c94"
+     misc_feature    1516..1518
+                     /label="靶密码子 CGA(Arg112)"
+                     /note="C388靶; 原CGC->CGA(390 C>A同义); 编辑CGA->UGA(stop)"
+                     /ApEinfo_fwdcolor="#e41a1c"
+                     /ApEinfo_revcolor="#e41a1c"
+     misc_feature    1519..1524
+                     /label="GS-linker(DHFR侧)"
+                     /note="GGCAGC"
+                     /ApEinfo_fwdcolor="#9edae5"
+                     /ApEinfo_revcolor="#9edae5"
+     CDS             1525..2001
+                     /label="ecDHFR-DD"
+                     /note="C端去稳定域(N18T/A19V/G67S)"
+                     /ApEinfo_fwdcolor="#1f77b4"
+                     /ApEinfo_revcolor="#1f77b4"
+     CDS             2002..2004
+                     /label="stop"
+                     /note="TGA"
+                     /ApEinfo_fwdcolor="#000000"
+                     /ApEinfo_revcolor="#000000"
+ORIGIN
+        1 gccaccatgg tgagcaaggg cgaggaggat aacatggcca tcatcaagga gttcatgcgc
+       61 ttcaaggtgc acatggaggg ctccgtgaac ggccacgagt tcgagatcga gggcgagggc
+      121 gagggccgcc cctacgaggg cacccagacc gccaagctga aggtgaccaa gggtggcccc
+      181 ctgcccttcg cctgggacat cctgtcccct cagttcatgt acggctccaa ggcctacgtg
+      241 aagcaccccg ccgacatccc cgactacttg aagctgtcct tccccgaggg cttcaagtgg
+      301 gagcgcgtga tgaacttcga ggacggcggc gtggtgaccg tgacccagga ctcctccctg
+      361 caggacggcg agttcatcta caaggtgaag ctgcgcggca ccaacttccc ctccgacggc
+      421 cccgtaatgc agaagaagac catgggctgg gaggcctcct ccgagcggat gtaccccgag
+      481 gacggcgccc tgaagggcga gatcaagcag aggctgaagc tgaaggacgg cggccactac
+      541 gacgctgagg tcaagaccac ctacaaggcc aagaagcccg tgcagctgcc cggcgcctac
+      601 aacgtcaaca tcaagttgga catcacctcc cacaacgagg actacaccat cgtggaacag
+      661 tacgaacgcg ccgagggccg ccactccacc ggcggcatgg acgagctgta caagggaagc
+      721 ggagctacta acttcagcct gctgaagcag gctggcgacg tggaggagaa ccctggacct
+      781 atggtgagca agggcgagga gctgttcacc ggggtggtgc ccatcctggt cgagctggac
+      841 ggcgacgtaa acggccacaa gttcagcgtg tccggcgagg gcgagggcga tgccacctac
+      901 ggcaagctga ccctgaagtt catctgcacc accggcaagc tgcccgtgcc ctggcccacc
+      961 ctcgtgacca ccctgaccta cggcgtgcag tgcttcagcc gctaccccga ccacatgaag
+     1021 cagcacgact tcttcaagtc cgccatgccc gaaggctacg tccaggagcg caccatcttc
+     1081 ttcaaggacg acggcaacta caagacccgc gccgaggtga agttcgaggg cgacaccctg
+     1141 gtgaaccgca tcgagctgaa gggcatcgac ttcaaggagg acggcaacat cctggggcac
+     1201 aagctggagt acaactacaa cagccacaac gtctatatca tggccgacaa gcagaagaac
+     1261 ggcatcaagg tgaacttcaa gatccgccac aacatcgagg acggcagcgt gcagctcgcc
+     1321 gaccactacc agcagaacac ccccatcggc gacggccccg tgctgctgcc cgacaaccac
+     1381 tacctgagca cccagtccgc cctgagcaaa gaccccaacg agaagcgcga tcacatggtc
+     1441 ctgctggagt tcgtgaccgc cgccgggatc actctcggca tggacgagct gtacaagggc
+     1501 agcatggagg acgtgcgagg cagcatgatc agcctgatcg ccgccctggc cgtggaccgc
+     1561 gtgatcggca tggaaaccgt gatgccctgg aacctgcccg ccgacctggc ctggttcaag
+     1621 cgcaacaccc tgaacaagcc cgtgatcatg ggccgccaca cctgggagag catcggccgc
+     1681 cccctgcccg gccgcaagaa catcatcctg agcagccagc ccagcaccga cgaccgcgtg
+     1741 acctgggtga agagcgtgga cgaggccatc gccgcctgcg gcgacgtgcc cgagatcatg
+     1801 gtgatcggcg gcggccgcgt gtacgagcag ttcctgccca aggcccagaa gctgtacctg
+     1861 acccacatcg acgccgaggt ggagggcgac acccacttcc ccgactacga gcccgacgac
+     1921 tgggagagcg tgttcagcga gttccacgac gccgacgccc agaacagcca cagctactgc
+     1981 ttcgagatcc tggagcgccg ctga
+//

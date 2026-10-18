@@ -1,0 +1,4 @@
+﻿model,segment,model_mass_low,model_mass_high,RAS_low,RAS_high,maximum_compatibility_width,status,qualification
+affine,0,,,,,,NO_NARROW_INTERIOR_DOMAIN,No model grid segment meets exploratory screen; not an absolute assay validity test
+isotonic,1,0.507,0.8280000000000001,0.750961091333186,1.0580682577211622,0.19599999999999995,EXPLORATORY,Configuration-fixed <=0.20 width; unique inverse; positive local slope; neither reference boundary truncates set; internal diagnostic only
+monotone_hinge_50,1,0.545,0.908,0.7843591007550823,1.0955974597076443,0.2,EXPLORATORY,Configuration-fixed <=0.20 width; unique inverse; positive local slope; neither reference boundary truncates set; internal diagnostic only

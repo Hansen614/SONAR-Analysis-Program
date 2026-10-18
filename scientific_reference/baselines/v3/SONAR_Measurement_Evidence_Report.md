@@ -1,0 +1,34 @@
+Version: `sonar-s7-s10-layer23-20261013-v3`. Reviewed 2026-10-13. Upstream Flow Quantification: `sonar-fresh-s7-s10-20261012-v2`. Experimental data: S7/S10 only; HEK293T confirmed in the current user request.
+
+# SONAR Integrated Measurement Evidence Report
+
+## Findings to carry into scientific writing
+The extension resolves the central OpenA-reference problem and performs the molecular and calibration analyses that were previously only feasibility audits. It supports a **523-bp candidate amplicon, a sequence-supported C280 stop-switch candidate, actual bidirectional chromatogram response, fitted S7 mass-reference models, and grouped optical-to-relative-molecular prediction tests**. It does not establish calibrated RNA-editing fractions, a validated RES domain or PER.
+
+1. Four no-editor F/R reconstructions from two independent wells agree exactly at 523 bp. Accepted Q20 support covers 494 positions; 393 are supported in both directions. Terminal positions 1–14 and 509–523 are primer-derived at the declared quality level. C280 has eight accepted control calls and uniquely introduces a stop within the reconstructed EGFP–DHFR linker. Intended target identity remains provisional.
+2. Of 48 Sanger reads, 47 pass site QC. The flagged `1-8-2.F` fails local sequence identity, not merely a vendor warning. Twenty-three complete technical pairs remain within 12 wells. C280 signal increases with dose; eligible equal-well F peak ratios rise from 0.04493 to 0.16354, and R ratios from 0.01584 to 0.28745. These are peak compositions, **not RNA editing percentages**.
+3. Affine, isotonic and fixed-knot monotonic S7 fits were actually estimated and internally tested. Isotonic leave-well RMSE is 0.05073, but leave-level RMSE is 0.10710; affine values are 0.07804 and 0.09339. Isotonic plateaus and large discrepancy-aware inverse sets prevent a validated domain. Both 90% wells remain below both 75% wells under all 11 context sensitivities.
+4. The paired molecular index follows B detection much more closely than RAS. At the well level, reporter RAS versus index has Pearson r=−0.288; B-positive fraction r=0.976. Leave-dose-out RAS-only RMSE 0.09015 is worse than the mean-only baseline 0.08380; B-only RMSE is 0.01922. This is a meaningful failure of the current RAS-only predictive relationship for the measured relative endpoint.
+5. A staged biological model is not qualified because accurate RNA fractions and S7-to-S10 transfer are absent. An explicitly hypothetical affine-rescaling sensitivity reproduces direct predictions to numerical precision, illustrating that a deterministic invertible intermediate adds no data by itself.
+
+
+## Layer 0: context calibration
+**Question.** Can the fluorescence measurements be processed in one reproducible context? **Method.** Native FCS interpretation is cross-checked independently; fixed Mock-trained scatter/pulse gates, per-file rate QC, linear mean subtraction and provisional positivity boundaries are applied. **Evidence.** Twenty S7 acquisitions, twelve S10 acquisitions and two shared unique Mocks on one detector profile. **Key findings.** Mock singlet retention is about 78.4–78.5%; cross-control positivity rates are 0.424–0.602%; one S10 acquisition loses 4.32% of events to the rate rule. **Interpretation.** Geometry and approximate negative-background transfer are consistent within the supplied session. **Limits.** Mock transfer does not prove optical spillover correction, multicolor negative classification, viable-cell selection or interday transfer. **Figure opportunity.** F01–F03 provide actual gates, backgrounds and counts. **Sources.** `inventory/acquisition_manifest.csv`, `reader_crosscheck.csv`, `channel_metadata.csv`; `results/event_retention.csv`, `background_thresholds.csv`, `negative_transfer.csv`; `contexts/context.json`; detailed methods in `reports/Layer0_Context_Calibration.md`.
+
+## Layer 1: flow quantification
+**Question.** Can green reporter output be interpreted relative to a continuous red reference, and what does blue add? **Method.** RAS=sum(corrected green)/sum(corrected red) on identical red-eligible events, preserving negative green values. Blue-stratified results, paired-event bootstrap intervals, shared control-mean uncertainty, gate/background perturbations, finite-event subsampling and bright-event influence are assessed separately. **Evidence.** All 32 reporter populations meet the provisional numerical screen; 10 positive-ratio S10 blue-selected populations are estimable. Two no-editor-labelled blue-selected populations fail denominator precision. **Key findings.** RAS lowers CV in 8/10 S7 and 5/6 S10 pairs. Gate perturbations change main scores by at most about 1.64%, alternative Mock means by about 0.12%. The top 1% of red events carry 16.78–30.78% of red signal; deleting them would change RAS by -1.18% to +6.29%. S10 B-positive fractions rise from 1.22% to 40.21% at endpoint labels. **Interpretation.** Normalization often reduces observed scale-related dispersion but retains expression weighting and does not make the reporter a molecular counter. BFP adds a detectable-expression covariate, not an editing-rate readout. **Limits.** A/B independent transfection wells and S10 ORCA–P2A–BFP linkage are user-confirmed; no optical/LOQ validation; 14/40 common B-bin scores are unavailable, preventing a complete standardized comparison. **Figure opportunities.** F04–F10 support normalization, heterogeneous improvement, blue prevalence, robustness and influence. **Sources.** `results/ras_results.csv`, `repeatability.csv`, `sensitivity.csv`, `high_expression_influence.csv`, `blue_profiles.csv`, `B_negative_transfer.csv`, `event_count_sensitivity.csv`, `bootstrap_draws.csv`; detailed report `reports/Layer1_Flow_Quantification.md`.
+
+
+
+
+## Layer 2: Reporter Calibration
+
+Three actual S7 mass-axis models, grouped validation and inverse uncertainty are complete. Internally evaluated exploratory mass-equivalent values are available; no validated RES domain is established. See [Layer 2 report](reports/Layer2_RES_Calibration.md).
+
+## Layer 3: Biological Calibration
+
+OpenA523/C280 reconstruction, bidirectional peak analysis and 12-well signal prediction are complete. RAS does not outperform a mean-only predictor for the available relative endpoint. Accurate RNA fractions, cross-population transfer and PER remain unqualified. See [Layer 3 report](reports/Layer3_PER_Calibration.md).
+
+## Full scientific handoff
+
+[Layer 2–3 evidence report](SONAR_Layer23_Evidence_Report.md), [Chinese summary](SONAR_Layer23_Scientific_Summary_ZH.md), [blocker resolution](SONAR_Layer23_Blocker_Resolution.md), and [figure evidence inventory](SONAR_Layer23_Figure_Evidence_Inventory.md). Earlier feasibility-only reports are retained as v2 historical context; the new actual analysis supersedes their statements that models were not fitted.

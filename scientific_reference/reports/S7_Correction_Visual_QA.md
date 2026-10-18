@@ -1,0 +1,5 @@
+# v4 visual and document QA
+
+Reviewed 2026-10-13. Five affected existing diagnostics and four new correction diagnostics were viewed together. C01 original/corrected response, C02 model comparison, C03 local slopes and cross-model inverse envelope, and C04 hypothetical S10 mapping were inspected at full viewing size. Axes, original/corrected interpretation, uncertain transfer labels, units, plateau behavior and figure captions agree with exported source tables. C03 marks only the largest contiguous grid segment, not the isolated grid-threshold points. These are analytical diagnostics, not final publication artwork.
+
+The other 20 PNG/SVG figure pairs are byte-identical to v3. Updated figures were independently regenerated, and all 29 current PNGs are pixel-identical across executions. Thirteen current scientific reports/manifests/registers were also byte-compared between executions. No affected plot uses relabeled event measurements: only the documented input assignments change. Reproduction details are in reproducibility_record.json.
