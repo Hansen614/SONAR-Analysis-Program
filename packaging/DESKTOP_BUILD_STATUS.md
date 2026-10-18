@@ -1,50 +1,35 @@
-# SAP desktop candidate — 1.4.0rc1
+# SAP v1.4.0rc1 — public desktop preview
 
-Built and verified locally on 2026-10-18, macOS 26.5.2 / Apple Silicon / Python 3.13.7.
+Published on 2026-10-18 (Asia/Shanghai).
 
-## Delivered
+- Public MIT-licensed source: https://github.com/Hansen614/SONAR-Analysis-Program
+- Release and downloads: https://github.com/Hansen614/SONAR-Analysis-Program/releases/tag/v1.4.0rc1
+- Tagged application/build source: `18587af088848e05c061ffccec35c53fff360e6f`
+- Windows build: https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39102672849
+- Windows archive validation and delivery: https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39110537992
 
-- `desktop-dist/SAP.app`: self-contained arm64 application, approximately 429 MiB on disk.
-- `desktop-dist/SAP-1.4.0rc1-macos-arm64.dmg`: approximately 273 MiB, with SAP.app and Applications shortcut.
-- `desktop-dist/BUILD_MANIFEST.json` and `SHA256SUMS.txt`: inputs, versions, source/asset hashes and package checksum.
-- `packaging/SAP.spec`, `build_desktop.py`, locked Mac dependencies, Windows build instructions and `.github/workflows/desktop-build.yml`.
+## Released packages
 
-The graphical interface, Logo and scientific formulas are retained. The application uses pywebview/WKWebView and embeds Python through PyInstaller. It starts on Home in a dedicated window without a terminal. Experiment data and logs are stored under `~/Library/Application Support/SAP/`, or the experiment directory chosen by the user. The existing development workspace is untouched.
+| Package | Bytes | SHA256 |
+| --- | ---: | --- |
+| SAP-1.4.0rc1-windows-x64-portable.zip | 602824153 | `0a6cc37a87c03e7e64dd6b8f6647643cd142801da7213f372885a726ee6a66ca` |
+| SAP-1.4.0rc1-macos-arm64.dmg | 282796862 | `337e777018138ff643802a280a8b3eb9b50db853beea1b52c099bf35463d8834` |
 
-## Verification
+Both are self-contained desktop packages with Python, existing SAP UI/assets, licenses and all 883 frozen scientific reference files. Windows also includes Microsoft's fixed WebView2 Runtime and a first-launch terms acknowledgement. The unused HEIC codec binaries are excluded. Scientific algorithms, reference file bytes and graphical analysis/design pages are unchanged.
 
-- Existing application suite: 46 passed in the new isolated environment.
-- New desktop lifecycle checks: 2 passed, including concurrent-process lock exclusion and release.
-- Sequence design: 117 checks passed; fixed control oligos: 26 checks passed.
-- Frozen application: all 883 scientific files verified; all 27 declared scientific dependency versions match; 10 API/static/download routes verified.
-- Actual bundled FCS: RAS 0.9562602659677871; RES model estimate 0.7454898213131972, matching existing expected values within 1e-12 relative tolerance. Qualified RES remains null. Theta reused without refitting.
-- Native GUI: design example through oligo output; CSV save dialog and saved file; actual FCS selection/upload; Theta preview; sample computation; report ZIP save; close terminates server; restart restores active experiment.
-- Exported CSV parses into 3 rows; exported report ZIP passes integrity check with 14 files.
-- Isolated relocated bundle: PASS with original project and system Python paths denied, non-loopback networking denied, and Chinese/space-containing output path. The sandbox was separately checked to actually reject access to original source. This is not a clean-machine certification or a universal macOS compatibility claim.
-- Local ad-hoc code signature verifies. No Developer ID identity or notarization is present.
+## Completed verification
 
-Evidence is saved in `verification/SAP_desktop_self_test.json`, `SAP_desktop_isolation_test.json`, the isolation profile and native GUI screenshots. The scientific pipeline source hash is unchanged.
+- Windows: 49 Python tests passed; sequence and control-oligo checks passed; frozen real-FCS/API/export tests passed; native Home/Design/Construction/Analysis GUI checks passed and verified use of the bundled WebView2 process.
+- macOS: frozen real-FCS/API/export and native GUI tests passed; DMG CRC check passed; the actual DMG was mounted read-only, and its ad-hoc signature, packaged source hashes, license inventory and all 883 reference hashes were verified.
+- Both frozen pipelines produced RAS `0.9562602659677871`, RES model estimate `0.7454898213131972`, and null qualified RES for the bundled acceptance example. Theta was reused without refitting.
+- Windows portable ZIP CRC, x64 GUI subsystem (no console), embedded Python/browser, source hashes and all reference hashes passed archive checks.
+- GitHub upload digests match the verified package digests. Unauthenticated requests confirmed the public MIT repository, published pre-release and HTTP 200 downloads for both packages, with matching byte lengths.
+- Per-platform build manifests, verification JSON, dependency locks and combined SHA256SUMS.txt are attached to the Release.
 
-## Remaining release work
+The macOS build began at the tagged source. A delivery/documentation-only commit was added while it ran; the manifest records both that later checkout head and the verified build-source commit. Every packaged application source hash and packaging input was checked against the tag.
 
-macOS arm64 and Windows x64 candidates have been built and tested as recorded here. Intel Mac remains unbuilt. The repository and Actions artifacts are private; no public signed release has been published.
+## Remaining work before a signed stable release
 
-Before external publication: clean-system GUI and offline tests on supported targets; Developer ID signing, hardened runtime/notarization/stapling for macOS; Windows signing plan; project license and distribution permission review; third-party notices; publish verified artifacts to GitHub Releases. macOS 14 is the configured build floor based on dependencies, but only macOS 26.5.2 has been tested here.
+Windows signing and manual clean Windows 11 acceptance; macOS Developer ID signing/notarization/stapling and additional supported-version clean-system acceptance. The configured macOS floor is 14; local native tests used macOS 26.5.2 Apple Silicon. Intel Mac and Windows ARM64 packages have not been built. This is a public **pre-release**, not a signed stable release; OS security can block first launch.
 
-## Windows build completed — 2026-10-18
-
-Source and all 883 frozen scientific reference files were uploaded to the user's private repository with explicit authorization. User workspaces, caches, local QA exports and build environments were excluded.
-
-- Repository: https://github.com/Hansen614/SONAR-Analysis-Program
-- Successful run: https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39100443668
-- Built source: b59fa6d9184a0317fcfb29f01863ed524814a6e8
-- Artifact: SAP-windows-x64-candidate / SAP-1.4.0rc1-windows-x64-portable.zip
-- Python tests: 48 passed; design checks: 117 passed; control oligos: 26 passed.
-- Frozen executable: actual FCS self-test, reference hashes, dependency metadata, API and export checks passed.
-- Native WebView: Home, Design, Construction and Analysis pages load; oligo engine produces expected sequences; process path confirms use of the bundled WebView2 Fixed Runtime.
-- Microsoft runtime: 155.0.4283.62 x64; CAB SHA256 pinned in packaging/webview2-windows-x64.json; Microsoft executable signature validated in CI.
-- First CI run exposed a missing test-output directory on a clean checkout; the test now creates that directory. No scientific algorithm was changed.
-
-The repository remains private. This is an unsigned candidate artifact, not a public GitHub Release. Manual Windows 11 user acceptance and signing remain pending.
-
-Local download verification passed: ZIP integrity, Windows x64 GUI executable, bundled Python/WebView2 and all 883 scientific file hashes. Portable ZIP size: 608898510 bytes; SHA256: `8411361a14952f2d1959d4b3a1b38e1531bafa5049cf106a3931f37c0d1fd215`. The exact resolved Windows dependency lock is retained in `packaging/requirements-windows-x64.lock.txt`.
+The earlier local candidates and Actions artifacts are superseded by the two release packages above. Use the fixed Release links in `docs/WIKI_CONTRIBUTION.md` for Wiki download buttons. That file supplies copy/links; it does not itself deploy the Wiki.
