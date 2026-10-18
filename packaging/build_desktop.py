@@ -16,7 +16,7 @@ from sonar_app.backend import Platform, sha
 
 
 def run(*args):
-    subprocess.run([str(a) for a in args], cwd=ROOT, check=True)
+    subprocess.run([str(a) for a in args], cwd=ROOT, check=True, timeout=1200)
 
 
 def main():
@@ -40,6 +40,12 @@ def main():
     run(binary, '--self-test', report)
     result = json.loads((report / 'self-test.json').read_text())
     assert result['status'] == 'PASS' and result['frozen']
+    gui_result = None
+    if sys.platform == 'win32':
+        gui_report = ROOT / '_work/frozen-gui-test'
+        run(binary, '--ui-self-test', gui_report)
+        gui_result = json.loads((gui_report / 'gui-self-test.json').read_text())
+        assert gui_result['status'] == 'PASS' and gui_result['frozen']
     machine = platform.machine().lower()
     arch = 'arm64' if machine in ('arm64','aarch64') else 'x64'
     stem = f'SAP-{__version__}-{"macos" if sys.platform == "darwin" else "windows"}-{arch}'
@@ -61,7 +67,7 @@ def main():
                 'pywebview': importlib.metadata.version('pywebview'),
                 'scientific_manifest_sha256': sha(ROOT / 'scientific_reference/RELEASE_MANIFEST.json'),
                 'artifact': artifact.name, 'artifact_sha256': sha(artifact),
-                'self_test': result, 'public_release_ready': False,
+                'self_test': result, 'gui_self_test': gui_result, 'public_release_ready': False,
                 'signing': ('Ad-hoc signed; not Developer ID signed or notarized' if sys.platform == 'darwin' else 'Unsigned Windows candidate'),
                 'sources': {str(f.relative_to(ROOT)):sha(f) for f in (ROOT/'sonar_app').rglob('*')
                     if f.is_file() and '__pycache__' not in f.parts}}

@@ -109,4 +109,5 @@ jobs:
             _work/frozen-self-test/self-test.json
             _work/frozen-self-test/FAILED.txt
             _work/frozen-self-test/logs/
+            _work/frozen-gui-test/
             _work/desktop-build/SAP/warn-SAP.txt

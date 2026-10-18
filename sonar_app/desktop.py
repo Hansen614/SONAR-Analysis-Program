@@ -97,11 +97,61 @@ def smoke_test(platform, destination):
     return status
 
 
+def gui_smoke_test(window, directory, completed):
+    """CI-only check of the real native WebView and bundled JavaScript."""
+    import time
+    from .backend import write_json
+    try:
+        def wait_for(script):
+            deadline = time.monotonic() + 45
+            while time.monotonic() < deadline:
+                try:
+                    value = window.evaluate_js(script)
+                    if value:
+                        return value
+                except Exception:
+                    pass
+                time.sleep(.2)
+            raise RuntimeError('Desktop UI did not become ready: ' + script)
+        wait_for("document.querySelector('main') && typeof state !== 'undefined' && !!state.data")
+        pages = []
+        for route, expected in [('home','Choose a workspace'), ('design','Design your Reporter'),
+                                ('construction','Reporter construction'), ('analyze','Start an experiment')]:
+            window.evaluate_js('location.hash = ' + json.dumps(route))
+            wait_for("document.querySelector('main').innerText.includes(" + json.dumps(expected) + ")")
+            pages.append(route)
+        sequences = window.evaluate_js("""ReporterDesign.build(ReporterDesign.prepare({
+            text:'GACATGGAGGACGTGCGC', target:16, footprint:12, spacer:2, name:'CI'}),
+            'CGA', ReporterVector).oligos.map(o=>o.sequence)""")
+        assert sequences == ['CAGCGACATGGAGGACGTGCGA', 'TGCCTCGCACGTCCTCCATGTC']
+        result = {'status':'PASS', 'pages':pages, 'oligos':sequences,
+                  'user_agent':window.evaluate_js('navigator.userAgent'),
+                  'frozen':bool(getattr(sys,'frozen',False))}
+        if sys.platform == 'win32':
+            import subprocess
+            command = "Get-CimInstance Win32_Process -Filter \"Name='msedgewebview2.exe'\" | Select-Object -ExpandProperty ExecutablePath | ConvertTo-Json -Compress"
+            paths = json.loads(subprocess.check_output(['powershell','-NoProfile','-Command',command],
+                text=True, encoding='utf-8').strip())
+            if isinstance(paths,str): paths = [paths]
+            expected = str(Path(sys._MEIPASS) / 'WebView2').lower()
+            assert any(str(path).lower().startswith(expected) for path in paths), paths
+            result['bundled_webview2_process_verified'] = True
+        write_json(directory / 'gui-self-test.json', result)
+        completed.append(True)
+    except Exception as exc:
+        logging.exception('Desktop UI self-test failed')
+        (directory / 'FAILED.txt').write_text(str(exc),encoding='utf-8')
+    finally:
+        window.destroy()
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--self-test', type=Path, metavar='OUTPUT_DIRECTORY')
+    parser.add_argument('--ui-self-test', type=Path, metavar='OUTPUT_DIRECTORY')
     args = parser.parse_args()
-    directory = args.self_test.resolve() if args.self_test else user_directory()
+    diagnostic = args.self_test or args.ui_self_test
+    directory = diagnostic.resolve() if diagnostic else user_directory()
     directory.mkdir(parents=True, exist_ok=True)
     logs = directory / 'logs'; logs.mkdir(exist_ok=True)
     handler = RotatingFileHandler(logs / 'SAP.log', maxBytes=2_000_000, backupCount=3, encoding='utf-8')
@@ -147,12 +197,14 @@ def main():
                     'Please wait for the current operation to finish before closing SAP.')
                 return False
         window.events.closing += closing
-        webview.start(gui='edgechromium' if sys.platform == 'win32' else 'cocoa',
+        completed = []
+        runner = (lambda: gui_smoke_test(window, directory, completed)) if args.ui_self_test else None
+        webview.start(runner, gui='edgechromium' if sys.platform == 'win32' else 'cocoa',
                       private_mode=False, storage_path=str(directory / 'webview'))
-        return 0
+        return 0 if not args.ui_self_test or completed else 1
     except Exception as exc:
         logging.exception('SAP failed')
-        if args.self_test:
+        if diagnostic:
             (directory / 'FAILED.txt').write_text(str(exc), encoding='utf-8')
         else:
             native_error(f'{exc}\n\nDiagnostic log: {logs / "SAP.log"}')
