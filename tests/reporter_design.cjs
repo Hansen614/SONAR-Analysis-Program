@@ -41,5 +41,6 @@ for(const footprint of [4,10,12,14,30,60])for(const spacer of [0,2,3,30]){
  const n=footprint+spacer,extra=(3-n%3)%3,up='A'.repeat(n+extra),q=prepare({text:up+'CAG',target:up.length+1,footprint,spacer}),b=engine.build(q,'CAG',vector);
  check(()=>assert.equal(b.valid,true));check(()=>assert.equal(b.core.length%3,0));check(()=>assert.equal(b.core.slice(extra,-3),'A'.repeat(n)));
 }
+fs.mkdirSync(require('node:path').join(__dirname,'../_work/reporter-design'),{recursive:true});
 fs.writeFileSync('_work/reporter-design/engine_results.json',JSON.stringify([r,old],null,2));
 console.log(`PASS: ${checks} sequence checks, Universal EV full-vector golden hashes, default PUF12 frame, parameter ranges and input rejection.`);

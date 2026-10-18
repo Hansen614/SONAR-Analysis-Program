@@ -78,18 +78,24 @@ jobs:
           $sig = Get-AuthenticodeSignature $exe.FullName
           if ($sig.Status -ne 'Valid' -or $sig.SignerCertificate.Subject -notmatch 'Microsoft Corporation') { throw 'Microsoft runtime signature check failed' }
           "SAP_WEBVIEW2_RUNTIME=$($exe.Directory.FullName)" >> $env:GITHUB_ENV
-      - name: Test and build
+      - name: Install dependencies
         shell: pwsh
         run: |
           python -m venv .desktop-venv
           .desktop-venv/Scripts/python -m pip install -r packaging/requirements-desktop.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Run scientific and sequence tests
+        shell: pwsh
+        run: |
           .desktop-venv/Scripts/python -m pytest tests -q
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           node tests/reporter_design.cjs
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           node tests/control_oligos.cjs
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Build and verify standalone application
+        shell: pwsh
+        run: |
           .desktop-venv/Scripts/python packaging/build_desktop.py
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           .desktop-venv/Scripts/python -m pip freeze > desktop-dist/requirements-windows-x64.lock.txt
