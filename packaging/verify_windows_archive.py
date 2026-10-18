@@ -37,6 +37,7 @@ def verify(folder):
             assert hashlib.sha256(z.read('SAP/_internal/scientific_reference/' + row['path'])).hexdigest() == row['sha256']
         assert len(reference['files']) == 883
         for path, digest in manifest['sources'].items():
+            path = path.replace('\\', '/')
             # The source manifest also records the CLI-only entry point. The desktop
             # executable has its own entry point, so PyInstaller does not collect it.
             if path == 'sonar_app/__main__.py' and 'SAP/_internal/' + path not in names:
