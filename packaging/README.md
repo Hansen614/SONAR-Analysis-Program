@@ -14,16 +14,16 @@ python3.13 -m venv .desktop-venv
 .desktop-venv/bin/python packaging/build_desktop.py
 ```
 
-Windows x64 (requires native Windows build and subsequent GUI verification):
+Windows x64 (native Windows build; dependency lock captured from the successful candidate):
 
 ```powershell
 py -3.13 -m venv .desktop-venv
-.desktop-venv\Scripts\python -m pip install -r packaging/requirements-desktop.txt
+.desktop-venv\Scripts\python -m pip install -r packaging/requirements-windows-x64.lock.txt
 $env:SAP_WEBVIEW2_RUNTIME = "C:\build\WebView2"
 .desktop-venv\Scripts\python packaging/build_desktop.py
 ```
 
-Obtain the x64 Fixed Version WebView2 Runtime from Microsoft, verify its downloaded SHA256 against your recorded release input, and extract it before building. Set SAP_WEBVIEW2_RUNTIME to the directory directly containing msedgewebview2.exe. The build refuses to silently omit it. Pin the resolved Windows dependencies after a successful native build. macOS Intel also requires its own native build and QA.
+Obtain the x64 Fixed Version WebView2 Runtime from Microsoft, verify its downloaded SHA256 against your recorded release input, and extract it before building. Set SAP_WEBVIEW2_RUNTIME to the directory directly containing msedgewebview2.exe. The build refuses to silently omit it. The committed Windows lock records the dependencies from the successful native build. macOS Intel also requires its own native build and QA.
 
 Outputs: desktop-dist/SAP.app or desktop-dist/SAP/, architecture-specific DMG/ZIP, BUILD_MANIFEST.json, SHA256SUMS.txt. A frozen self-test runs real Mock and sample FCS through Theta/RAS/RES, checks the manifest, downloads, source identity and dependency metadata. Test data goes into _work/frozen-self-test, never the user's experiment workspace.
 

@@ -1,6 +1,6 @@
 # SAP desktop candidate — 1.4.0rc1
 
-This is a local test build, not yet a signed public release.
+These are test candidates, not yet signed public releases.
 
 ## macOS (Apple Silicon)
 
@@ -8,7 +8,9 @@ Open the DMG, drag SAP.app to Applications, then open SAP. The app includes Pyth
 
 ## Windows
 
-After a Windows build is available, fully extract the portable ZIP and open SAP.exe inside the SAP directory. Keep the entire directory together. The offline build must include the Microsoft WebView2 Fixed Runtime. No Windows binary is produced by a Mac build.
+Download **SAP-windows-x64-candidate** from the [successful GitHub Actions run](https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39100443668). Sign in with an account that has access to the private repository. Extract that artifact, then fully extract SAP-1.4.0rc1-windows-x64-portable.zip. Open SAP/SAP.exe. Keep the entire SAP directory together, including _internal. Python and the Microsoft WebView2 Fixed Runtime are included; no command line or Python installation is required.
+
+The candidate is built and automatically tested on GitHub's Windows Server 2022 x64 runner. Manual clean-machine Windows 11 acceptance and Windows code signing remain pending. Do not disable system security to run an untrusted copy.
 
 ## Data and examples
 

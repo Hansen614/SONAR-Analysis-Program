@@ -1,6 +1,6 @@
 ## Desktop candidate (1.4.0rc1)
 
-SAP can now be built as a self-contained desktop application. The current local candidate targets Apple Silicon Macs. See [desktop installation notes](packaging/INSTALL.md) and [maintainer build instructions](packaging/README.md). Output packages are generated in `desktop-dist/`; these binaries are separate from the source installation described below. Windows and Intel Mac builds require their own target-platform build and verification. This candidate has not completed public-release signing/notarization.
+SAP has self-contained desktop candidates for Apple Silicon macOS and Windows x64. No separate Python installation is required. See [installation notes](packaging/INSTALL.md) and [build instructions](packaging/README.md). Windows candidates are available from the [successful GitHub Actions run](https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39100443668) under **SAP-windows-x64-candidate** (repository access required). Extract the downloaded artifact and then fully extract `SAP-1.4.0rc1-windows-x64-portable.zip`; open `SAP/SAP.exe` and keep the entire SAP folder together. These are unsigned/ad-hoc-signed candidates, not a public signed release. Intel Mac remains unbuilt.
 
 # SONAR Platform 1.3.1
 

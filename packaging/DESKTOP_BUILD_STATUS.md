@@ -27,6 +27,24 @@ Evidence is saved in `verification/SAP_desktop_self_test.json`, `SAP_desktop_iso
 
 ## Remaining release work
 
-This is a working local candidate, not a public signed release. Windows and Intel Mac binaries have not been built or tested. The workflow is prepared locally but has not been pushed or run on GitHub; no download release has been published.
+macOS arm64 and Windows x64 candidates have been built and tested as recorded here. Intel Mac remains unbuilt. The repository and Actions artifacts are private; no public signed release has been published.
 
-Before external publication: Windows native build with a verified WebView2 Fixed Runtime; clean-system GUI and offline tests on supported targets; Developer ID signing, hardened runtime/notarization/stapling for macOS; Windows signing plan; project license and distribution permission review; third-party notices; publish verified artifacts to GitHub Releases. macOS 14 is the configured build floor based on dependencies, but only macOS 26.5.2 has been tested here.
+Before external publication: clean-system GUI and offline tests on supported targets; Developer ID signing, hardened runtime/notarization/stapling for macOS; Windows signing plan; project license and distribution permission review; third-party notices; publish verified artifacts to GitHub Releases. macOS 14 is the configured build floor based on dependencies, but only macOS 26.5.2 has been tested here.
+
+## Windows build completed — 2026-10-18
+
+Source and all 883 frozen scientific reference files were uploaded to the user's private repository with explicit authorization. User workspaces, caches, local QA exports and build environments were excluded.
+
+- Repository: https://github.com/Hansen614/SONAR-Analysis-Program
+- Successful run: https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39100443668
+- Built source: b59fa6d9184a0317fcfb29f01863ed524814a6e8
+- Artifact: SAP-windows-x64-candidate / SAP-1.4.0rc1-windows-x64-portable.zip
+- Python tests: 48 passed; design checks: 117 passed; control oligos: 26 passed.
+- Frozen executable: actual FCS self-test, reference hashes, dependency metadata, API and export checks passed.
+- Native WebView: Home, Design, Construction and Analysis pages load; oligo engine produces expected sequences; process path confirms use of the bundled WebView2 Fixed Runtime.
+- Microsoft runtime: 155.0.4283.62 x64; CAB SHA256 pinned in packaging/webview2-windows-x64.json; Microsoft executable signature validated in CI.
+- First CI run exposed a missing test-output directory on a clean checkout; the test now creates that directory. No scientific algorithm was changed.
+
+The repository remains private. This is an unsigned candidate artifact, not a public GitHub Release. Manual Windows 11 user acceptance and signing remain pending.
+
+Local download verification passed: ZIP integrity, Windows x64 GUI executable, bundled Python/WebView2 and all 883 scientific file hashes. Portable ZIP size: 608898510 bytes; SHA256: `8411361a14952f2d1959d4b3a1b38e1531bafa5049cf106a3931f37c0d1fd215`. The exact resolved Windows dependency lock is retained in `packaging/requirements-windows-x64.lock.txt`.
