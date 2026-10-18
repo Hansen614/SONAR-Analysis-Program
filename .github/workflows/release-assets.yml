@@ -1,0 +1,58 @@
+name: Attach verified Windows package to draft release
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        description: Successful desktop build run ID
+        required: true
+        type: string
+      release_tag:
+        description: Existing draft release tag (must match built commit)
+        required: true
+        type: string
+permissions:
+  contents: write
+  actions: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN: ${{ inputs.source_run }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify build identity and draft release
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_RUN" =~ ^[0-9]+$ ]]
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+rc[0-9]+$ ]]
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN" > source-run.json
+          gh api "repos/$GITHUB_REPOSITORY/commits/$RELEASE_TAG" > tagged-commit.json
+          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft,isPrerelease > draft.json
+          python - <<'PY'
+          import json
+          run=json.load(open('source-run.json')); tag=json.load(open('tagged-commit.json')); draft=json.load(open('draft.json'))
+          assert run['conclusion']=='success' and run['status']=='completed'
+          assert run['path']=='.github/workflows/desktop-build.yml'
+          assert run['head_sha']==tag['sha']
+          assert draft['isDraft'] and draft['isPrerelease']
+          PY
+      - name: Download and validate candidate
+        run: |
+          gh run download "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" -n SAP-windows-x64-candidate -D candidate
+          python packaging/verify_windows_archive.py candidate > candidate/WINDOWS_VERIFICATION.json
+          python - <<'PY'
+          import json, pathlib, shutil
+          p=pathlib.Path('candidate'); m=json.loads((p/'BUILD_MANIFEST.json').read_text(encoding='utf-8-sig'))
+          run=json.load(open('source-run.json'))
+          assert m['source_commit']==run['head_sha']
+          shutil.copyfile(p/'BUILD_MANIFEST.json',p/'BUILD_MANIFEST-windows-x64.json')
+          shutil.copyfile(p/'SHA256SUMS.txt',p/'SHA256SUMS-windows-x64.txt')
+          PY
+      - name: Attach verified files to draft only
+        run: |
+          test "$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          gh release upload "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" candidate/*.zip candidate/BUILD_MANIFEST-windows-x64.json candidate/SHA256SUMS-windows-x64.txt candidate/WINDOWS_VERIFICATION.json candidate/requirements-windows-x64.lock.txt
