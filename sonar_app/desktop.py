@@ -101,12 +101,16 @@ def gui_smoke_test(window, directory, completed):
     """CI-only check of the real native WebView and bundled JavaScript."""
     import time
     from .backend import write_json
+    def evaluate(script):
+        # Native execution avoids eval(), preserving the application's strict CSP.
+        value = window.run_js('JSON.stringify((' + script + '))')
+        return json.loads(value) if value is not None else None
     try:
         def wait_for(script):
             deadline = time.monotonic() + 45
             while time.monotonic() < deadline:
                 try:
-                    value = window.evaluate_js(script)
+                    value = evaluate(script)
                     if value:
                         return value
                 except Exception:
@@ -117,15 +121,15 @@ def gui_smoke_test(window, directory, completed):
         pages = []
         for route, expected in [('home','Choose a workspace'), ('design','Design your Reporter'),
                                 ('construction','Reporter construction'), ('analyze','Start an experiment')]:
-            window.evaluate_js('location.hash = ' + json.dumps(route))
+            evaluate('location.hash = ' + json.dumps(route))
             wait_for("document.querySelector('main').innerText.includes(" + json.dumps(expected) + ")")
             pages.append(route)
-        sequences = window.evaluate_js("""ReporterDesign.build(ReporterDesign.prepare({
+        sequences = evaluate("""ReporterDesign.build(ReporterDesign.prepare({
             text:'GACATGGAGGACGTGCGC', target:16, footprint:12, spacer:2, name:'CI'}),
             'CGA', ReporterVector).oligos.map(o=>o.sequence)""")
         assert sequences == ['CAGCGACATGGAGGACGTGCGA', 'TGCCTCGCACGTCCTCCATGTC']
         result = {'status':'PASS', 'pages':pages, 'oligos':sequences,
-                  'user_agent':window.evaluate_js('navigator.userAgent'),
+                  'user_agent':evaluate('navigator.userAgent'),
                   'frozen':bool(getattr(sys,'frozen',False))}
         if sys.platform == 'win32':
             import subprocess

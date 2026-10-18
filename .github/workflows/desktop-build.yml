@@ -75,6 +75,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Extraction failed' }
           $exe = Get-ChildItem runtime -Recurse -Filter msedgewebview2.exe | Select-Object -First 1
           if (!$exe) { throw 'No runtime executable' }
+          $sig = Get-AuthenticodeSignature $exe.FullName
+          if ($sig.Status -ne 'Valid' -or $sig.SignerCertificate.Subject -notmatch 'Microsoft Corporation') { throw 'Microsoft runtime signature check failed' }
           "SAP_WEBVIEW2_RUNTIME=$($exe.Directory.FullName)" >> $env:GITHUB_ENV
       - name: Test and build
         shell: pwsh
