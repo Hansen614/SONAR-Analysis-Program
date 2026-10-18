@@ -1,8 +1,21 @@
-## Desktop candidate (1.4.0rc1)
+# SONAR Analysis Program (SAP)
 
-SAP has self-contained desktop candidates for Apple Silicon macOS and Windows x64. No separate Python installation is required. See [installation notes](packaging/INSTALL.md) and [build instructions](packaging/README.md). Windows candidates are available from the [successful GitHub Actions run](https://github.com/Hansen614/SONAR-Analysis-Program/actions/runs/39100443668) under **SAP-windows-x64-candidate** (repository access required). Extract the downloaded artifact and then fully extract `SAP-1.4.0rc1-windows-x64-portable.zip`; open `SAP/SAP.exe` and keep the entire SAP folder together. These are unsigned/ad-hoc-signed candidates, not a public signed release. Intel Mac remains unbuilt.
+Desktop software from SUSTech iGEM 2026 for Reporter sequence design, flow-cytometry analysis and reference-data inspection.
 
-# SONAR Platform 1.3.1
+## Download v1.4.0rc1 (public preview)
+
+| Platform | Download | Start |
+| --- | --- | --- |
+| Windows x64 | [Portable ZIP](https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-windows-x64-portable.zip) | Fully extract, open `SAP/SAP.exe`; keep the whole folder |
+| macOS Apple Silicon | [DMG](https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-macos-arm64.dmg) | Open DMG, drag SAP.app to Applications |
+
+No separate Python installation is required. These preview binaries are unsigned on Windows and ad-hoc signed/not notarized on macOS; OS security may block first launch. Intel Mac binaries are not provided. See [installation and examples](packaging/INSTALL.md), [release notes and limitations](docs/releases/v1.4.0rc1.md), and [all releases](https://github.com/Hansen614/SONAR-Analysis-Program/releases).
+
+Original SAP code is [MIT licensed](LICENSE). Third-party components retain their [own notices](THIRD_PARTY_NOTICES.md). No cloud calculation is required; experiment data is saved locally. RES model estimates are reference-equivalent measurements, not direct RNA editing percentages.
+
+Maintainers: [desktop build instructions](packaging/README.md). Source/development instructions follow below.
+
+## Source installation and development
 
 本地流式测量平台：**Layer 0 Θ → Layer 1 RAS → Layer 2 RES**。
 

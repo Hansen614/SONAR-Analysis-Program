@@ -82,7 +82,7 @@ jobs:
         shell: pwsh
         run: |
           python -m venv .desktop-venv
-          .desktop-venv/Scripts/python -m pip install -r packaging/requirements-desktop.txt
+          .desktop-venv/Scripts/python -m pip install -r packaging/requirements-windows-x64.lock.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Run scientific and sequence tests
         shell: pwsh

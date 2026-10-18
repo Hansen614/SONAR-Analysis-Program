@@ -7,7 +7,8 @@ from PyInstaller.utils.hooks import copy_metadata, collect_data_files
 ROOT = Path(SPECPATH).parent
 REFERENCE = ROOT / 'scientific_reference'
 science_modules = [p.stem for p in (REFERENCE / 'src').glob('*.py')]
-datas = []
+datas = [(str(ROOT / 'LICENSE'), '.'),
+         (str(ROOT / '_work/third-party-notices'), 'THIRD_PARTY_NOTICES')]
 # Only manifest-registered scientific files plus its manifest. No caches or user workspace.
 import json
 manifest = json.loads((REFERENCE / 'RELEASE_MANIFEST.json').read_text())
@@ -25,7 +26,7 @@ datas += collect_data_files('tzdata')
 collection_mode = {'sonar_app': 'py', **{name: 'py' for name in science_modules}}
 hidden = ['science_api', 'core', 'reporter_calibration', 'inverse_calibration',
           'flowio', 'numpy', 'pandas', 'matplotlib.backends.backend_agg',
-          'openpyxl', 'pillow_heif', 'PIL.Image']
+          'openpyxl', 'PIL.Image']
 if sys.platform == 'win32':
     runtime = os.environ.get('SAP_WEBVIEW2_RUNTIME')
     if not runtime or not (Path(runtime) / 'msedgewebview2.exe').is_file():
@@ -33,7 +34,7 @@ if sys.platform == 'win32':
     datas.append((runtime, 'WebView2'))
 a = Analysis([str(ROOT / 'desktop_entry.py')], pathex=[str(ROOT), str(REFERENCE / 'src')],
     binaries=[], datas=datas, hiddenimports=hidden, hookspath=[], runtime_hooks=[],
-    excludes=['PyQt5','PyQt6','PySide2','PySide6','tkinter','IPython','notebook'],
+    excludes=['PyQt5','PyQt6','PySide2','PySide6','tkinter','IPython','notebook','pillow_heif','_pillow_heif'],
     module_collection_mode=collection_mode)
 pyz = PYZ(a.pure)
 icon = str(ROOT / 'packaging/icons' / ('SAP.icns' if sys.platform == 'darwin' else 'SAP.ico'))

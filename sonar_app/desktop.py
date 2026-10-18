@@ -166,6 +166,10 @@ def main():
     guard = server = None
     try:
         guard = InstanceLock(directory)
+        if sys.platform == 'win32' and getattr(sys, 'frozen', False) and not diagnostic:
+            from .desktop_terms import ensure_runtime_terms
+            if not ensure_runtime_terms(directory):
+                return 0
         from .backend import Platform
         platform = Platform(workspace=directory / 'workspace')
         if args.self_test:
