@@ -1,6 +1,6 @@
 # SONAR Analysis Program (SAP)
 
-Desktop software from SUSTech iGEM 2026 for Reporter sequence design, flow-cytometry analysis and reference-data inspection.
+Desktop software from SUSTech-BIO 2026 iGEM Team for Reporter sequence design, flow-cytometry analysis and reference-data inspection.
 
 ## Download v1.4.0rc1 (public preview)
 
@@ -101,3 +101,5 @@ Maintainers: [desktop build instructions](packaging/README.md). Source/developme
 网页插入步骤转写自维护中的 `Protocols/RP02`（v1.0，2026-10-13），保留短双链适配起始方案的边界，附原 PDF 下载。下载副本与源文件的哈希保存在 `sonar_app/static/downloads/construction_manifest.json`。正式 protocol 仍只在 `Protocols/` 维护；源包更新后运行 `.venv/bin/python tools/refresh_construction_assets.py` 同步下载镜像与设计参考，并核对网页转写内容。原 RP02 PDF 的 4,669 bp 示例保持原文；网页按 7,498 bp 质粒 将 75 ng 换算为约 15.2 fmol，沿用约 114 fmol 插入起始量时比例约 7.5∶1，不代表条件已优化。五个下载路径通过明确白名单提供，不开放任意本地文件路径。
 
 卡片使用包内 SVG 图谱，点击可放大，支持缩放、适合窗口、Esc / 关闭按钮 / 遮罩关闭；质粒图仅将 EV 标签同步为 Plasmid，其余图谱内容不变。图谱来源与修改记录纳入 `construction_manifest.json`，并由刷新工具同步。
+
+Team attribution: **SUSTech-BIO 2026 iGEM Team**. The frozen `scientific_reference/` package retains historical attribution wording and hashes to preserve compatibility with saved experiments; those historical labels are not the current team name.
