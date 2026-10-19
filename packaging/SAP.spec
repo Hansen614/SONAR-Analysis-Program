@@ -45,5 +45,5 @@ coll = COLLECT(exe, a.binaries, a.datas, strip=False, upx=False, name='SAP')
 if sys.platform == 'darwin':
     app = BUNDLE(coll, name='SAP.app', icon=icon, bundle_identifier='org.sustech-igem.sap',
         info_plist={'CFBundleShortVersionString':'1.4.0', 'CFBundleVersion':'14001',
-                    'LSMinimumSystemVersion':'14.0', 'NSHighResolutionCapable':True, 'NSHumanReadableCopyright':'SUSTech iGEM 2026',
+                    'LSMinimumSystemVersion':'14.0', 'NSHighResolutionCapable':True, 'NSHumanReadableCopyright':'SUSTech-BIO 2026 iGEM Team',
                     'NSAppTransportSecurity': {'NSAllowsLocalNetworking':True}})
